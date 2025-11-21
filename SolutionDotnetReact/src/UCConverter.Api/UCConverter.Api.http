@@ -1,0 +1,6 @@
+@UCConverter.Api_HostAddress = http://localhost:5185
+
+GET {{UCConverter.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

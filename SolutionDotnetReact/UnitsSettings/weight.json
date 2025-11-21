@@ -1,0 +1,81 @@
+{
+  "category": "weight",
+  "categoryDisplayName": "Weight / Mass",
+  "baseUnit": {
+    "symbol": "kg",
+    "name": "kilogram",
+    "displayName": "Kilogram",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "kg",
+      "name": "kilogram",
+      "displayName": "Kilogram",
+      "category": "weight",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "g",
+      "name": "gram",
+      "displayName": "Gram",
+      "category": "weight",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.001,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "mg",
+      "name": "milligram",
+      "displayName": "Milligram",
+      "category": "weight",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000001,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "t",
+      "name": "metric ton",
+      "displayName": "Metric Ton",
+      "category": "weight",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "lb",
+      "name": "pound",
+      "displayName": "Pound",
+      "category": "weight",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.453592,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "oz",
+      "name": "ounce",
+      "displayName": "Ounce",
+      "category": "weight",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.0283495,
+      "conversionFormula": null
+    }
+  ]
+}
+

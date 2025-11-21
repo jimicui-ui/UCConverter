@@ -1,0 +1,6 @@
+{
+  "UCConverter.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Api",
+  "UCConverter.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Application",
+  "UCConverter.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Domain",
+  "UCConverter.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Infrastructure"
+}

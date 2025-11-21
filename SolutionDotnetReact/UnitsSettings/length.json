@@ -1,0 +1,103 @@
+{
+  "category": "length",
+  "categoryDisplayName": "Length / Distance",
+  "baseUnit": {
+    "symbol": "m",
+    "name": "meter",
+    "displayName": "Meter",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "m",
+      "name": "meter",
+      "displayName": "Meter",
+      "category": "length",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "km",
+      "name": "kilometer",
+      "displayName": "Kilometer",
+      "category": "length",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "cm",
+      "name": "centimeter",
+      "displayName": "Centimeter",
+      "category": "length",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.01,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "mm",
+      "name": "millimeter",
+      "displayName": "Millimeter",
+      "category": "length",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.001,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "ft",
+      "name": "foot",
+      "displayName": "Foot",
+      "category": "length",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.3048,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "in",
+      "name": "inch",
+      "displayName": "Inch",
+      "category": "length",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.0254,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "mi",
+      "name": "mile",
+      "displayName": "Mile",
+      "category": "length",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 1609.34,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "yd",
+      "name": "yard",
+      "displayName": "Yard",
+      "category": "length",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.9144,
+      "conversionFormula": null
+    }
+  ]
+}
+

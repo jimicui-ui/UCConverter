@@ -1,0 +1,92 @@
+{
+  "category": "volume",
+  "categoryDisplayName": "Volume",
+  "baseUnit": {
+    "symbol": "m³",
+    "name": "cubic meter",
+    "displayName": "Cubic Meter",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "m³",
+      "name": "cubic meter",
+      "displayName": "Cubic Meter",
+      "category": "volume",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "L",
+      "name": "liter",
+      "displayName": "Liter",
+      "category": "volume",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.001,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "mL",
+      "name": "milliliter",
+      "displayName": "Milliliter",
+      "category": "volume",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000001,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "gal",
+      "name": "gallon",
+      "displayName": "Gallon (US)",
+      "category": "volume",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "US Customary",
+      "conversionFactor": 0.00378541,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "qt",
+      "name": "quart",
+      "displayName": "Quart (US)",
+      "category": "volume",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "US Customary",
+      "conversionFactor": 0.000946353,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "pt",
+      "name": "pint",
+      "displayName": "Pint (US)",
+      "category": "volume",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "US Customary",
+      "conversionFactor": 0.000473176,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "fl oz",
+      "name": "fluid ounce",
+      "displayName": "Fluid Ounce (US)",
+      "category": "volume",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "US Customary",
+      "conversionFactor": 0.0000295735,
+      "conversionFormula": null
+    }
+  ]
+}
+

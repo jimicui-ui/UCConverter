@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "UCConverter.Application/1.0.0": {
+        "dependencies": {
+          "UCConverter.Domain": "1.0.0"
+        },
+        "runtime": {
+          "UCConverter.Application.dll": {}
+        }
+      },
+      "UCConverter.Domain/1.0.0": {
+        "runtime": {
+          "UCConverter.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UCConverter.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UCConverter.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

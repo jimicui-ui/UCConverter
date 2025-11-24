@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ye8cqBHlmdA=",
+  "dgSpecHash": "7kPake8E37I=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\tests\\UCConverter.IntegrationTests\\UCConverter.IntegrationTests.csproj",
+  "projectFilePath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\tests\\UCConverter.IntegrationTests\\UCConverter.IntegrationTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jimic\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\jimic\\.nuget\\packages\\coverlet.msbuild\\6.0.4\\coverlet.msbuild.6.0.4.nupkg.sha512",

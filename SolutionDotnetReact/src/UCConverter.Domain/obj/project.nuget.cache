@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Bf73WzYfyDQ=",
+  "dgSpecHash": "zn4vVTrBV4Y=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj",
+  "projectFilePath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

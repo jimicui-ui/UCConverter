@@ -5867,11 +5867,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\tests\\UCConverter.Infrastructure.Tests\\UCConverter.Infrastructure.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\tests\\UCConverter.Infrastructure.Tests\\UCConverter.Infrastructure.Tests.csproj",
       "projectName": "UCConverter.Infrastructure.Tests",
-      "projectPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\tests\\UCConverter.Infrastructure.Tests\\UCConverter.Infrastructure.Tests.csproj",
+      "projectPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\tests\\UCConverter.Infrastructure.Tests\\UCConverter.Infrastructure.Tests.csproj",
       "packagesPath": "C:\\Users\\jimic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\tests\\UCConverter.Infrastructure.Tests\\obj\\",
+      "outputPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\tests\\UCConverter.Infrastructure.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5893,8 +5893,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Infrastructure\\UCConverter.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Infrastructure\\UCConverter.Infrastructure.csproj"
+            "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Infrastructure\\UCConverter.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Infrastructure\\UCConverter.Infrastructure.csproj"
             }
           }
         }

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj",
       "projectName": "UCConverter.Domain",
-      "projectPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj",
+      "projectPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj",
       "packagesPath": "C:\\Users\\jimic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Domain\\obj\\",
+      "outputPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

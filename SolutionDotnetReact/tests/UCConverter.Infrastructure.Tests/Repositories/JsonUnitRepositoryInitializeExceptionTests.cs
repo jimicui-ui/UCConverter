@@ -3,8 +3,6 @@ namespace UCConverter.Infrastructure.Tests.Repositories;
 using Microsoft.Extensions.Logging;
 using Moq;
 using System.IO;
-using System.IO.Abstractions;
-using System.IO.Abstractions.TestingHelpers;
 using UCConverter.Infrastructure.Repositories;
 using Xunit;
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AxOP5h5a2iE=",
+  "dgSpecHash": "wA68LDgHhEk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Api\\UCConverter.Api.csproj",
+  "projectFilePath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Api\\UCConverter.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jimic\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.22\\microsoft.aspnetcore.openapi.8.0.22.nupkg.sha512",
     "C:\\Users\\jimic\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

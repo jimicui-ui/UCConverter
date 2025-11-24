@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gXa6XP/9hEM=",
+  "dgSpecHash": "kBL9/WBYCRo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Application\\UCConverter.Application.csproj",
+  "projectFilePath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Application\\UCConverter.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jimic\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\jimic\\.nuget\\packages\\microsoft.extensions.localization\\8.0.0\\microsoft.extensions.localization.8.0.0.nupkg.sha512",

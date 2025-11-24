@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8KiWHNuNEHY=",
+  "dgSpecHash": "Qw+Mhl5rJCQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\tests\\UCConverter.Infrastructure.Tests\\UCConverter.Infrastructure.Tests.csproj",
+  "projectFilePath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\tests\\UCConverter.Infrastructure.Tests\\UCConverter.Infrastructure.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jimic\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\jimic\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\tests\\UCConverter.Api.Tests\\UCConverter.Api.Tests.csproj": {}
+    "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\tests\\UCConverter.Api.Tests\\UCConverter.Api.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Api\\UCConverter.Api.csproj": {
+    "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Api\\UCConverter.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Api\\UCConverter.Api.csproj",
+        "projectUniqueName": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Api\\UCConverter.Api.csproj",
         "projectName": "UCConverter.Api",
-        "projectPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Api\\UCConverter.Api.csproj",
+        "projectPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Api\\UCConverter.Api.csproj",
         "packagesPath": "C:\\Users\\jimic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Api\\obj\\",
+        "outputPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,11 +33,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Application\\UCConverter.Application.csproj": {
-                "projectPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Application\\UCConverter.Application.csproj"
+              "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Application\\UCConverter.Application.csproj": {
+                "projectPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Application\\UCConverter.Application.csproj"
               },
-              "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Infrastructure\\UCConverter.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Infrastructure\\UCConverter.Infrastructure.csproj"
+              "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Infrastructure\\UCConverter.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Infrastructure\\UCConverter.Infrastructure.csproj"
               }
             }
           }
@@ -90,14 +90,14 @@
         }
       }
     },
-    "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Application\\UCConverter.Application.csproj": {
+    "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Application\\UCConverter.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Application\\UCConverter.Application.csproj",
+        "projectUniqueName": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Application\\UCConverter.Application.csproj",
         "projectName": "UCConverter.Application",
-        "projectPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Application\\UCConverter.Application.csproj",
+        "projectPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Application\\UCConverter.Application.csproj",
         "packagesPath": "C:\\Users\\jimic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Application\\obj\\",
+        "outputPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -119,8 +119,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj": {
-                "projectPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj"
+              "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj": {
+                "projectPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj"
               }
             }
           }
@@ -170,14 +170,14 @@
         }
       }
     },
-    "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj": {
+    "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj",
         "projectName": "UCConverter.Domain",
-        "projectPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj",
+        "projectPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj",
         "packagesPath": "C:\\Users\\jimic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Domain\\obj\\",
+        "outputPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -236,14 +236,14 @@
         }
       }
     },
-    "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Infrastructure\\UCConverter.Infrastructure.csproj": {
+    "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Infrastructure\\UCConverter.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Infrastructure\\UCConverter.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Infrastructure\\UCConverter.Infrastructure.csproj",
         "projectName": "UCConverter.Infrastructure",
-        "projectPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Infrastructure\\UCConverter.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Infrastructure\\UCConverter.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\jimic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -265,8 +265,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj": {
-                "projectPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj"
+              "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj": {
+                "projectPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Domain\\UCConverter.Domain.csproj"
               }
             }
           }
@@ -312,14 +312,14 @@
         }
       }
     },
-    "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\tests\\UCConverter.Api.Tests\\UCConverter.Api.Tests.csproj": {
+    "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\tests\\UCConverter.Api.Tests\\UCConverter.Api.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\tests\\UCConverter.Api.Tests\\UCConverter.Api.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\tests\\UCConverter.Api.Tests\\UCConverter.Api.Tests.csproj",
         "projectName": "UCConverter.Api.Tests",
-        "projectPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\tests\\UCConverter.Api.Tests\\UCConverter.Api.Tests.csproj",
+        "projectPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\tests\\UCConverter.Api.Tests\\UCConverter.Api.Tests.csproj",
         "packagesPath": "C:\\Users\\jimic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\tests\\UCConverter.Api.Tests\\obj\\",
+        "outputPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\tests\\UCConverter.Api.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -341,8 +341,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Api\\UCConverter.Api.csproj": {
-                "projectPath": "C:\\Users\\jimic\\source\\repos\\UCSolution\\SolutionDotnetReact\\src\\UCConverter.Api\\UCConverter.Api.csproj"
+              "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Api\\UCConverter.Api.csproj": {
+                "projectPath": "C:\\Users\\jimic\\source\\repos\\UCConverter\\SolutionDotnetReact\\src\\UCConverter.Api\\UCConverter.Api.csproj"
               }
             }
           }

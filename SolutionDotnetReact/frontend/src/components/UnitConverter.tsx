@@ -48,6 +48,7 @@ export function UnitConverter() {
       });
     }, 100);
     return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Load units when category changes
@@ -62,6 +63,7 @@ export function UnitConverter() {
       setFromUnit('');
       setToUnit('');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCategory, i18n.language]);
 
   const loadCategories = async () => {

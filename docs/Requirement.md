@@ -172,6 +172,44 @@ The solution must follow a **4-layer architecture** pattern where **each layer i
 - `POST /convert` - Perform unit conversion
 - `GET /units/{unitSymbol}` - Get detailed information about a specific unit (optional)
 
+#### API Documentation (Swagger/OpenAPI)
+
+The API must include comprehensive interactive API documentation using **Swagger/OpenAPI**.
+
+**Swagger/OpenAPI Requirements**:
+- **Swagger UI Integration**: Implement Swagger UI for interactive API documentation and testing
+- **OpenAPI Specification**: Generate and maintain OpenAPI 3.0 specification for all API endpoints
+- **Documentation Coverage**: All endpoints must be fully documented with:
+  - Endpoint descriptions and purpose
+  - Request/response schemas with detailed property descriptions
+  - Parameter descriptions (path, query, header parameters)
+  - Request body examples
+  - Response examples (success and error scenarios)
+  - HTTP status codes and their meanings
+  - Authentication requirements (if applicable)
+- **Interactive Testing**: Swagger UI must allow developers to test API endpoints directly from the documentation interface
+- **Localization Support**: API documentation should reflect localized error messages and descriptions when applicable
+
+**Implementation Details**:
+- Use **Swashbuckle.AspNetCore** (or similar .NET library) for Swagger/OpenAPI integration
+- Configure Swagger UI to be available in development and optionally in production (with appropriate security)
+- Generate OpenAPI JSON/YAML specification that can be exported and used by API clients
+- Include XML comments from code to automatically populate Swagger documentation
+- Document all DTOs, models, and enums with XML documentation comments
+- Provide example values for all request/response models
+
+**Swagger Endpoints**:
+- `GET /swagger` - Swagger UI interface (development/staging environments)
+- `GET /swagger/v1/swagger.json` - OpenAPI JSON specification
+- `GET /swagger/v1/swagger.yaml` - OpenAPI YAML specification (optional)
+
+**Documentation Standards**:
+- Use clear, concise descriptions for all endpoints and parameters
+- Include practical examples for common use cases
+- Document error responses with error codes and messages
+- Specify data types, formats, and constraints (e.g., required fields, min/max values)
+- Include unit metadata information in endpoint documentation
+
 #### Technical Implementation
 
 **Architecture Requirements**:
@@ -232,8 +270,72 @@ The solution must follow a **4-layer architecture** pattern where **each layer i
 
 #### Features to Support
 - Dark mode (optional, future enhancement)
-- Mobile responsive layout
+- **Responsive Page Design**: Full support for mobile/phone and desktop devices
 - Multi-language toggle
+
+#### Responsive Page Design Requirements
+
+The application must provide a fully responsive user interface that adapts seamlessly across different device types and screen sizes.
+
+**Device Support**:
+- **Mobile/Phone**: Support for smartphones (iOS and Android) with screen widths from 320px to 767px
+- **Tablet**: Support for tablet devices with screen widths from 768px to 1023px
+- **Desktop**: Support for desktop and laptop screens with widths from 1024px and above
+- **Large Desktop**: Optimized for large desktop monitors (1920px and above)
+
+**Responsive Design Principles**:
+- **Mobile-First Approach**: Design and develop starting from mobile screens, then enhance for larger screens
+- **Flexible Layouts**: Use CSS Grid and Flexbox for fluid, adaptive layouts
+- **Responsive Typography**: Font sizes should scale appropriately across breakpoints
+- **Touch-Friendly Interface**: 
+  - Minimum touch target size of 44x44px for mobile devices
+  - Adequate spacing between interactive elements
+  - Swipe gestures where appropriate
+- **Adaptive Navigation**: 
+  - Mobile: Collapsible menu (hamburger menu) or bottom navigation
+  - Desktop: Full horizontal navigation menu
+- **Content Prioritization**: 
+  - Show most important content first on mobile
+  - Progressive disclosure for secondary features
+- **Form Optimization**:
+  - Full-width inputs on mobile for easier data entry
+  - Appropriate input types (number, tel, etc.) to trigger correct mobile keyboards
+  - Large, easily tappable buttons on mobile
+
+**Breakpoint Strategy**:
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1023px
+- **Desktop**: ≥ 1024px
+- **Large Desktop**: ≥ 1920px
+
+**Layout Adaptations**:
+- **Mobile**: 
+  - Single-column layout for conversion inputs
+  - Stacked form elements (category, source unit, target unit, value)
+  - Full-width buttons
+  - Compact result display
+- **Tablet**: 
+  - Two-column layout where appropriate
+  - Side-by-side unit selectors
+  - Optimized spacing and padding
+- **Desktop**: 
+  - Multi-column layouts for better space utilization
+  - Horizontal form layouts
+  - Enhanced spacing and visual hierarchy
+  - Optional sidebar for favorites/history
+
+**Performance Considerations**:
+- Optimize images and assets for mobile networks
+- Lazy loading for non-critical content
+- Minimize JavaScript bundle size for faster mobile load times
+- Use CSS media queries for responsive styling (avoid JavaScript-based layout changes where possible)
+
+**Testing Requirements**:
+- Test on real devices (iOS and Android) or device emulators
+- Test across multiple screen sizes and orientations (portrait/landscape)
+- Verify touch interactions work correctly on mobile devices
+- Ensure text remains readable at all screen sizes
+- Validate that all features are accessible on mobile devices
 
 #### Additional Features
 - Display conversion formula (optional)
@@ -411,18 +513,20 @@ UCSolution/
 ### 3.5 Usability & Accessibility
 
 - Clear, intuitive interface
+- **Responsive design**: Fully functional and optimized for mobile, tablet, and desktop devices
 - Keyboard navigation support
 - High contrast options for better visibility
+- Touch-friendly interface for mobile devices (minimum 44x44px touch targets)
 
 ### 3.6 Testing Requirements
 
 #### Unit Testing
 
-- **Code Coverage Requirement**: **100% code coverage** for all layers
-  - Domain Layer: 100% coverage of all business logic, entities, and value objects
-  - Application Layer: 100% coverage of all services, use cases, and mappers
-  - Infrastructure Layer: 100% coverage of all repository implementations and data access
-  - Presentation Layer: 100% coverage of all controllers/endpoints, DTOs, and validators
+- **Code Coverage Requirement**: **Over 95% code coverage** for all layers
+  - Domain Layer: ≥95% coverage of all business logic, entities, and value objects
+  - Application Layer: ≥95% coverage of all services, use cases, and mappers
+  - Infrastructure Layer: ≥95% coverage of all repository implementations and data access
+  - Presentation Layer: ≥95% coverage of all controllers/endpoints, DTOs, and validators
 
 - **Testing Framework**: Use xUnit, NUnit, or MSTest
 - **Mocking Framework**: Use Moq, NSubstitute, or similar for dependencies
@@ -446,7 +550,7 @@ UCSolution/
 
 #### Integration Testing
 
-- **API Endpoint Coverage Requirement**: **100% coverage of all API endpoints**
+- **API Endpoint Coverage Requirement**: **Over 95% coverage of all API endpoints**
   - All endpoints must have integration tests
   - Test all HTTP methods (GET, POST, etc.)
   - Test all success scenarios
@@ -482,7 +586,7 @@ UCSolution/
 - **Continuous Integration**: All tests must pass in CI/CD pipeline
 - **Pre-commit**: Run unit tests before code commit (optional but recommended)
 - **Coverage Reports**: Generate and publish coverage reports in CI/CD
-- **Coverage Gates**: Fail build if coverage drops below 100%
+- **Coverage Gates**: Fail build if coverage drops below 95%
 - **Test Execution Time**: Unit tests should complete in < 30 seconds
 - **Integration tests**: Should complete in < 2 minutes
 
@@ -603,11 +707,11 @@ UCSolution/
 │   └── ... (one JSON file per category)
 │
 └── tests/
-    ├── UCConverter.Domain.Tests/          # Unit tests for Domain layer (100% coverage required)
-    ├── UCConverter.Application.Tests/     # Unit tests for Application layer (100% coverage required)
-    ├── UCConverter.Infrastructure.Tests/  # Unit tests for Infrastructure layer (100% coverage required)
-    ├── UCConverter.Api.Tests/             # Unit tests for Presentation layer (100% coverage required)
-    └── UCConverter.IntegrationTests/      # Integration tests for all API endpoints (100% endpoint coverage required)
+    ├── UCConverter.Domain.Tests/          # Unit tests for Domain layer (≥95% coverage required)
+    ├── UCConverter.Application.Tests/     # Unit tests for Application layer (≥95% coverage required)
+    ├── UCConverter.Infrastructure.Tests/  # Unit tests for Infrastructure layer (≥95% coverage required)
+    ├── UCConverter.Api.Tests/             # Unit tests for Presentation layer (≥95% coverage required)
+    └── UCConverter.IntegrationTests/      # Integration tests for all API endpoints (≥95% endpoint coverage required)
 ```
 
 **Project Dependencies**:
@@ -618,8 +722,8 @@ UCSolution/
 
 **Test Project Requirements**:
 - Each layer must have a corresponding unit test project
-- **100% code coverage** required for all unit test projects
-- **100% API endpoint coverage** required for integration tests
+- **Over 95% code coverage** required for all unit test projects
+- **Over 95% API endpoint coverage** required for integration tests
 - All test projects must pass in CI/CD pipeline
 - Coverage reports must be generated and validated
 
@@ -816,8 +920,9 @@ UCSolution/
 - ✅ React UI + localization (EN + CN)
 - ✅ Azure deployment
 - ✅ Open-source repo with documentation
-- ✅ **100% unit test coverage** for all layers
-- ✅ **100% integration test coverage** for all API endpoints
+- ✅ **Swagger/OpenAPI documentation** with interactive API testing
+- ✅ **Over 95% unit test coverage** for all layers
+- ✅ **Over 95% integration test coverage** for all API endpoints
 - ✅ CI/CD pipeline with test execution and coverage validation
 
 ### Phase 2 – Extended Features
@@ -826,7 +931,7 @@ UCSolution/
 - Favorites + history features
 - More languages support
 - API rate limiting
-- Public API documentation
+- Enhanced public API documentation (public Swagger UI access, API documentation portal)
 
 ### Phase 3 – Advanced / Community Driven
 

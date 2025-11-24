@@ -2,6 +2,7 @@ namespace UCConverter.Application.Tests.Services;
 
 using Moq;
 using UCConverter.Application.DTOs;
+using UCConverter.Application.Interfaces;
 using UCConverter.Application.Services;
 using UCConverter.Domain.Entities;
 using UCConverter.Domain.Interfaces;
@@ -11,13 +12,21 @@ public class UnitConverterServiceTests
 {
     private readonly Mock<IConversionService> _mockConversionService;
     private readonly Mock<IUnitRepository> _mockRepository;
+    private readonly Mock<ILocalizationService> _mockLocalizationService;
     private readonly UnitConverterService _service;
 
     public UnitConverterServiceTests()
     {
         _mockConversionService = new Mock<IConversionService>();
         _mockRepository = new Mock<IUnitRepository>();
-        _service = new UnitConverterService(_mockConversionService.Object, _mockRepository.Object);
+        _mockLocalizationService = new Mock<ILocalizationService>();
+        _service = new UnitConverterService(_mockConversionService.Object, _mockRepository.Object, _mockLocalizationService.Object);
+        
+        // Setup default localization behavior
+        _mockLocalizationService.Setup(l => l.GetCategoryDisplayName(It.IsAny<string>()))
+            .Returns<string>(name => char.ToUpper(name[0]) + name.Substring(1));
+        _mockLocalizationService.Setup(l => l.GetUnitDisplayName(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
+            .Returns<string, string, string>((cat, sym, def) => def);
     }
 
     [Fact]

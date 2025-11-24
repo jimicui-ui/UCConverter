@@ -15,6 +15,14 @@
         },
         "runtime": {
           "UCConverter.Api.dll": {}
+        },
+        "resources": {
+          "en/UCConverter.Api.resources.dll": {
+            "locale": "en"
+          },
+          "zh/UCConverter.Api.resources.dll": {
+            "locale": "zh"
+          }
         }
       },
       "Microsoft.AspNetCore.OpenApi/8.0.22": {
@@ -109,6 +117,14 @@
           "UCConverter.Application.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
+          }
+        },
+        "resources": {
+          "en/UCConverter.Application.resources.dll": {
+            "locale": "en"
+          },
+          "zh/UCConverter.Application.resources.dll": {
+            "locale": "zh"
           }
         }
       },

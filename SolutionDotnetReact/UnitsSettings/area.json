@@ -1,0 +1,114 @@
+{
+  "category": "area",
+  "categoryDisplayName": "Area",
+  "baseUnit": {
+    "symbol": "m²",
+    "name": "square meter",
+    "displayName": "Square Meter",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "m²",
+      "name": "square meter",
+      "displayName": "Square Meter",
+      "category": "area",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "km²",
+      "name": "square kilometer",
+      "displayName": "Square Kilometer",
+      "category": "area",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000000.0,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "ha",
+      "name": "hectare",
+      "displayName": "Hectare",
+      "category": "area",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 10000.0,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "cm²",
+      "name": "square centimeter",
+      "displayName": "Square Centimeter",
+      "category": "area",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.0001,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "mm²",
+      "name": "square millimeter",
+      "displayName": "Square Millimeter",
+      "category": "area",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000001,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "ft²",
+      "name": "square foot",
+      "displayName": "Square Foot",
+      "category": "area",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.092903,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "in²",
+      "name": "square inch",
+      "displayName": "Square Inch",
+      "category": "area",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.00064516,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "acre",
+      "name": "acre",
+      "displayName": "Acre",
+      "category": "area",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 4046.86,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "mi²",
+      "name": "square mile",
+      "displayName": "Square Mile",
+      "category": "area",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 2589988.11,
+      "conversionFormula": null
+    }
+  ]
+}
+

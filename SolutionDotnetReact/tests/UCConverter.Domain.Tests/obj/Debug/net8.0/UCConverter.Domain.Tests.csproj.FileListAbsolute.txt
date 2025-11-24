@@ -99,6 +99,7 @@ C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Dom
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Domain.Tests\obj\Debug\net8.0\UCConverter.Domain.Tests.AssemblyInfoInputs.cache
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Domain.Tests\obj\Debug\net8.0\UCConverter.Domain.Tests.AssemblyInfo.cs
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Domain.Tests\obj\Debug\net8.0\UCConverter.Domain.Tests.csproj.CoreCompileInputs.cache
+C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Domain.Tests\obj\Debug\net8.0\UCConverter.Domain.Tests.sourcelink.json
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Domain.Tests\obj\Debug\net8.0\UCConver.F5A603C0.Up2Date
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Domain.Tests\obj\Debug\net8.0\UCConverter.Domain.Tests.dll
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Domain.Tests\obj\Debug\net8.0\refint\UCConverter.Domain.Tests.dll

@@ -1,6 +1,7 @@
 namespace UCConverter.Application.Mappings;
 
 using UCConverter.Application.DTOs;
+using UCConverter.Application.Interfaces;
 using UCConverter.Domain.Entities;
 
 /// <summary>
@@ -33,22 +34,30 @@ public static class ConversionMapping
         };
     }
 
-    public static CategoryDto ToCategoryDto(this Category category)
+    public static CategoryDto ToCategoryDto(this Category category, ILocalizationService? localizationService = null)
     {
+        var displayName = localizationService != null
+            ? localizationService.GetCategoryDisplayName(category.Name)
+            : category.DisplayName;
+
         return new CategoryDto
         {
             Name = category.Name,
-            DisplayName = category.DisplayName
+            DisplayName = displayName
         };
     }
 
-    public static UnitDto ToUnitDto(this Unit unit)
+    public static UnitDto ToUnitDto(this Unit unit, ILocalizationService? localizationService = null, string? categoryName = null)
     {
+        var displayName = localizationService != null && !string.IsNullOrEmpty(categoryName)
+            ? localizationService.GetUnitDisplayName(categoryName, unit.Symbol, unit.DisplayName)
+            : unit.DisplayName;
+
         return new UnitDto
         {
             Symbol = unit.Symbol,
             Name = unit.Name,
-            DisplayName = unit.DisplayName,
+            DisplayName = displayName,
             IsBaseUnit = unit.IsBaseUnit,
             IsSIUnit = unit.IsSIUnit,
             UnitSystem = unit.UnitSystem,

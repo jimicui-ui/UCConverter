@@ -159,8 +159,8 @@
           "Microsoft.Extensions.Http": "8.0.0.0",
           "Microsoft.Extensions.Identity.Core": "8.0.0.0",
           "Microsoft.Extensions.Identity.Stores": "8.0.0.0",
-          "Microsoft.Extensions.Localization.Abstractions": "8.0.0.0",
-          "Microsoft.Extensions.Localization": "8.0.0.0",
+          "Microsoft.Extensions.Localization.Abstractions.Reference": "8.0.0.0",
+          "Microsoft.Extensions.Localization.Reference": "8.0.0.0",
           "Microsoft.Extensions.Logging.Configuration.Reference": "8.0.0.0",
           "Microsoft.Extensions.Logging.Console.Reference": "8.0.0.0",
           "Microsoft.Extensions.Logging.Debug.Reference": "8.0.0.0",
@@ -885,18 +885,36 @@
             "fileVersion": "1.0.0.0"
           }
         },
+        "resources": {
+          "en/UCConverter.Api.resources.dll": {
+            "locale": "en"
+          },
+          "zh/UCConverter.Api.resources.dll": {
+            "locale": "zh"
+          }
+        },
         "compile": {
           "UCConverter.Api.dll": {}
         }
       },
       "UCConverter.Application/1.0.0": {
         "dependencies": {
+          "Microsoft.Extensions.Localization": "8.0.0",
+          "Microsoft.Extensions.Localization.Abstractions": "8.0.0",
           "UCConverter.Domain": "1.0.0"
         },
         "runtime": {
           "UCConverter.Application.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
+          }
+        },
+        "resources": {
+          "en/UCConverter.Application.resources.dll": {
+            "locale": "en"
+          },
+          "zh/UCConverter.Application.resources.dll": {
+            "locale": "zh"
           }
         },
         "compile": {
@@ -1625,13 +1643,13 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.Localization.Abstractions/8.0.0.0": {
+      "Microsoft.Extensions.Localization.Abstractions.Reference/8.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Localization.Abstractions.dll": {}
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.Localization/8.0.0.0": {
+      "Microsoft.Extensions.Localization.Reference/8.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Localization.dll": {}
         },
@@ -2862,6 +2880,18 @@
           "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "10.0.0"
         },
+        "compileOnly": true
+      },
+      "Microsoft.Extensions.Localization/8.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Localization.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Options": "8.0.0"
+        },
+        "compileOnly": true
+      },
+      "Microsoft.Extensions.Localization.Abstractions/8.0.0": {
         "compileOnly": true
       },
       "Microsoft.Extensions.Logging/8.0.0": {
@@ -4487,12 +4517,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Localization.Abstractions/8.0.0.0": {
+    "Microsoft.Extensions.Localization.Abstractions.Reference/8.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Localization/8.0.0.0": {
+    "Microsoft.Extensions.Localization.Reference/8.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -5529,6 +5559,20 @@
       "sha512": "sha512-AG7HWwVRdCHlaA++1oKDxLsXIBxmDpMPb3VoyOoAghEWnkUvEAdYQUwnV4jJbAaa/nMYNiEh5ByoLauZBEiovg==",
       "path": "microsoft.extensions.hosting.abstractions/8.0.0",
       "hashPath": "microsoft.extensions.hosting.abstractions.8.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Localization/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-I4xyK9RaXyJBkU5+jQpkZITR/54tXGbdt5CsBmogf8Irrz+RXXsp1zJgrmQzxEOpxj5VMAA/GQ4SGZMeM5nVSg==",
+      "path": "microsoft.extensions.localization/8.0.0",
+      "hashPath": "microsoft.extensions.localization.8.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Localization.Abstractions/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LIMzXjjzv7o3tx3XXvQVHNcrMNPfSoUp4R/YJucdyBixJGRp5p8v2rF1CnRbo+wwtzB4Se/gJYyUpNN8F/TMGw==",
+      "path": "microsoft.extensions.localization.abstractions/8.0.0",
+      "hashPath": "microsoft.extensions.localization.abstractions.8.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/8.0.0": {
       "type": "package",

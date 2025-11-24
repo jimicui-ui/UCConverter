@@ -10,6 +10,12 @@ C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.App
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\UCConverter.Application.Tests.pdb
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\Castle.Core.dll
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
+C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\Microsoft.Extensions.Localization.dll
+C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\Microsoft.TestPlatform.CoreUtilities.dll
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
@@ -96,11 +102,14 @@ C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.App
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\UCConverter.Domain.dll
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\UCConverter.Application.pdb
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\UCConverter.Domain.pdb
+C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\en\UCConverter.Application.resources.dll
+C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\bin\Debug\net8.0\zh\UCConverter.Application.resources.dll
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\obj\Debug\net8.0\UCConverter.Application.Tests.csproj.AssemblyReference.cache
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\obj\Debug\net8.0\UCConverter.Application.Tests.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\obj\Debug\net8.0\UCConverter.Application.Tests.AssemblyInfoInputs.cache
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\obj\Debug\net8.0\UCConverter.Application.Tests.AssemblyInfo.cs
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\obj\Debug\net8.0\UCConverter.Application.Tests.csproj.CoreCompileInputs.cache
+C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\obj\Debug\net8.0\UCConverter.Application.Tests.sourcelink.json
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\obj\Debug\net8.0\UCConver.BA5E7B59.Up2Date
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\obj\Debug\net8.0\UCConverter.Application.Tests.dll
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\tests\UCConverter.Application.Tests\obj\Debug\net8.0\refint\UCConverter.Application.Tests.dll

@@ -11,14 +11,20 @@ using Xunit;
 public class CategoriesControllerTests
 {
     private readonly Mock<IUnitConverterService> _mockService;
+    private readonly Mock<ILocalizationService> _mockLocalizationService;
     private readonly Mock<ILogger<CategoriesController>> _mockLogger;
     private readonly CategoriesController _controller;
 
     public CategoriesControllerTests()
     {
         _mockService = new Mock<IUnitConverterService>();
+        _mockLocalizationService = new Mock<ILocalizationService>();
         _mockLogger = new Mock<ILogger<CategoriesController>>();
-        _controller = new CategoriesController(_mockService.Object, _mockLogger.Object);
+        _controller = new CategoriesController(_mockService.Object, _mockLocalizationService.Object, _mockLogger.Object);
+        
+        // Setup default localization behavior
+        _mockLocalizationService.Setup(l => l.GetErrorMessage("CategoryNotFound", It.IsAny<object[]>()))
+            .Returns<string, object[]>((key, args) => $"Category '{args[0]}' not found");
     }
 
     [Fact]
@@ -86,6 +92,9 @@ public class CategoriesControllerTests
         // Arrange
         _mockService.Setup(s => s.GetUnitsByCategoryAsync("nonexistent"))
             .ReturnsAsync(Enumerable.Empty<UnitDto>());
+        
+        _mockLocalizationService.Setup(l => l.GetErrorMessage("CategoryNotFound", It.IsAny<object[]>()))
+            .Returns<string, object[]>((key, args) => $"Category '{args[0]}' not found");
 
         // Act
         var result = await _controller.GetUnitsByCategory("nonexistent");

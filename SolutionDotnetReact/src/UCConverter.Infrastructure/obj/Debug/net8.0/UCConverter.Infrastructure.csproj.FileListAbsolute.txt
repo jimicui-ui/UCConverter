@@ -8,6 +8,7 @@ C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\src\UCConverter.Infra
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\src\UCConverter.Infrastructure\obj\Debug\net8.0\UCConverter.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\src\UCConverter.Infrastructure\obj\Debug\net8.0\UCConverter.Infrastructure.AssemblyInfo.cs
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\src\UCConverter.Infrastructure\obj\Debug\net8.0\UCConverter.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\src\UCConverter.Infrastructure\obj\Debug\net8.0\UCConverter.Infrastructure.sourcelink.json
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\src\UCConverter.Infrastructure\obj\Debug\net8.0\UCConver.C708C1FD.Up2Date
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\src\UCConverter.Infrastructure\obj\Debug\net8.0\UCConverter.Infrastructure.dll
 C:\Users\jimic\source\repos\UCSolution\SolutionDotnetReact\src\UCConverter.Infrastructure\obj\Debug\net8.0\refint\UCConverter.Infrastructure.dll

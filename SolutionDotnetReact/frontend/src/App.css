@@ -1,0 +1,30 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem 1rem;
+}
+
+/* Responsive padding for app container */
+@media (max-width: 767px) {
+  .app {
+    padding: 1rem 0.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .app {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .app {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .app {
+    padding: 3rem 2rem;
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "common": {
+    "convert": "转换",
+    "converting": "转换中...",
+    "result": "结果：",
+    "category": "类别",
+    "from": "从",
+    "to": "到",
+    "value": "数值",
+    "enterValue": "输入数值",
+    "swap": "交换",
+    "baseUnit": "基准单位：",
+    "availableUnits": "可用单位：",
+    "language": "语言"
+  },
+  "unitConverter": {
+    "title": "单位转换器",
+    "subtitle": "在不同测量单位之间转换"
+  },
+  "errors": {
+    "fillAllFields": "请填写所有字段",
+    "invalidNumber": "请输入有效数字",
+    "failedToLoadCategories": "加载类别失败",
+    "failedToLoadUnits": "加载单位失败",
+    "conversionFailed": "转换失败"
+  },
+  "units": {
+    "si": "SI",
+    "base": "基准"
+  }
+}
+

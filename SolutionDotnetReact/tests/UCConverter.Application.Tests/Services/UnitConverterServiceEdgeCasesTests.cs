@@ -12,13 +12,21 @@ public class UnitConverterServiceEdgeCasesTests
 {
     private readonly Mock<IConversionService> _mockConversionService;
     private readonly Mock<IUnitRepository> _mockRepository;
+    private readonly Mock<ILocalizationService> _mockLocalizationService;
     private readonly UnitConverterService _service;
 
     public UnitConverterServiceEdgeCasesTests()
     {
         _mockConversionService = new Mock<IConversionService>();
         _mockRepository = new Mock<IUnitRepository>();
-        _service = new UnitConverterService(_mockConversionService.Object, _mockRepository.Object);
+        _mockLocalizationService = new Mock<ILocalizationService>();
+        _service = new UnitConverterService(_mockConversionService.Object, _mockRepository.Object, _mockLocalizationService.Object);
+        
+        // Setup default localization behavior
+        _mockLocalizationService.Setup(l => l.GetCategoryDisplayName(It.IsAny<string>()))
+            .Returns<string>(name => char.ToUpper(name[0]) + name.Substring(1));
+        _mockLocalizationService.Setup(l => l.GetUnitDisplayName(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
+            .Returns<string, string, string>((cat, sym, def) => def);
     }
 
     [Fact]

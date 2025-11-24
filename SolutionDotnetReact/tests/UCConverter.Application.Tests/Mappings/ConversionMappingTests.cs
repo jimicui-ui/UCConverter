@@ -1,6 +1,8 @@
 namespace UCConverter.Application.Tests.Mappings;
 
+using Moq;
 using UCConverter.Application.DTOs;
+using UCConverter.Application.Interfaces;
 using UCConverter.Application.Mappings;
 using UCConverter.Domain.Entities;
 using Xunit;
@@ -80,6 +82,47 @@ public class ConversionMappingTests
     }
 
     [Fact]
+    public void ToCategoryDto_WithLocalizationService_ReturnsLocalizedDisplayName()
+    {
+        // Arrange
+        var category = new Category
+        {
+            Name = "length",
+            DisplayName = "Length / Distance"
+        };
+        var mockLocalizationService = new Mock<ILocalizationService>();
+        mockLocalizationService.Setup(l => l.GetCategoryDisplayName("length"))
+            .Returns("长度 / 距离");
+
+        // Act
+        var result = category.ToCategoryDto(mockLocalizationService.Object);
+
+        // Assert
+        Assert.NotNull(result);
+        Assert.Equal("length", result.Name);
+        Assert.Equal("长度 / 距离", result.DisplayName);
+    }
+
+    [Fact]
+    public void ToCategoryDto_WithoutLocalizationService_ReturnsOriginalDisplayName()
+    {
+        // Arrange
+        var category = new Category
+        {
+            Name = "length",
+            DisplayName = "Length / Distance"
+        };
+
+        // Act
+        var result = category.ToCategoryDto(null);
+
+        // Assert
+        Assert.NotNull(result);
+        Assert.Equal("length", result.Name);
+        Assert.Equal("Length / Distance", result.DisplayName);
+    }
+
+    [Fact]
     public void ToUnitDto_WhenValidUnit_ReturnsDto()
     {
         // Arrange
@@ -106,6 +149,81 @@ public class ConversionMappingTests
         Assert.True(result.IsSIUnit);
         Assert.Equal("SI", result.UnitSystem);
         Assert.Equal(1.0, result.ConversionFactor);
+    }
+
+    [Fact]
+    public void ToUnitDto_WithLocalizationService_ReturnsLocalizedDisplayName()
+    {
+        // Arrange
+        var unit = new Unit
+        {
+            Symbol = "m",
+            Name = "meter",
+            DisplayName = "Meter",
+            IsBaseUnit = true,
+            IsSIUnit = true,
+            UnitSystem = "SI",
+            ConversionFactor = 1.0
+        };
+        var mockLocalizationService = new Mock<ILocalizationService>();
+        mockLocalizationService.Setup(l => l.GetUnitDisplayName("length", "m", "Meter"))
+            .Returns("米");
+
+        // Act
+        var result = unit.ToUnitDto(mockLocalizationService.Object, "length");
+
+        // Assert
+        Assert.NotNull(result);
+        Assert.Equal("m", result.Symbol);
+        Assert.Equal("米", result.DisplayName);
+    }
+
+    [Fact]
+    public void ToUnitDto_WithoutLocalizationService_ReturnsOriginalDisplayName()
+    {
+        // Arrange
+        var unit = new Unit
+        {
+            Symbol = "m",
+            Name = "meter",
+            DisplayName = "Meter",
+            IsBaseUnit = true,
+            IsSIUnit = true,
+            UnitSystem = "SI",
+            ConversionFactor = 1.0
+        };
+
+        // Act
+        var result = unit.ToUnitDto(null, null);
+
+        // Assert
+        Assert.NotNull(result);
+        Assert.Equal("Meter", result.DisplayName);
+    }
+
+    [Fact]
+    public void ToUnitDto_WithLocalizationServiceButEmptyCategoryName_ReturnsOriginalDisplayName()
+    {
+        // Arrange
+        var unit = new Unit
+        {
+            Symbol = "m",
+            Name = "meter",
+            DisplayName = "Meter",
+            IsBaseUnit = true,
+            IsSIUnit = true,
+            UnitSystem = "SI",
+            ConversionFactor = 1.0
+        };
+        var mockLocalizationService = new Mock<ILocalizationService>();
+
+        // Act
+        var result = unit.ToUnitDto(mockLocalizationService.Object, "");
+
+        // Assert
+        Assert.NotNull(result);
+        Assert.Equal("Meter", result.DisplayName);
+        mockLocalizationService.Verify(l => l.GetUnitDisplayName(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
     }
 }
 

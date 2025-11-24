@@ -12,11 +12,16 @@ public class UnitConverterService : IUnitConverterService
 {
     private readonly IConversionService _conversionService;
     private readonly IUnitRepository _unitRepository;
+    private readonly ILocalizationService _localizationService;
 
-    public UnitConverterService(IConversionService conversionService, IUnitRepository unitRepository)
+    public UnitConverterService(
+        IConversionService conversionService, 
+        IUnitRepository unitRepository,
+        ILocalizationService localizationService)
     {
         _conversionService = conversionService ?? throw new ArgumentNullException(nameof(conversionService));
         _unitRepository = unitRepository ?? throw new ArgumentNullException(nameof(unitRepository));
+        _localizationService = localizationService ?? throw new ArgumentNullException(nameof(localizationService));
     }
 
     public async Task<ConvertResponseDto> ConvertAsync(ConvertRequestDto request)
@@ -44,13 +49,13 @@ public class UnitConverterService : IUnitConverterService
     public async Task<IEnumerable<CategoryDto>> GetAllCategoriesAsync()
     {
         var categories = await _unitRepository.GetAllCategoriesAsync();
-        return categories.Select(c => c.ToCategoryDto());
+        return categories.Select(c => c.ToCategoryDto(_localizationService));
     }
 
     public async Task<IEnumerable<UnitDto>> GetUnitsByCategoryAsync(string categoryName)
     {
         var units = await _unitRepository.GetUnitsByCategoryAsync(categoryName);
-        return units.Select(u => u.ToUnitDto());
+        return units.Select(u => u.ToUnitDto(_localizationService, categoryName));
     }
 }
 

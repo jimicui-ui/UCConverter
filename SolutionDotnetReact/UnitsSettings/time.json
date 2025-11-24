@@ -1,0 +1,125 @@
+{
+  "category": "time",
+  "categoryDisplayName": "Time",
+  "baseUnit": {
+    "symbol": "s",
+    "name": "second",
+    "displayName": "Second",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "s",
+      "name": "second",
+      "displayName": "Second",
+      "category": "time",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "ms",
+      "name": "millisecond",
+      "displayName": "Millisecond",
+      "category": "time",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.001,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "µs",
+      "name": "microsecond",
+      "displayName": "Microsecond",
+      "category": "time",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000001,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "ns",
+      "name": "nanosecond",
+      "displayName": "Nanosecond",
+      "category": "time",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000000001,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "min",
+      "name": "minute",
+      "displayName": "Minute",
+      "category": "time",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 60.0,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "h",
+      "name": "hour",
+      "displayName": "Hour",
+      "category": "time",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 3600.0,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "d",
+      "name": "day",
+      "displayName": "Day",
+      "category": "time",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 86400.0,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "wk",
+      "name": "week",
+      "displayName": "Week",
+      "category": "time",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 604800.0,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "mo",
+      "name": "month",
+      "displayName": "Month",
+      "category": "time",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 2629746.0,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "yr",
+      "name": "year",
+      "displayName": "Year",
+      "category": "time",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 31556952.0,
+      "conversionFormula": null
+    }
+  ]
+}
+

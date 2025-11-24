@@ -1,0 +1,92 @@
+{
+  "category": "speed",
+  "categoryDisplayName": "Speed / Velocity",
+  "baseUnit": {
+    "symbol": "m/s",
+    "name": "meter per second",
+    "displayName": "Meter per Second",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "m/s",
+      "name": "meter per second",
+      "displayName": "Meter per Second",
+      "category": "speed",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "km/h",
+      "name": "kilometer per hour",
+      "displayName": "Kilometer per Hour",
+      "category": "speed",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.277778,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "mph",
+      "name": "mile per hour",
+      "displayName": "Mile per Hour",
+      "category": "speed",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.44704,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "ft/s",
+      "name": "foot per second",
+      "displayName": "Foot per Second",
+      "category": "speed",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.3048,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "kn",
+      "name": "knot",
+      "displayName": "Knot",
+      "category": "speed",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Nautical",
+      "conversionFactor": 0.514444,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "km/s",
+      "name": "kilometer per second",
+      "displayName": "Kilometer per Second",
+      "category": "speed",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null
+    },
+    {
+      "symbol": "cm/s",
+      "name": "centimeter per second",
+      "displayName": "Centimeter per Second",
+      "category": "speed",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.01,
+      "conversionFormula": null
+    }
+  ]
+}
+

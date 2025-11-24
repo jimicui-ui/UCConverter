@@ -13,11 +13,16 @@ using UCConverter.Domain.Exceptions;
 public class CategoriesController : ControllerBase
 {
     private readonly IUnitConverterService _unitConverterService;
+    private readonly ILocalizationService _localizationService;
     private readonly ILogger<CategoriesController> _logger;
 
-    public CategoriesController(IUnitConverterService unitConverterService, ILogger<CategoriesController> logger)
+    public CategoriesController(
+        IUnitConverterService unitConverterService, 
+        ILocalizationService localizationService,
+        ILogger<CategoriesController> logger)
     {
         _unitConverterService = unitConverterService ?? throw new ArgumentNullException(nameof(unitConverterService));
+        _localizationService = localizationService ?? throw new ArgumentNullException(nameof(localizationService));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
@@ -57,7 +62,8 @@ public class CategoriesController : ControllerBase
             
             if (!units.Any())
             {
-                return NotFound(new { error = "Category not found", category = name });
+                var errorMessage = _localizationService.GetErrorMessage("CategoryNotFound", name);
+                return NotFound(new { error = errorMessage, category = name });
             }
 
             return Ok(units);

@@ -11,14 +11,16 @@ using Xunit;
 public class ConvertControllerEdgeCasesTests
 {
     private readonly Mock<IUnitConverterService> _mockService;
+    private readonly Mock<ILocalizationService> _mockLocalizationService;
     private readonly Mock<ILogger<ConvertController>> _mockLogger;
     private readonly ConvertController _controller;
 
     public ConvertControllerEdgeCasesTests()
     {
         _mockService = new Mock<IUnitConverterService>();
+        _mockLocalizationService = new Mock<ILocalizationService>();
         _mockLogger = new Mock<ILogger<ConvertController>>();
-        _controller = new ConvertController(_mockService.Object, _mockLogger.Object);
+        _controller = new ConvertController(_mockService.Object, _mockLocalizationService.Object, _mockLogger.Object);
     }
 
     [Fact]

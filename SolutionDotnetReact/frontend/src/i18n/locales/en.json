@@ -1,0 +1,32 @@
+{
+  "common": {
+    "convert": "Convert",
+    "converting": "Converting...",
+    "result": "Result:",
+    "category": "Category",
+    "from": "From",
+    "to": "To",
+    "value": "Value",
+    "enterValue": "Enter value",
+    "swap": "Swap",
+    "baseUnit": "Base Unit:",
+    "availableUnits": "Available Units:",
+    "language": "Language"
+  },
+  "unitConverter": {
+    "title": "Unit Converter",
+    "subtitle": "Convert between different units of measurement"
+  },
+  "errors": {
+    "fillAllFields": "Please fill in all fields",
+    "invalidNumber": "Please enter a valid number",
+    "failedToLoadCategories": "Failed to load categories",
+    "failedToLoadUnits": "Failed to load units",
+    "conversionFailed": "Conversion failed"
+  },
+  "units": {
+    "si": "SI",
+    "base": "Base"
+  }
+}
+

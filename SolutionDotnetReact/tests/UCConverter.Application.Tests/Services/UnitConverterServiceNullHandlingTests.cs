@@ -12,13 +12,13 @@ public class UnitConverterServiceNullHandlingTests
 {
     private readonly Mock<IConversionService> _mockConversionService;
     private readonly Mock<IUnitRepository> _mockRepository;
-    private readonly UnitConverterService _service;
+    private readonly Mock<ILocalizationService> _mockLocalizationService;
 
     public UnitConverterServiceNullHandlingTests()
     {
         _mockConversionService = new Mock<IConversionService>();
         _mockRepository = new Mock<IUnitRepository>();
-        _service = new UnitConverterService(_mockConversionService.Object, _mockRepository.Object);
+        _mockLocalizationService = new Mock<ILocalizationService>();
     }
 
     [Fact]
@@ -26,7 +26,7 @@ public class UnitConverterServiceNullHandlingTests
     {
         // Act & Assert
         Assert.Throws<ArgumentNullException>(() =>
-            new UnitConverterService(null!, _mockRepository.Object));
+            new UnitConverterService(null!, _mockRepository.Object, _mockLocalizationService.Object));
     }
 
     [Fact]
@@ -34,7 +34,15 @@ public class UnitConverterServiceNullHandlingTests
     {
         // Act & Assert
         Assert.Throws<ArgumentNullException>(() =>
-            new UnitConverterService(_mockConversionService.Object, null!));
+            new UnitConverterService(_mockConversionService.Object, null!, _mockLocalizationService.Object));
+    }
+
+    [Fact]
+    public void Constructor_WhenLocalizationServiceIsNull_ThrowsArgumentNullException()
+    {
+        // Act & Assert
+        Assert.Throws<ArgumentNullException>(() =>
+            new UnitConverterService(_mockConversionService.Object, _mockRepository.Object, null!));
     }
 }
 

@@ -13,11 +13,16 @@ using UCConverter.Domain.Exceptions;
 public class ConvertController : ControllerBase
 {
     private readonly IUnitConverterService _unitConverterService;
+    private readonly ILocalizationService _localizationService;
     private readonly ILogger<ConvertController> _logger;
 
-    public ConvertController(IUnitConverterService unitConverterService, ILogger<ConvertController> logger)
+    public ConvertController(
+        IUnitConverterService unitConverterService, 
+        ILocalizationService localizationService,
+        ILogger<ConvertController> logger)
     {
         _unitConverterService = unitConverterService ?? throw new ArgumentNullException(nameof(unitConverterService));
+        _localizationService = localizationService ?? throw new ArgumentNullException(nameof(localizationService));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
@@ -60,17 +65,20 @@ public class ConvertController : ControllerBase
         catch (CategoryNotFoundException ex)
         {
             _logger.LogWarning("Category not found: {Category}", ex.CategoryName);
-            return NotFound(new { error = ex.Message, category = ex.CategoryName });
+            var errorMessage = _localizationService.GetErrorMessage("CategoryNotFound", ex.CategoryName);
+            return NotFound(new { error = errorMessage, category = ex.CategoryName });
         }
         catch (UnitNotFoundException ex)
         {
             _logger.LogWarning("Unit not found: {Unit}", ex.UnitSymbol);
-            return NotFound(new { error = ex.Message, unit = ex.UnitSymbol });
+            var errorMessage = _localizationService.GetErrorMessage("UnitNotFound", ex.UnitSymbol);
+            return NotFound(new { error = errorMessage, unit = ex.UnitSymbol });
         }
         catch (InvalidConversionException ex)
         {
             _logger.LogWarning("Invalid conversion: {From} to {To}", ex.FromUnit, ex.ToUnit);
-            return BadRequest(new { error = ex.Message, fromUnit = ex.FromUnit, toUnit = ex.ToUnit });
+            var errorMessage = _localizationService.GetErrorMessage("InvalidConversion");
+            return BadRequest(new { error = errorMessage, fromUnit = ex.FromUnit, toUnit = ex.ToUnit });
         }
         catch (Exception ex)
         {

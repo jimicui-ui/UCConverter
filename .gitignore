@@ -10,10 +10,18 @@ x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
-[Bb]in/
-[Oo]bj/
 [Ll]og/
 [Ll]ogs/
+
+# Bin and obj folders (all variations)
+[Bb]in/
+[Oo]bj/
+**/bin/
+**/Bin/
+**/BIN/
+**/obj/
+**/Obj/
+**/OBJ/
 
 # Visual Studio cache/options directory
 .vs/

@@ -9,7 +9,7 @@ const getInitialLanguage = () => {
     if (typeof window !== 'undefined' && window.localStorage) {
       return localStorage.getItem('language') || 'en';
     }
-  } catch (e) {
+  } catch {
     // localStorage might not be available
   }
   return 'en';

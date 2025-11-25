@@ -19,7 +19,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 1.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "km",
@@ -30,7 +31,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 1000.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "cm",
@@ -41,7 +43,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 0.01,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "mm",
@@ -52,7 +55,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 0.001,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "ft",
@@ -63,7 +67,8 @@
       "isSIUnit": false,
       "unitSystem": "Imperial",
       "conversionFactor": 0.3048,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "in",
@@ -74,7 +79,8 @@
       "isSIUnit": false,
       "unitSystem": "Imperial",
       "conversionFactor": 0.0254,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "mi",
@@ -85,7 +91,8 @@
       "isSIUnit": false,
       "unitSystem": "Imperial",
       "conversionFactor": 1609.34,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "yd",
@@ -96,7 +103,8 @@
       "isSIUnit": false,
       "unitSystem": "Imperial",
       "conversionFactor": 0.9144,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     }
   ]
 }

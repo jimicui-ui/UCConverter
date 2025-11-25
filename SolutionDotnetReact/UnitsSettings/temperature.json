@@ -19,7 +19,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": null,
-      "conversionFormula": "x"
+      "conversionFormula": "x",
+      "conversionInverseFormula": "x"
     },
     {
       "symbol": "°C",
@@ -30,7 +31,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": null,
-      "conversionFormula": "x + 273.15"
+      "conversionFormula": "x + 273.15",
+      "conversionInverseFormula": "x - 273.15"
     },
     {
       "symbol": "°F",
@@ -41,7 +43,8 @@
       "isSIUnit": false,
       "unitSystem": "US Customary",
       "conversionFactor": null,
-      "conversionFormula": "(x - 32) * 5/9 + 273.15"
+      "conversionFormula": "(x - 32) * 5/9 + 273.15",
+      "conversionInverseFormula": "(x - 273.15) * 9/5 + 32"
     }
   ]
 }

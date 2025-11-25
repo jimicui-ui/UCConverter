@@ -19,7 +19,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 1.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "ms",
@@ -30,7 +31,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 0.001,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "µs",
@@ -41,7 +43,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 0.000001,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "ns",
@@ -52,7 +55,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 0.000000001,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "min",
@@ -63,7 +67,8 @@
       "isSIUnit": false,
       "unitSystem": "Non-SI",
       "conversionFactor": 60.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "h",
@@ -74,7 +79,8 @@
       "isSIUnit": false,
       "unitSystem": "Non-SI",
       "conversionFactor": 3600.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "d",
@@ -85,7 +91,8 @@
       "isSIUnit": false,
       "unitSystem": "Non-SI",
       "conversionFactor": 86400.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "wk",
@@ -96,7 +103,8 @@
       "isSIUnit": false,
       "unitSystem": "Non-SI",
       "conversionFactor": 604800.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "mo",
@@ -107,7 +115,8 @@
       "isSIUnit": false,
       "unitSystem": "Non-SI",
       "conversionFactor": 2629746.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "yr",
@@ -118,7 +127,8 @@
       "isSIUnit": false,
       "unitSystem": "Non-SI",
       "conversionFactor": 31556952.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     }
   ]
 }

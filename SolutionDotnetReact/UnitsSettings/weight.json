@@ -19,7 +19,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 1.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "g",
@@ -30,7 +31,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 0.001,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "mg",
@@ -41,7 +43,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 0.000001,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "t",
@@ -52,7 +55,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 1000.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "lb",
@@ -63,7 +67,8 @@
       "isSIUnit": false,
       "unitSystem": "Imperial",
       "conversionFactor": 0.453592,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "oz",
@@ -74,7 +79,8 @@
       "isSIUnit": false,
       "unitSystem": "Imperial",
       "conversionFactor": 0.0283495,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     }
   ]
 }

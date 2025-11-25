@@ -133,7 +133,8 @@ public class JsonUnitRepository : IUnitRepository
             IsSIUnit = unitJson.IsSIUnit,
             UnitSystem = unitJson.UnitSystem ?? string.Empty,
             ConversionFactor = unitJson.ConversionFactor,
-            ConversionFormula = unitJson.ConversionFormula
+            ConversionFormula = unitJson.ConversionFormula,
+            ConversionInverseFormula = unitJson.ConversionInverseFormula
         };
     }
 

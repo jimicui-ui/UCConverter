@@ -19,7 +19,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 1.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "km/h",
@@ -30,7 +31,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 0.277778,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "mph",
@@ -41,7 +43,8 @@
       "isSIUnit": false,
       "unitSystem": "Imperial",
       "conversionFactor": 0.44704,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "ft/s",
@@ -52,7 +55,8 @@
       "isSIUnit": false,
       "unitSystem": "Imperial",
       "conversionFactor": 0.3048,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "kn",
@@ -63,7 +67,8 @@
       "isSIUnit": false,
       "unitSystem": "Nautical",
       "conversionFactor": 0.514444,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "km/s",
@@ -74,7 +79,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 1000.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "cm/s",
@@ -85,7 +91,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 0.01,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     }
   ]
 }

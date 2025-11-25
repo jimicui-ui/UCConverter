@@ -35,7 +35,8 @@ public class ConversionServiceFormulaTrimTests
             Name = "celsius",
             Category = "test",
             IsBaseUnit = false,
-            ConversionFormula = "  x + 273.15  " // Has whitespace, should match after trim
+            ConversionFormula = "  x + 273.15  ", // Has whitespace, should match after trim
+            ConversionInverseFormula = "x - 273.15"
         };
         var category = new Category
         {

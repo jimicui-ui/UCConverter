@@ -19,7 +19,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 1.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "L",
@@ -30,7 +31,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 0.001,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "mL",
@@ -41,7 +43,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 0.000001,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "gal",
@@ -52,7 +55,8 @@
       "isSIUnit": false,
       "unitSystem": "US Customary",
       "conversionFactor": 0.00378541,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "qt",
@@ -63,7 +67,8 @@
       "isSIUnit": false,
       "unitSystem": "US Customary",
       "conversionFactor": 0.000946353,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "pt",
@@ -74,7 +79,8 @@
       "isSIUnit": false,
       "unitSystem": "US Customary",
       "conversionFactor": 0.000473176,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "fl oz",
@@ -85,7 +91,8 @@
       "isSIUnit": false,
       "unitSystem": "US Customary",
       "conversionFactor": 0.0000295735,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     }
   ]
 }

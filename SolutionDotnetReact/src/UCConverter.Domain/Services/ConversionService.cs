@@ -131,8 +131,12 @@ public class ConversionService : IConversionService
         double result;
         if (!string.IsNullOrEmpty(toUnit.ConversionFormula))
         {
-            // Need inverse formula to convert from base to target
-            result = EvaluateInverseFormula(toUnit.ConversionFormula, baseValue);
+            // Use inverse formula to convert from base to target
+            if (string.IsNullOrEmpty(toUnit.ConversionInverseFormula))
+            {
+                throw new UnitConversionException($"Inverse formula is required for unit with formula: {toUnit.Symbol}");
+            }
+            result = EvaluateFormula(toUnit.ConversionInverseFormula, baseValue);
             formula = $"Converted via base unit using formula";
         }
         else
@@ -147,7 +151,7 @@ public class ConversionService : IConversionService
     private double EvaluateFormula(string formula, double value)
     {
         // Simple formula evaluation for temperature conversions
-        // Formula format: "x + 273.15" or "(x - 32) * 5/9 + 273.15"
+        // Formula format: "x + 273.15" or "(x - 32) * 5/9 + 273.15" or "(x - 273.15) * 9/5 + 32"
         // Replace 'x' with the actual value
         var expression = formula.Replace("x", value.ToString(System.Globalization.CultureInfo.InvariantCulture));
 
@@ -162,29 +166,6 @@ public class ConversionService : IConversionService
         {
             throw new UnitConversionException($"Failed to evaluate conversion formula: {formula}");
         }
-    }
-
-    private double EvaluateInverseFormula(string formula, double baseValue)
-    {
-        // For inverse conversion, we need to solve for x in the formula
-        // This is a simplified implementation for common temperature formulas
-        
-        // If formula is "x + 273.15", inverse is "x - 273.15"
-        if (formula.Contains("x + 273.15") && !formula.Contains("x -"))
-        {
-            return baseValue - 273.15;
-        }
-
-        // If formula is "(x - 32) * 5/9 + 273.15", inverse is more complex
-        // For now, use a simple approach: if converting from base (K) to Celsius
-        if (formula.Contains("x + 273.15") && formula.Trim() == "x + 273.15")
-        {
-            return baseValue - 273.15;
-        }
-
-        // For more complex formulas, we might need a proper expression parser
-        // For MVP, we'll handle the common cases
-        throw new UnitConversionException($"Complex inverse formula conversion not yet supported: {formula}");
     }
 }
 

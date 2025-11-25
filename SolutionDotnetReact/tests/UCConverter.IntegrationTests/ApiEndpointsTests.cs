@@ -326,6 +326,144 @@ public class ApiEndpointsTests : IClassFixture<WebApplicationFactory<Program>>, 
         Assert.Equal(10.0, result.Result, 4);
     }
 
+    [Fact]
+    public async Task Convert_WhenConvertingTemperature_KelvinToCelsius_ShouldReturnOk()
+    {
+        // Arrange
+        var request = new ConvertRequestDto
+        {
+            Category = "temperature",
+            FromUnit = "K",
+            ToUnit = "°C",
+            Value = 298.15
+        };
+
+        // Act
+        var response = await _client.PostAsJsonAsync("/api/convert", request);
+
+        // Assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var content = await response.Content.ReadAsStringAsync();
+        var result = JsonSerializer.Deserialize<ConvertResponseDto>(content, _jsonOptions);
+        Assert.NotNull(result);
+        Assert.Equal(25.0, result.Result, 2); // 298.15K = 25°C
+    }
+
+    [Fact]
+    public async Task Convert_WhenConvertingTemperature_KelvinToFahrenheit_ShouldReturnOk()
+    {
+        // Arrange
+        var request = new ConvertRequestDto
+        {
+            Category = "temperature",
+            FromUnit = "K",
+            ToUnit = "°F",
+            Value = 273.15
+        };
+
+        // Act
+        var response = await _client.PostAsJsonAsync("/api/convert", request);
+
+        // Assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var content = await response.Content.ReadAsStringAsync();
+        var result = JsonSerializer.Deserialize<ConvertResponseDto>(content, _jsonOptions);
+        Assert.NotNull(result);
+        Assert.Equal(32.0, result.Result, 2); // 273.15K = 32°F (freezing point)
+    }
+
+    [Fact]
+    public async Task Convert_WhenConvertingTemperature_CelsiusToFahrenheit_ShouldReturnOk()
+    {
+        // Arrange
+        var request = new ConvertRequestDto
+        {
+            Category = "temperature",
+            FromUnit = "°C",
+            ToUnit = "°F",
+            Value = 25.0
+        };
+
+        // Act
+        var response = await _client.PostAsJsonAsync("/api/convert", request);
+
+        // Assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var content = await response.Content.ReadAsStringAsync();
+        var result = JsonSerializer.Deserialize<ConvertResponseDto>(content, _jsonOptions);
+        Assert.NotNull(result);
+        Assert.Equal(77.0, result.Result, 1); // 25°C = 77°F
+    }
+
+    [Fact]
+    public async Task Convert_WhenConvertingTemperature_FahrenheitToCelsius_ShouldReturnOk()
+    {
+        // Arrange
+        var request = new ConvertRequestDto
+        {
+            Category = "temperature",
+            FromUnit = "°F",
+            ToUnit = "°C",
+            Value = 32.0
+        };
+
+        // Act
+        var response = await _client.PostAsJsonAsync("/api/convert", request);
+
+        // Assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var content = await response.Content.ReadAsStringAsync();
+        var result = JsonSerializer.Deserialize<ConvertResponseDto>(content, _jsonOptions);
+        Assert.NotNull(result);
+        Assert.Equal(0.0, result.Result, 2); // 32°F = 0°C (freezing point)
+    }
+
+    [Fact]
+    public async Task Convert_WhenConvertingTemperature_CelsiusToKelvin_ShouldReturnOk()
+    {
+        // Arrange
+        var request = new ConvertRequestDto
+        {
+            Category = "temperature",
+            FromUnit = "°C",
+            ToUnit = "K",
+            Value = 100.0
+        };
+
+        // Act
+        var response = await _client.PostAsJsonAsync("/api/convert", request);
+
+        // Assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var content = await response.Content.ReadAsStringAsync();
+        var result = JsonSerializer.Deserialize<ConvertResponseDto>(content, _jsonOptions);
+        Assert.NotNull(result);
+        Assert.Equal(373.15, result.Result, 2); // 100°C = 373.15K (boiling point)
+    }
+
+    [Fact]
+    public async Task Convert_WhenConvertingTemperature_FahrenheitToKelvin_ShouldReturnOk()
+    {
+        // Arrange
+        var request = new ConvertRequestDto
+        {
+            Category = "temperature",
+            FromUnit = "°F",
+            ToUnit = "K",
+            Value = 212.0
+        };
+
+        // Act
+        var response = await _client.PostAsJsonAsync("/api/convert", request);
+
+        // Assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var content = await response.Content.ReadAsStringAsync();
+        var result = JsonSerializer.Deserialize<ConvertResponseDto>(content, _jsonOptions);
+        Assert.NotNull(result);
+        Assert.Equal(373.15, result.Result, 2); // 212°F = 373.15K (boiling point)
+    }
+
     public void Dispose()
     {
         _client?.Dispose();

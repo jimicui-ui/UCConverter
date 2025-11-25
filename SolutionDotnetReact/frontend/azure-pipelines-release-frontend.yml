@@ -1,0 +1,168 @@
+# Azure DevOps Release Pipeline for Frontend
+# This pipeline builds and releases the React + Vite frontend application
+
+trigger: none  # Manual trigger or triggered by another pipeline
+
+pool:
+  vmImage: 'ubuntu-latest'  # or 'windows-latest' or 'macos-latest'
+
+variables:
+  - group: FrontendReleaseVariables  # Optional: Use variable groups for secrets
+  - name: nodeVersion
+    value: '18.x'
+  - name: buildConfiguration
+    value: 'Release'
+  - name: frontendPath
+    value: '$(System.DefaultWorkingDirectory)/frontend'
+  - name: artifactName
+    value: 'frontend-dist'
+
+stages:
+  - stage: Build
+    displayName: 'Build Frontend'
+    jobs:
+      - job: BuildFrontend
+        displayName: 'Build React Application'
+        steps:
+          - task: NodeTool@0
+            displayName: 'Install Node.js $(nodeVersion)'
+            inputs:
+              versionSpec: '$(nodeVersion)'
+
+          - task: Npm@1
+            displayName: 'Install npm dependencies'
+            inputs:
+              command: 'install'
+              workingDir: '$(frontendPath)'
+              verbose: false
+
+          - task: Npm@1
+            displayName: 'Run linting'
+            inputs:
+              command: 'custom'
+              workingDir: '$(frontendPath)'
+              customCommand: 'run lint'
+            continueOnError: true  # Don't fail pipeline on lint warnings
+
+          - task: Npm@1
+            displayName: 'Build application'
+            inputs:
+              command: 'custom'
+              workingDir: '$(frontendPath)'
+              customCommand: 'run build'
+            env:
+              VITE_API_BASE_URL: $(VITE_API_BASE_URL)  # Set from pipeline variables or variable group
+
+          - task: PublishBuildArtifacts@1
+            displayName: 'Publish build artifacts'
+            inputs:
+              pathToPublish: '$(frontendPath)/dist'
+              artifactName: '$(artifactName)'
+              publishLocation: 'Container'
+
+  - stage: Deploy
+    displayName: 'Deploy Frontend'
+    dependsOn: Build
+    condition: succeeded()
+    jobs:
+      - deployment: DeployToStaging
+        displayName: 'Deploy to Staging'
+        environment: 'Staging'  # Create this environment in Azure DevOps
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: DownloadBuildArtifacts@0
+                  displayName: 'Download build artifacts'
+                  inputs:
+                    buildType: 'current'
+                    downloadType: 'specific'
+                    downloadPath: '$(System.ArtifactsDirectory)'
+                    artifactName: '$(artifactName)'
+
+                # Option 1: Deploy to Azure Static Web Apps
+                - task: AzureStaticWebApp@0
+                  displayName: 'Deploy to Azure Static Web Apps'
+                  inputs:
+                    app_location: '$(System.ArtifactsDirectory)/$(artifactName)'
+                    api_location: ''  # Leave empty if no API
+                    output_location: ''
+                    azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN)  # Set in variable group
+                  condition: eq(variables['deploymentTarget'], 'AzureStaticWebApps')
+                  enabled: false  # Set to true if using Azure Static Web Apps
+
+                # Option 2: Deploy to Azure Storage Static Website
+                - task: AzureCLI@2
+                  displayName: 'Deploy to Azure Storage Static Website'
+                  inputs:
+                    azureSubscription: $(azureSubscription)  # Set in service connections
+                    scriptType: 'bash'
+                    scriptLocation: 'inlineScript'
+                    inlineScript: |
+                      # Upload files to Azure Storage
+                      az storage blob upload-batch \
+                        --account-name $(storageAccountName) \
+                        --account-key $(storageAccountKey) \
+                        --source "$(System.ArtifactsDirectory)/$(artifactName)" \
+                        --destination '$web' \
+                        --overwrite
+                  condition: eq(variables['deploymentTarget'], 'AzureStorage')
+                  enabled: false  # Set to true if using Azure Storage
+
+                # Option 3: Deploy to IIS (Windows Server)
+                - task: IISWebAppManagementOnMachineGroup@0
+                  displayName: 'Deploy to IIS'
+                  inputs:
+                    IISDeploymentType: 'IISWebsite'
+                    ActionIISWebsite: 'CreateOrUpdateWebsite'
+                    WebsiteName: 'UCConverterFrontend'
+                    WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot\UCConverterFrontend'
+                    AddBinding: true
+                    Bindings: '[{"protocol":"http","ipAddress":"*","port":"80","hostname":""}]'
+                  condition: eq(variables['deploymentTarget'], 'IIS')
+                  enabled: false  # Set to true if using IIS
+
+                # Option 4: Deploy to Linux Web Server (Nginx/Apache)
+                - task: SSH@0
+                  displayName: 'Deploy to Linux Web Server'
+                  inputs:
+                    sshEndpoint: $(sshEndpoint)  # Set in service connections
+                    runOptions: 'commands'
+                    commands: |
+                      # Copy files to web server
+                      scp -r $(System.ArtifactsDirectory)/$(artifactName)/* $(webServerPath)/
+                      # Restart web server if needed
+                      sudo systemctl reload nginx
+                  condition: eq(variables['deploymentTarget'], 'LinuxWebServer')
+                  enabled: false  # Set to true if using Linux web server
+
+                # Option 5: Generic file copy (for any target)
+                - task: CopyFiles@2
+                  displayName: 'Copy files to deployment target'
+                  inputs:
+                    SourceFolder: '$(System.ArtifactsDirectory)/$(artifactName)'
+                    Contents: '**'
+                    TargetFolder: '$(deploymentTargetPath)'
+                  condition: eq(variables['deploymentTarget'], 'FileCopy')
+                  enabled: false  # Set to true if using file copy
+
+      - deployment: DeployToProduction
+        displayName: 'Deploy to Production'
+        environment: 'Production'  # Create this environment in Azure DevOps
+        dependsOn: DeployToStaging
+        condition: succeeded()
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: DownloadBuildArtifacts@0
+                  displayName: 'Download build artifacts'
+                  inputs:
+                    buildType: 'current'
+                    downloadType: 'specific'
+                    downloadPath: '$(System.ArtifactsDirectory)'
+                    artifactName: '$(artifactName)'
+
+                # Add your production deployment steps here
+                # (Similar to staging, but with production-specific settings)
+

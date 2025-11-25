@@ -30,6 +30,34 @@ body,
               border-color var(--transition-base);
 }
 
+/* Prevent layout shifts during responsive changes */
+.unit-converter,
+.converter-form,
+.form-group,
+.result {
+  will-change: auto;
+}
+
+/* Optimize rendering for mobile */
+@media (max-width: 767px) {
+  /* Reduce repaints on mobile */
+  .unit-converter,
+  .converter-form {
+    contain: layout style;
+  }
+
+  /* Disable hover effects on touch devices */
+  @media (hover: none) {
+    .swap-button:hover,
+    .convert-button:hover,
+    .form-group select:hover,
+    .form-group input:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -40,6 +68,8 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Responsive typography base */

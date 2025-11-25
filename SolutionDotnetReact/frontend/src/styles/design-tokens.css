@@ -203,11 +203,21 @@
   --z-index-modal: 1000;
   --z-index-tooltip: 2000;
   
-  /* ===== Breakpoints (for reference, use in media queries) ===== */
+  /* ===== Breakpoints ===== */
+  /* Note: CSS custom properties cannot be used directly in media queries,
+     but these values are documented for consistency */
   /* Mobile: < 768px */
   /* Tablet: 768px - 1023px */
   /* Desktop: 1024px - 1919px */
   /* Large Desktop: ≥ 1920px */
+  
+  /* Breakpoint values for JavaScript/TypeScript use */
+  --breakpoint-mobile-max: 767px;
+  --breakpoint-tablet-min: 768px;
+  --breakpoint-tablet-max: 1023px;
+  --breakpoint-desktop-min: 1024px;
+  --breakpoint-desktop-max: 1919px;
+  --breakpoint-large-desktop-min: 1920px;
 }
 
 /* Dark theme shadow adjustments */

@@ -94,14 +94,15 @@ public class ConversionServiceFormulaTests
     [Fact]
     public async Task ConvertAsync_WhenBothUnitsHaveFormulas_ConvertsThroughBaseUnit()
     {
-        // Arrange - Celsius to Fahrenheit (both have formulas)
+        // Arrange - Celsius to Fahrenheit (both have formulas with inverse formulas)
         var fromUnit = new Unit
         {
             Symbol = "°C",
             Name = "celsius",
             Category = "temperature",
             IsBaseUnit = false,
-            ConversionFormula = "x + 273.15"
+            ConversionFormula = "x + 273.15",
+            ConversionInverseFormula = "x - 273.15"
         };
         var toUnit = new Unit
         {
@@ -109,7 +110,8 @@ public class ConversionServiceFormulaTests
             Name = "fahrenheit",
             Category = "temperature",
             IsBaseUnit = false,
-            ConversionFormula = "(x - 32) * 5/9 + 273.15"
+            ConversionFormula = "(x - 32) * 5/9 + 273.15",
+            ConversionInverseFormula = "(x - 273.15) * 9/5 + 32"
         };
         var baseUnit = new Unit
         {
@@ -117,7 +119,9 @@ public class ConversionServiceFormulaTests
             Name = "kelvin",
             Category = "temperature",
             IsBaseUnit = true,
-            ConversionFactor = 1.0
+            ConversionFactor = 1.0,
+            ConversionFormula = "x",
+            ConversionInverseFormula = "x"
         };
         var category = new Category
         {
@@ -128,9 +132,12 @@ public class ConversionServiceFormulaTests
         _mockRepository.Setup(r => r.GetCategoryByNameAsync("temperature"))
             .ReturnsAsync(category);
 
-        // Act & Assert - This should throw because complex inverse formula is not supported
-        await Assert.ThrowsAsync<UnitConversionException>(() =>
-            _conversionService.ConvertAsync("temperature", "°C", "°F", 25.0));
+        // Act - This should now work with explicit inverse formulas
+        var result = await _conversionService.ConvertAsync("temperature", "°C", "°F", 25.0);
+
+        // Assert
+        Assert.NotNull(result);
+        Assert.Equal(77.0, result.Result, 1); // 25°C = 77°F
     }
 
     [Fact]

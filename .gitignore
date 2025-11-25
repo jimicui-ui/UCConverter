@@ -13,15 +13,50 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
-# Bin and obj folders (all variations)
+# Bin and obj folders (all variations) - MUST be at root level
 [Bb]in/
 [Oo]bj/
+
+# Bin and obj folders anywhere in the tree
 **/bin/
 **/Bin/
 **/BIN/
 **/obj/
 **/Obj/
 **/OBJ/
+
+# All files inside bin/obj directories
+**/bin/**
+**/obj/**
+**/bin/**/*
+**/obj/**/*
+
+# Specific build artifacts that might be in bin/obj
+**/bin/**/*.dll
+**/bin/**/*.exe
+**/bin/**/*.pdb
+**/bin/**/*.cache
+**/bin/**/*.txt
+**/bin/**/*.json
+**/bin/**/*.editorconfig
+**/bin/**/CoverletSourceRootsMapping*
+**/bin/**/MvcTestingAppManifest.json
+**/obj/**/*.dll
+**/obj/**/*.exe
+**/obj/**/*.pdb
+**/obj/**/*.cache
+**/obj/**/*.txt
+**/obj/**/*.json
+**/obj/**/*.editorconfig
+**/obj/**/*.cs
+**/obj/**/AssemblyInfo.cs
+**/obj/**/AssemblyInfoInputs.cache
+**/obj/**/assets.cache
+**/obj/**/csproj.*.cache
+**/obj/**/csproj.*.txt
+**/obj/**/GeneratedMSBuildEditorConfig.editorconfig
+**/obj/**/genruntimeconfig.cache
+**/obj/**/sourcelink.json
 
 # Visual Studio cache/options directory
 .vs/
@@ -41,7 +76,6 @@ bld/
 *.obj
 *.iobj
 *.pch
-*.pdb
 *.ipdb
 *.pgc
 *.pgd
@@ -60,6 +94,32 @@ bld/
 *.pidb
 *.svclog
 *.scc
+
+# .NET build artifacts in bin/obj directories
+**/bin/**/*.dll
+**/bin/**/*.exe
+**/bin/**/*.pdb
+**/bin/**/*.cache
+**/bin/**/*.txt
+**/bin/**/*.json
+**/bin/**/*.editorconfig
+**/obj/**/*.dll
+**/obj/**/*.exe
+**/obj/**/*.pdb
+**/obj/**/*.cache
+**/obj/**/*.txt
+**/obj/**/*.json
+**/obj/**/*.editorconfig
+**/obj/**/*.cs
+**/obj/**/AssemblyInfo.cs
+**/obj/**/AssemblyInfoInputs.cache
+**/obj/**/assets.cache
+**/obj/**/csproj.*.cache
+**/obj/**/csproj.*.txt
+**/obj/**/GeneratedMSBuildEditorConfig.editorconfig
+**/obj/**/genruntimeconfig.cache
+**/obj/**/sourcelink.json
+**/bin/**/CoverletSourceRootsMapping*
 
 # NuGet Packages
 *.nupkg

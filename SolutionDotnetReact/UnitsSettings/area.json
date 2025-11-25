@@ -19,7 +19,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 1.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "km²",
@@ -30,7 +31,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 1000000.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "ha",
@@ -41,7 +43,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 10000.0,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "cm²",
@@ -52,7 +55,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 0.0001,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "mm²",
@@ -63,7 +67,8 @@
       "isSIUnit": true,
       "unitSystem": "SI",
       "conversionFactor": 0.000001,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "ft²",
@@ -74,7 +79,8 @@
       "isSIUnit": false,
       "unitSystem": "Imperial",
       "conversionFactor": 0.092903,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "in²",
@@ -85,7 +91,8 @@
       "isSIUnit": false,
       "unitSystem": "Imperial",
       "conversionFactor": 0.00064516,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "acre",
@@ -96,7 +103,8 @@
       "isSIUnit": false,
       "unitSystem": "Imperial",
       "conversionFactor": 4046.86,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     },
     {
       "symbol": "mi²",
@@ -107,7 +115,8 @@
       "isSIUnit": false,
       "unitSystem": "Imperial",
       "conversionFactor": 2589988.11,
-      "conversionFormula": null
+      "conversionFormula": null,
+      "conversionInverseFormula": null
     }
   ]
 }

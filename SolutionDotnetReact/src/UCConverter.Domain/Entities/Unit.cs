@@ -14,6 +14,7 @@ public class Unit
     public string UnitSystem { get; set; } = string.Empty;
     public double? ConversionFactor { get; set; }
     public string? ConversionFormula { get; set; }
+    public string? ConversionInverseFormula { get; set; }
 
     /// <summary>
     /// Converts a value from this unit to the base unit of the category

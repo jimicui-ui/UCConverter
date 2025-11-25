@@ -22,5 +22,6 @@ public class UnitJson
     public string UnitSystem { get; set; } = string.Empty;
     public double? ConversionFactor { get; set; }
     public string? ConversionFormula { get; set; }
+    public string? ConversionInverseFormula { get; set; }
 }
 

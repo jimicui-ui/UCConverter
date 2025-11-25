@@ -36,7 +36,8 @@ public class ConversionServiceInverseFormulaSecondConditionTests
             Name = "celsius",
             Category = "test",
             IsBaseUnit = false,
-            ConversionFormula = "  x + 273.15  " // Has whitespace, trim() == "x + 273.15"
+            ConversionFormula = "  x + 273.15  ", // Has whitespace, trim() == "x + 273.15"
+            ConversionInverseFormula = "x - 273.15"
         };
         var category = new Category
         {

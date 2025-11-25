@@ -41,13 +41,53 @@ builder.Services.AddSwaggerGen(options =>
     {
         Title = "Unit Converter API",
         Version = "v1",
-        Description = "Open-source Unit Converter API with support for multiple unit categories (Length, Weight, Temperature, Volume). Built with Clean Architecture and SOLID principles.",
+        Description = @"Open-source Unit Converter API with support for multiple unit categories (Length, Weight, Temperature, Volume, Area, Time, Speed). 
+        
+Built with Clean Architecture and SOLID principles.
+
+## Features
+- Support for multiple unit categories
+- SI base unit conversions
+- Formula-based conversions (e.g., temperature)
+- Localization support (English, Chinese)
+- Comprehensive error handling
+
+## Getting Started
+1. Get all available categories: `GET /api/categories`
+2. Get units for a category: `GET /api/categories/{name}/units`
+3. Perform conversion: `POST /api/convert`
+
+## Examples
+See the examples section for each endpoint to see real-world usage scenarios.",
         Contact = new Microsoft.OpenApi.Models.OpenApiContact
         {
             Name = "Unit Converter Project",
-            Url = new Uri("https://github.com/yourusername/unit-converter")
+            Url = new Uri("https://github.com/jimicui-ui/UCConverter")
         }
     });
+
+    // Include XML comments
+    var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    if (File.Exists(xmlPath))
+    {
+        options.IncludeXmlComments(xmlPath);
+    }
+
+    // Include XML comments from Application layer
+    var applicationXmlFile = "UCConverter.Application.xml";
+    var applicationXmlPath = Path.Combine(AppContext.BaseDirectory, applicationXmlFile);
+    if (File.Exists(applicationXmlPath))
+    {
+        options.IncludeXmlComments(applicationXmlPath);
+    }
+
+    // Enable example schemas
+    options.EnableAnnotations();
+    options.UseInlineDefinitionsForEnums();
+    
+    // Custom schema IDs to avoid conflicts
+    options.CustomSchemaIds(type => type.FullName?.Replace("+", "."));
 });
 
 // Add CORS for frontend
@@ -101,6 +141,23 @@ app.UseSwaggerUI(options =>
 {
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "Unit Converter API v1");
     options.RoutePrefix = "swagger"; // Accessible at /swagger
+    
+    // Enhanced Swagger UI configuration
+    options.DisplayRequestDuration();
+    options.EnableDeepLinking();
+    options.EnableFilter();
+    options.EnableTryItOutByDefault();
+    options.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.List);
+    options.DefaultModelsExpandDepth(2);
+    options.DefaultModelRendering(Swashbuckle.AspNetCore.SwaggerUI.ModelRendering.Example);
+    options.ShowExtensions();
+    options.EnableValidator();
+    options.SupportedSubmitMethods(new[] { 
+        Swashbuckle.AspNetCore.SwaggerUI.SubmitMethod.Get, 
+        Swashbuckle.AspNetCore.SwaggerUI.SubmitMethod.Post,
+        Swashbuckle.AspNetCore.SwaggerUI.SubmitMethod.Put,
+        Swashbuckle.AspNetCore.SwaggerUI.SubmitMethod.Delete 
+    });
 });
 
 app.UseCors("AllowFrontend");

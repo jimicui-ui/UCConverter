@@ -1,6 +1,7 @@
 namespace UCConverter.Api.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 using UCConverter.Application.DTOs;
 using UCConverter.Application.Interfaces;
 using UCConverter.Domain.Exceptions;
@@ -10,6 +11,7 @@ using UCConverter.Domain.Exceptions;
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
+[SwaggerTag("Category Management")]
 public class CategoriesController : ControllerBase
 {
     private readonly IUnitConverterService _unitConverterService;
@@ -29,10 +31,39 @@ public class CategoriesController : ControllerBase
     /// <summary>
     /// Get all available unit categories
     /// </summary>
-    /// <returns>List of categories</returns>
+    /// <param name="locale">Optional locale parameter for localized category names (e.g., "en", "zh", "en-US", "zh-CN"). Can be passed as query parameter or Accept-Language header.</param>
+    /// <returns>List of all available unit categories</returns>
+    /// <remarks>
+    /// Returns all available unit categories in the system. Categories are returned with localized display names based on the locale parameter or Accept-Language header.
+    /// 
+    /// **Supported Categories:**
+    /// - length: Length / Distance units (meter, foot, inch, etc.)
+    /// - weight: Weight / Mass units (kilogram, pound, ounce, etc.)
+    /// - temperature: Temperature units (Celsius, Fahrenheit, Kelvin)
+    /// - volume: Volume units (liter, gallon, cubic meter, etc.)
+    /// - area: Area units (square meter, square foot, acre, etc.)
+    /// - time: Time units (second, minute, hour, etc.)
+    /// - speed: Speed units (meter per second, mile per hour, etc.)
+    /// 
+    /// **Example Usage:**
+    /// - Get categories in English: `GET /api/categories?locale=en`
+    /// - Get categories in Chinese: `GET /api/categories?locale=zh`
+    /// - Get categories using Accept-Language header: `GET /api/categories` with `Accept-Language: zh-CN`
+    /// </remarks>
+    /// <response code="200">Successfully retrieved list of categories</response>
+    /// <response code="500">Internal server error occurred</response>
     [HttpGet]
     [ProducesResponseType(typeof(IEnumerable<CategoryDto>), StatusCodes.Status200OK)]
-    public async Task<ActionResult<IEnumerable<CategoryDto>>> GetCategories()
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    [SwaggerOperation(
+        Summary = "Get all categories",
+        Description = "Retrieves all available unit categories with localized display names",
+        OperationId = "GetCategories",
+        Tags = new[] { "Categories" }
+    )]
+    [SwaggerResponse(200, "Successfully retrieved categories", typeof(IEnumerable<CategoryDto>))]
+    [SwaggerResponse(500, "Internal server error", typeof(object))]
+    public async Task<ActionResult<IEnumerable<CategoryDto>>> GetCategories([FromQuery] string? locale = null)
     {
         try
         {
@@ -49,12 +80,42 @@ public class CategoriesController : ControllerBase
     /// <summary>
     /// Get all units for a specific category
     /// </summary>
-    /// <param name="name">Category name</param>
-    /// <returns>List of units in the category</returns>
+    /// <param name="name">The category name (e.g., "length", "weight", "temperature")</param>
+    /// <param name="locale">Optional locale parameter for localized unit names (e.g., "en", "zh", "en-US", "zh-CN"). Can be passed as query parameter or Accept-Language header.</param>
+    /// <returns>List of units in the specified category</returns>
+    /// <remarks>
+    /// Returns all units available in the specified category. Units are returned with localized display names based on the locale parameter or Accept-Language header.
+    /// 
+    /// **Category Examples:**
+    /// - `length`: Returns units like meter (m), kilometer (km), foot (ft), inch (in), mile (mi)
+    /// - `weight`: Returns units like kilogram (kg), gram (g), pound (lb), ounce (oz)
+    /// - `temperature`: Returns units like Celsius (°C), Fahrenheit (°F), Kelvin (K)
+    /// - `volume`: Returns units like liter (L), gallon (gal), cubic meter (m³)
+    /// 
+    /// **Example Usage:**
+    /// - Get length units: `GET /api/categories/length/units`
+    /// - Get weight units in Chinese: `GET /api/categories/weight/units?locale=zh`
+    /// - Get temperature units: `GET /api/categories/temperature/units`
+    /// </remarks>
+    /// <response code="200">Successfully retrieved units for the category</response>
+    /// <response code="404">Category not found</response>
+    /// <response code="500">Internal server error occurred</response>
     [HttpGet("{name}/units")]
     [ProducesResponseType(typeof(IEnumerable<UnitDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<IEnumerable<UnitDto>>> GetUnitsByCategory(string name)
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    [SwaggerOperation(
+        Summary = "Get units by category",
+        Description = "Retrieves all units available in a specific category with localized display names",
+        OperationId = "GetUnitsByCategory",
+        Tags = new[] { "Categories" }
+    )]
+    [SwaggerResponse(200, "Successfully retrieved units", typeof(IEnumerable<UnitDto>))]
+    [SwaggerResponse(404, "Category not found", typeof(object))]
+    [SwaggerResponse(500, "Internal server error", typeof(object))]
+    public async Task<ActionResult<IEnumerable<UnitDto>>> GetUnitsByCategory(
+        [SwaggerParameter("The category name (e.g., 'length', 'weight', 'temperature')", Required = true)] string name,
+        [FromQuery] string? locale = null)
     {
         try
         {
@@ -75,4 +136,3 @@ public class CategoriesController : ControllerBase
         }
     }
 }
-

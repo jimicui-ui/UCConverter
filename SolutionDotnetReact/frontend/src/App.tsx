@@ -1,13 +1,16 @@
 import { UnitConverter } from './components/UnitConverter'
 import { ErrorBoundary } from './components/ErrorBoundary'
+import { ThemeProvider } from './contexts/ThemeContext'
 import './App.css'
 
 function App() {
   return (
     <ErrorBoundary>
-      <div className="app">
-        <UnitConverter />
-      </div>
+      <ThemeProvider>
+        <div className="app">
+          <UnitConverter />
+        </div>
+      </ThemeProvider>
     </ErrorBoundary>
   )
 }

@@ -11,7 +11,26 @@
     "swap": "Swap",
     "baseUnit": "Base Unit:",
     "availableUnits": "Available Units:",
-    "language": "Language"
+    "language": "Language",
+    "switchToDark": "Switch to dark mode",
+    "switchToLight": "Switch to light mode",
+    "switchToBlue": "Switch to blue theme",
+    "switchTheme": "Switch theme",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "searchUnits": "Search units...",
+    "noUnitsFound": "No units found",
+    "loading": "Loading...",
+    "headerControls": "Header controls",
+    "selectLanguage": "Select language",
+    "selectCategory": "Select category",
+    "selectFromUnit": "Select from unit",
+    "selectToUnit": "Select to unit",
+    "searchFromUnits": "Search from units",
+    "searchToUnits": "Search to units",
+    "swapUnits": "Swap units",
+    "copyResult": "Copy result",
+    "categoryInformation": "Category information"
   },
   "unitConverter": {
     "title": "Unit Converter",
@@ -22,7 +41,10 @@
     "invalidNumber": "Please enter a valid number",
     "failedToLoadCategories": "Failed to load categories",
     "failedToLoadUnits": "Failed to load units",
-    "conversionFailed": "Conversion failed"
+    "conversionFailed": "Conversion failed",
+    "emptyValue": "Please enter a value",
+    "invalidNumberFormat": "Invalid number format",
+    "valueRequired": "Value is required"
   },
   "units": {
     "si": "SI",

@@ -58,7 +58,7 @@ public class JsonUnitRepositoryInitializeExceptionTests : IDisposable
     }
 
     [Fact]
-    public void Initialize_WhenLockContention_HandlesGracefully()
+    public async Task Initialize_WhenLockContention_HandlesGracefully()
     {
         // Arrange
         var repository = new JsonUnitRepository(_testUnitsSettingsPath, _mockLogger.Object);
@@ -69,7 +69,7 @@ public class JsonUnitRepositoryInitializeExceptionTests : IDisposable
         {
             tasks.Add(Task.Run(() => repository.Initialize()));
         }
-        Task.WaitAll(tasks.ToArray());
+        await Task.WhenAll(tasks);
         
         // Assert - Should handle concurrent initialization
         Assert.True(true);

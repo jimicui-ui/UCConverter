@@ -11,7 +11,11 @@
     "swap": "交换",
     "baseUnit": "基准单位：",
     "availableUnits": "可用单位：",
-    "language": "语言"
+    "language": "语言",
+    "switchToDark": "切换到深色模式",
+    "switchToLight": "切换到浅色模式",
+    "switchToBlue": "切换到蓝色主题",
+    "switchTheme": "切换主题"
   },
   "unitConverter": {
     "title": "单位转换器",

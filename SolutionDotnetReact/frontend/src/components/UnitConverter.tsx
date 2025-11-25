@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { apiService } from '../services/api';
 import type { CategoryDto, UnitDto, ConvertRequestDto } from '../types/api';
+import { ThemeToggle } from './ThemeToggle';
 import './UnitConverter.css';
 
 export function UnitConverter() {
@@ -156,17 +157,20 @@ export function UnitConverter() {
       <div className="converter-header">
         <div className="header-top">
           <h1>{t('unitConverter.title')}</h1>
-          <div className="language-selector">
-            <label htmlFor="language">{t('common.language')}:</label>
-            <select
-              id="language"
-              value={i18n.language}
-              onChange={(e) => changeLanguage(e.target.value)}
-              className="language-select"
-            >
-              <option value="en">English</option>
-              <option value="zh">中文</option>
-            </select>
+          <div className="header-controls">
+            <ThemeToggle />
+            <div className="language-selector">
+              <label htmlFor="language">{t('common.language')}:</label>
+              <select
+                id="language"
+                value={i18n.language}
+                onChange={(e) => changeLanguage(e.target.value)}
+                className="language-select"
+              >
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+              </select>
+            </div>
           </div>
         </div>
         <p className="subtitle">{t('unitConverter.subtitle')}</p>
@@ -266,7 +270,7 @@ export function UnitConverter() {
           </div>
 
           <button
-            className="convert-button"
+            className={`convert-button ${loading ? 'loading' : ''}`}
             onClick={handleConvert}
             disabled={loading || !value || !fromUnit || !toUnit}
           >

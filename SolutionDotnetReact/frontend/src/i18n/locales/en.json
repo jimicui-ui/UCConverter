@@ -11,7 +11,11 @@
     "swap": "Swap",
     "baseUnit": "Base Unit:",
     "availableUnits": "Available Units:",
-    "language": "Language"
+    "language": "Language",
+    "switchToDark": "Switch to dark mode",
+    "switchToLight": "Switch to light mode",
+    "switchToBlue": "Switch to blue theme",
+    "switchTheme": "Switch theme"
   },
   "unitConverter": {
     "title": "Unit Converter",

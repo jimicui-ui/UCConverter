@@ -17,6 +17,12 @@
   box-sizing: border-box;
   /* Prevent layout shifts */
   min-height: 0;
+  transition: opacity var(--transition-base);
+}
+
+.unit-converter.language-changing {
+  opacity: 0.7;
+  pointer-events: none;
 }
 
 .converter-header {
@@ -81,6 +87,18 @@
   outline: none;
   border-color: var(--color-primary);
   box-shadow: var(--shadow-focus);
+}
+
+.language-select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.language-loading {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+  margin-left: var(--spacing-2);
+  font-style: italic;
 }
 
 .subtitle {
@@ -242,6 +260,55 @@
   border-color: var(--color-border-default);
 }
 
+/* Input Validation Styles */
+.form-group input.error {
+  border-color: var(--color-error-border);
+  background-color: var(--color-error-bg);
+}
+
+.form-group input.error:focus {
+  border-color: var(--color-error-border);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+}
+
+.error-inline {
+  color: var(--color-error-text);
+  font-weight: var(--font-weight-semibold);
+}
+
+.error-inline-message {
+  display: block;
+  color: var(--color-error-text);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-1);
+  padding-left: var(--spacing-2);
+}
+
+/* Unit Search Input */
+.unit-search {
+  width: 100%;
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-secondary);
+  margin-bottom: var(--spacing-2);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  box-sizing: border-box;
+}
+
+.unit-search:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-focus);
+}
+
+.unit-search::placeholder {
+  color: var(--color-text-tertiary);
+}
+
 /* Enhanced Unit Selection - Show SI/Base indicators */
 .form-group select option {
   padding: var(--spacing-2);
@@ -368,6 +435,30 @@
   transform: none;
 }
 
+.convert-button.loading {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+/* Conversion Loading Indicator */
+.conversion-loading {
+  text-align: center;
+  padding: var(--spacing-4);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-4);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
 /* Loading State */
 .convert-button:disabled.loading {
   position: relative;
@@ -408,6 +499,44 @@
   animation: fadeInUp var(--transition-slow);
   width: 100%;
   box-sizing: border-box;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-3);
+}
+
+.copy-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-2) var(--spacing-3);
+  color: var(--color-text-inverse);
+  cursor: pointer;
+  font-size: var(--font-size-lg);
+  transition: background-color var(--transition-base), transform var(--transition-base);
+  min-width: 36px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+}
+
+.copy-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.copy-button:active {
+  transform: scale(0.95);
+}
+
+.copy-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
 
 /* Dark theme result display */
@@ -462,6 +591,27 @@
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.category-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-2) 0;
+}
+
+.category-info-label {
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-normal);
+}
+
+.category-info-value {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+  text-align: right;
 }
 
 .category-info p {

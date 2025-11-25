@@ -1,9 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { apiService } from '../services/api';
 import type { CategoryDto, UnitDto, ConvertRequestDto } from '../types/api';
 import { ThemeToggle } from './ThemeToggle';
+import { useDebounce } from '../hooks/useDebounce';
+import { formatResultNumber, validateNumber } from '../utils/numberFormatter';
 import './UnitConverter.css';
+
+const STORAGE_KEY_PREFIX = 'uc_lastUnits_';
+const DEBOUNCE_DELAY = 500; // milliseconds
 
 export function UnitConverter() {
   const { t, i18n, ready } = useTranslation();
@@ -16,6 +21,14 @@ export function UnitConverter() {
   const [result, setResult] = useState<number | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [valueError, setValueError] = useState<string | null>(null);
+  const [languageChanging, setLanguageChanging] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [unitSearchFrom, setUnitSearchFrom] = useState<string>('');
+  const [unitSearchTo, setUnitSearchTo] = useState<string>('');
+
+  // Debounced value for real-time conversion
+  const debouncedValue = useDebounce(value, DEBOUNCE_DELAY);
 
   // Helper to safely get translation
   const safeT = (key: string, fallback?: string) => {
@@ -26,22 +39,29 @@ export function UnitConverter() {
     }
   };
 
+  // Get locale string for number formatting
+  const locale = i18n.language === 'zh' ? 'zh-CN' : 'en-US';
+
+  // Enhanced language switching with smooth transitions
   const changeLanguage = (lng: string) => {
     try {
+      setLanguageChanging(true);
       i18n.changeLanguage(lng);
       if (typeof window !== 'undefined' && window.localStorage) {
         localStorage.setItem('language', lng);
       }
       // Reload categories to get localized names
       loadCategories().catch(err => console.error('Error reloading categories:', err));
+      // Reset language changing state after a short delay
+      setTimeout(() => setLanguageChanging(false), 300);
     } catch (err) {
       console.error('Error changing language:', err);
+      setLanguageChanging(false);
     }
   };
 
   // Load categories on mount
   useEffect(() => {
-    // Use a small delay to ensure i18n is ready
     const timer = setTimeout(() => {
       loadCategories().catch(err => {
         console.error('Error loading categories:', err);
@@ -66,6 +86,46 @@ export function UnitConverter() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCategory, i18n.language]);
+
+  // Load last used units from localStorage when category changes
+  useEffect(() => {
+    if (selectedCategory && units.length > 0) {
+      const storageKey = `${STORAGE_KEY_PREFIX}${selectedCategory}`;
+      const saved = localStorage.getItem(storageKey);
+      if (saved) {
+        try {
+          const { from, to } = JSON.parse(saved);
+          // Verify units still exist
+          if (units.some(u => u.symbol === from) && units.some(u => u.symbol === to)) {
+            setFromUnit(from);
+            setToUnit(to);
+            return;
+          }
+        } catch (e) {
+          console.error('Error loading saved units:', e);
+        }
+      }
+      // Default: first and second unit
+      if (units.length > 0) {
+        setFromUnit(units[0].symbol);
+        if (units.length > 1) {
+          setToUnit(units[1].symbol);
+        } else {
+          setToUnit(units[0].symbol);
+        }
+      }
+    }
+  }, [selectedCategory, units]);
+
+  // Save last used units to localStorage
+  const saveLastUsedUnits = (category: string, from: string, to: string) => {
+    try {
+      const storageKey = `${STORAGE_KEY_PREFIX}${category}`;
+      localStorage.setItem(storageKey, JSON.stringify({ from, to }));
+    } catch (e) {
+      console.error('Error saving units:', e);
+    }
+  };
 
   const loadCategories = async () => {
     try {
@@ -92,14 +152,6 @@ export function UnitConverter() {
       setError(null);
       const data = await apiService.getUnitsByCategory(categoryName, i18n.language);
       setUnits(data);
-      if (data.length > 0) {
-        setFromUnit(data[0].symbol);
-        if (data.length > 1) {
-          setToUnit(data[1].symbol);
-        } else {
-          setToUnit(data[0].symbol);
-        }
-      }
     } catch (err: unknown) {
       const errorMsg = ready ? t('errors.failedToLoadUnits') : 'Failed to load units';
       setError(errorMsg);
@@ -107,32 +159,44 @@ export function UnitConverter() {
     }
   };
 
-  const handleConvert = async () => {
-    if (!selectedCategory || !fromUnit || !toUnit || !value) {
-      setError(t('errors.fillAllFields'));
+  // Real-time conversion function
+  const performConversion = async (val: string, from: string, to: string, category: string) => {
+    // Validate input
+    const validation = validateNumber(val);
+    if (!validation.isValid) {
+      if (validation.error === 'empty') {
+        setValueError(null);
+        setResult(null);
+        return;
+      }
+      setValueError(safeT('errors.invalidNumber', 'Invalid number'));
+      setResult(null);
       return;
     }
 
-    const numValue = parseFloat(value);
-    if (isNaN(numValue)) {
-      setError(t('errors.invalidNumber'));
+    if (!category || !from || !to || !validation.number) {
+      setValueError(null);
+      setResult(null);
       return;
     }
 
+    setValueError(null);
     setLoading(true);
     setError(null);
 
     try {
       const request: ConvertRequestDto = {
-        value: numValue,
-        fromUnit,
-        toUnit,
-        category: selectedCategory,
+        value: validation.number,
+        fromUnit: from,
+        toUnit: to,
+        category: category,
         locale: i18n.language,
       };
 
       const response = await apiService.convert(request);
       setResult(response.result);
+      // Save last used units
+      saveLastUsedUnits(category, from, to);
     } catch (err: unknown) {
       const errorMsg = ready ? t('errors.conversionFailed') : 'Conversion failed';
       setError(errorMsg);
@@ -143,17 +207,121 @@ export function UnitConverter() {
     }
   };
 
+  // Real-time conversion effect - triggers on debounced value or unit changes
+  useEffect(() => {
+    if (selectedCategory && fromUnit && toUnit && debouncedValue) {
+      performConversion(debouncedValue, fromUnit, toUnit, selectedCategory);
+    } else {
+      setResult(null);
+      setLoading(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedValue, fromUnit, toUnit, selectedCategory, i18n.language]);
+
+  // Handle immediate conversion when units change (not debounced)
+  useEffect(() => {
+    if (selectedCategory && fromUnit && toUnit && value) {
+      const validation = validateNumber(value);
+      if (validation.isValid && validation.number !== undefined) {
+        performConversion(value, fromUnit, toUnit, selectedCategory);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fromUnit, toUnit, selectedCategory]);
+
+  // Validate value on change
+  const handleValueChange = (newValue: string) => {
+    setValue(newValue);
+    const validation = validateNumber(newValue);
+    if (newValue && !validation.isValid) {
+      setValueError(safeT('errors.invalidNumber', 'Invalid number'));
+    } else {
+      setValueError(null);
+    }
+  };
+
+  // Manual convert button (fallback)
+  const handleConvert = async () => {
+    if (!selectedCategory || !fromUnit || !toUnit || !value) {
+      setError(safeT('errors.fillAllFields', 'Please fill in all fields'));
+      return;
+    }
+
+    const validation = validateNumber(value);
+    if (!validation.isValid || validation.number === undefined) {
+      setValueError(safeT('errors.invalidNumber', 'Invalid number'));
+      return;
+    }
+
+    await performConversion(value, fromUnit, toUnit, selectedCategory);
+  };
+
   const handleSwap = () => {
     const temp = fromUnit;
     setFromUnit(toUnit);
     setToUnit(temp);
-    setResult(null);
+    // Save swapped units
+    if (selectedCategory) {
+      saveLastUsedUnits(selectedCategory, toUnit, fromUnit);
+    }
   };
 
+  // Copy to clipboard
+  const handleCopyResult = async () => {
+    if (result === null || !value) return;
+
+    const resultText = `${formatResultNumber(parseFloat(value), locale)} ${fromUnit} = ${formatResultNumber(result, locale)} ${toUnit}`;
+    
+    try {
+      await navigator.clipboard.writeText(resultText);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = resultText;
+      textArea.style.position = 'fixed';
+      textArea.style.opacity = '0';
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (e) {
+        console.error('Fallback copy failed:', e);
+      }
+      document.body.removeChild(textArea);
+    }
+  };
+
+  // Filter units based on search
+  const filteredUnitsFrom = useMemo(() => {
+    if (!unitSearchFrom.trim()) return units;
+    const searchLower = unitSearchFrom.toLowerCase();
+    return units.filter(unit => 
+      unit.displayName.toLowerCase().includes(searchLower) ||
+      unit.symbol.toLowerCase().includes(searchLower) ||
+      (unit.name && unit.name.toLowerCase().includes(searchLower))
+    );
+  }, [units, unitSearchFrom]);
+
+  const filteredUnitsTo = useMemo(() => {
+    if (!unitSearchTo.trim()) return units;
+    const searchLower = unitSearchTo.toLowerCase();
+    return units.filter(unit => 
+      unit.displayName.toLowerCase().includes(searchLower) ||
+      unit.symbol.toLowerCase().includes(searchLower) ||
+      (unit.name && unit.name.toLowerCase().includes(searchLower))
+    );
+  }, [units, unitSearchTo]);
+
   const currentCategory = categories.find((c) => c && c.name === selectedCategory);
+  const baseUnit = units.find(u => u && u.isBaseUnit);
 
   return (
-    <div className="unit-converter">
+    <div className={`unit-converter ${languageChanging ? 'language-changing' : ''}`}>
       <div className="converter-header">
         <div className="header-top">
           <h1>{t('unitConverter.title')}</h1>
@@ -166,10 +334,14 @@ export function UnitConverter() {
                 value={i18n.language}
                 onChange={(e) => changeLanguage(e.target.value)}
                 className="language-select"
+                disabled={languageChanging}
               >
                 <option value="en">English</option>
                 <option value="zh">中文</option>
               </select>
+              {languageChanging && (
+                <span className="language-loading">{t('common.loading')}</span>
+              )}
             </div>
           </div>
         </div>
@@ -187,6 +359,10 @@ export function UnitConverter() {
             onChange={(e) => {
               setSelectedCategory(e.target.value);
               setResult(null);
+              setValue('');
+              setValueError(null);
+              setUnitSearchFrom('');
+              setUnitSearchTo('');
             }}
           >
             {categories.map((category) => (
@@ -202,22 +378,37 @@ export function UnitConverter() {
         <div className="conversion-row">
           <div className="form-group">
             <label htmlFor="fromUnit">{t('common.from')}</label>
+            {units.length > 5 && (
+              <input
+                type="text"
+                className="unit-search"
+                placeholder={t('common.searchUnits')}
+                value={unitSearchFrom}
+                onChange={(e) => setUnitSearchFrom(e.target.value)}
+              />
+            )}
             <select
               id="fromUnit"
               value={fromUnit}
               onChange={(e) => {
                 setFromUnit(e.target.value);
-                setResult(null);
+                if (selectedCategory) {
+                  saveLastUsedUnits(selectedCategory, e.target.value, toUnit);
+                }
               }}
               disabled={!selectedCategory || units.length === 0}
             >
-              {units.map((unit) => (
-                <option key={unit.symbol} value={unit.symbol}>
-                  {unit.displayName} ({unit.symbol})
-                  {unit.isSIUnit && ` [${t('units.si')}]`}
-                  {unit.isBaseUnit && ` [${t('units.base')}]`}
-                </option>
-              ))}
+              {filteredUnitsFrom.length > 0 ? (
+                filteredUnitsFrom.map((unit) => (
+                  <option key={unit.symbol} value={unit.symbol}>
+                    {unit.displayName} ({unit.symbol})
+                    {unit.isSIUnit && ` [${t('units.si')}]`}
+                    {unit.isBaseUnit && ` [${t('units.base')}]`}
+                  </option>
+                ))
+              ) : (
+                <option value="">{t('common.noUnitsFound')}</option>
+              )}
             </select>
           </div>
 
@@ -233,81 +424,119 @@ export function UnitConverter() {
 
           <div className="form-group">
             <label htmlFor="toUnit">{t('common.to')}</label>
+            {units.length > 5 && (
+              <input
+                type="text"
+                className="unit-search"
+                placeholder={t('common.searchUnits')}
+                value={unitSearchTo}
+                onChange={(e) => setUnitSearchTo(e.target.value)}
+              />
+            )}
             <select
               id="toUnit"
               value={toUnit}
               onChange={(e) => {
                 setToUnit(e.target.value);
-                setResult(null);
+                if (selectedCategory) {
+                  saveLastUsedUnits(selectedCategory, fromUnit, e.target.value);
+                }
               }}
               disabled={!selectedCategory || units.length === 0}
             >
-              {units.map((unit) => (
-                <option key={unit.symbol} value={unit.symbol}>
-                  {unit.displayName} ({unit.symbol})
-                  {unit.isSIUnit && ` [${t('units.si')}]`}
-                  {unit.isBaseUnit && ` [${t('units.base')}]`}
-                </option>
-              ))}
+              {filteredUnitsTo.length > 0 ? (
+                filteredUnitsTo.map((unit) => (
+                  <option key={unit.symbol} value={unit.symbol}>
+                    {unit.displayName} ({unit.symbol})
+                    {unit.isSIUnit && ` [${t('units.si')}]`}
+                    {unit.isBaseUnit && ` [${t('units.base')}]`}
+                  </option>
+                ))
+              ) : (
+                <option value="">{t('common.noUnitsFound')}</option>
+              )}
             </select>
           </div>
         </div>
 
         <div className="value-row">
           <div className="form-group">
-            <label htmlFor="value">{t('common.value')}</label>
+            <label htmlFor="value">
+              {t('common.value')}
+              {valueError && <span className="error-inline"> *</span>}
+            </label>
             <input
               id="value"
               type="number"
               value={value}
-              onChange={(e) => {
-                setValue(e.target.value);
-                setResult(null);
-              }}
+              onChange={(e) => handleValueChange(e.target.value)}
               placeholder={t('common.enterValue')}
               step="any"
+              className={valueError ? 'error' : ''}
+              aria-invalid={!!valueError}
+              aria-describedby={valueError ? 'value-error' : undefined}
             />
+            {valueError && (
+              <span id="value-error" className="error-inline-message" role="alert">
+                {valueError}
+              </span>
+            )}
           </div>
 
           <button
             className={`convert-button ${loading ? 'loading' : ''}`}
             onClick={handleConvert}
             disabled={loading || !value || !fromUnit || !toUnit}
+            title={t('common.convert')}
           >
             {loading ? t('common.converting') : t('common.convert')}
           </button>
         </div>
 
-        {result !== null && (
+        {loading && (
+          <div className="conversion-loading">
+            <span>{t('common.converting')}</span>
+          </div>
+        )}
+
+        {result !== null && !loading && (
           <div className="result">
-            <div className="result-label">{t('common.result')}</div>
+            <div className="result-header">
+              <div className="result-label">{t('common.result')}</div>
+              <button
+                className="copy-button"
+                onClick={handleCopyResult}
+                title={copied ? t('common.copied') : t('common.copy')}
+                aria-label={copied ? t('common.copied') : t('common.copy')}
+              >
+                {copied ? '✓' : '📋'}
+              </button>
+            </div>
             <div className="result-value">
-              {parseFloat(value).toLocaleString()} {fromUnit} ={' '}
-              <strong>{result.toLocaleString(undefined, { maximumFractionDigits: 10 })}</strong>{' '}
-              {toUnit}
+              {formatResultNumber(parseFloat(value), locale)} {fromUnit} ={' '}
+              <strong>{formatResultNumber(result, locale)}</strong> {toUnit}
             </div>
           </div>
         )}
 
         {currentCategory && (
           <div className="category-info">
-            <p>
-              <strong>{t('common.availableUnits')}</strong> {units.length}
-            </p>
-            {(() => {
-              const baseUnit = units.find(u => u && u.isBaseUnit);
-              return baseUnit ? (
-                <p>
-                  <strong>{t('common.baseUnit')}</strong> {baseUnit.displayName || baseUnit.name} (
-                  {baseUnit.symbol})
+            <div className="category-info-item">
+              <span className="category-info-label">{t('common.availableUnits')}</span>
+              <span className="category-info-value">{units.length}</span>
+            </div>
+            {baseUnit && (
+              <div className="category-info-item">
+                <span className="category-info-label">{t('common.baseUnit')}</span>
+                <span className="category-info-value">
+                  {baseUnit.displayName || baseUnit.name} ({baseUnit.symbol})
                   {baseUnit.isSIUnit && ` [${t('units.si')}]`}
-                </p>
-              ) : null;
-            })()}
+                </span>
+              </div>
+            )}
           </div>
         )}
       </div>
     </div>
   );
 }
-

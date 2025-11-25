@@ -15,7 +15,12 @@
     "switchToDark": "切换到深色模式",
     "switchToLight": "切换到浅色模式",
     "switchToBlue": "切换到蓝色主题",
-    "switchTheme": "切换主题"
+    "switchTheme": "切换主题",
+    "copy": "复制",
+    "copied": "已复制！",
+    "searchUnits": "搜索单位...",
+    "noUnitsFound": "未找到单位",
+    "loading": "加载中..."
   },
   "unitConverter": {
     "title": "单位转换器",
@@ -26,7 +31,10 @@
     "invalidNumber": "请输入有效数字",
     "failedToLoadCategories": "加载类别失败",
     "failedToLoadUnits": "加载单位失败",
-    "conversionFailed": "转换失败"
+    "conversionFailed": "转换失败",
+    "emptyValue": "请输入数值",
+    "invalidNumberFormat": "无效的数字格式",
+    "valueRequired": "需要输入数值"
   },
   "units": {
     "si": "SI",

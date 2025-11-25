@@ -15,7 +15,12 @@
     "switchToDark": "Switch to dark mode",
     "switchToLight": "Switch to light mode",
     "switchToBlue": "Switch to blue theme",
-    "switchTheme": "Switch theme"
+    "switchTheme": "Switch theme",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "searchUnits": "Search units...",
+    "noUnitsFound": "No units found",
+    "loading": "Loading..."
   },
   "unitConverter": {
     "title": "Unit Converter",
@@ -26,7 +31,10 @@
     "invalidNumber": "Please enter a valid number",
     "failedToLoadCategories": "Failed to load categories",
     "failedToLoadUnits": "Failed to load units",
-    "conversionFailed": "Conversion failed"
+    "conversionFailed": "Conversion failed",
+    "emptyValue": "Please enter a value",
+    "invalidNumberFormat": "Invalid number format",
+    "valueRequired": "Value is required"
   },
   "units": {
     "si": "SI",

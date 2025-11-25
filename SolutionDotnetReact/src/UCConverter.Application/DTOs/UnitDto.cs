@@ -17,7 +17,8 @@ namespace UCConverter.Application.DTOs;
 public class UnitDto
 {
     /// <summary>
-    /// The unit symbol used in conversions (e.g., "m" for meter, "kg" for kilogram, "°C" for Celsius)
+    /// The unit symbol used in conversions (e.g., "m" for meter, "kg" for kilogram, "°C" for Celsius).
+    /// This is the identifier used in conversion requests. Must match exactly (case-sensitive).
     /// </summary>
     /// <example>m</example>
     public string Symbol { get; set; } = string.Empty;
@@ -53,7 +54,9 @@ public class UnitDto
     public string UnitSystem { get; set; } = string.Empty;
 
     /// <summary>
-    /// The conversion factor to convert this unit to the base unit. Null for formula-based conversions (e.g., temperature).
+    /// The conversion factor to convert this unit to the base unit.
+    /// For linear conversions: multiply value by this factor to get base unit value.
+    /// Null for formula-based conversions (e.g., temperature) which use conversion formulas instead.
     /// </summary>
     /// <example>1.0</example>
     public double? ConversionFactor { get; set; }

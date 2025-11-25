@@ -28,19 +28,22 @@ namespace UCConverter.Application.DTOs;
 public class ConvertResponseDto
 {
     /// <summary>
-    /// The conversion result as a numeric value
+    /// The conversion result as a numeric value (double precision).
+    /// This is the exact calculated result before formatting.
     /// </summary>
     /// <example>34.4488188976378</example>
     public double Result { get; set; }
 
     /// <summary>
-    /// The formatted result string with appropriate precision
+    /// The formatted result string with appropriate precision for display.
+    /// This value is rounded based on the Precision property and is suitable for user display.
     /// </summary>
     /// <example>34.45</example>
     public string FormattedResult { get; set; } = string.Empty;
 
     /// <summary>
-    /// The number of decimal places used in the formatted result
+    /// The number of decimal places used in the formatted result.
+    /// Typically 2-10 decimal places depending on the conversion type and result magnitude.
     /// </summary>
     /// <example>2</example>
     public int Precision { get; set; }

@@ -20,7 +20,17 @@
     "copied": "Copied!",
     "searchUnits": "Search units...",
     "noUnitsFound": "No units found",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "headerControls": "Header controls",
+    "selectLanguage": "Select language",
+    "selectCategory": "Select category",
+    "selectFromUnit": "Select from unit",
+    "selectToUnit": "Select to unit",
+    "searchFromUnits": "Search from units",
+    "searchToUnits": "Search to units",
+    "swapUnits": "Swap units",
+    "copyResult": "Copy result",
+    "categoryInformation": "Category information"
   },
   "unitConverter": {
     "title": "Unit Converter",

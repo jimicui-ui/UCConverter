@@ -20,7 +20,17 @@
     "copied": "已复制！",
     "searchUnits": "搜索单位...",
     "noUnitsFound": "未找到单位",
-    "loading": "加载中..."
+    "loading": "加载中...",
+    "headerControls": "标题控件",
+    "selectLanguage": "选择语言",
+    "selectCategory": "选择类别",
+    "selectFromUnit": "选择源单位",
+    "selectToUnit": "选择目标单位",
+    "searchFromUnits": "搜索源单位",
+    "searchToUnits": "搜索目标单位",
+    "swapUnits": "交换单位",
+    "copyResult": "复制结果",
+    "categoryInformation": "类别信息"
   },
   "unitConverter": {
     "title": "单位转换器",

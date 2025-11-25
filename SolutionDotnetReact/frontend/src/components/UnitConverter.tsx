@@ -322,10 +322,11 @@ export function UnitConverter() {
 
   return (
     <div className={`unit-converter ${languageChanging ? 'language-changing' : ''}`}>
-      <div className="converter-header">
+      <a href="#main-content" className="skip-link">Skip to main content</a>
+      <header className="converter-header" role="banner">
         <div className="header-top">
           <h1>{t('unitConverter.title')}</h1>
-          <div className="header-controls">
+          <div className="header-controls" role="toolbar" aria-label={t('common.headerControls') || 'Header controls'}>
             <ThemeToggle />
             <div className="language-selector">
               <label htmlFor="language">{t('common.language')}:</label>
@@ -335,22 +336,30 @@ export function UnitConverter() {
                 onChange={(e) => changeLanguage(e.target.value)}
                 className="language-select"
                 disabled={languageChanging}
+                aria-label={t('common.selectLanguage') || 'Select language'}
+                aria-busy={languageChanging}
               >
                 <option value="en">English</option>
                 <option value="zh">中文</option>
               </select>
               {languageChanging && (
-                <span className="language-loading">{t('common.loading')}</span>
+                <span className="language-loading" aria-live="polite" aria-atomic="true">
+                  {t('common.loading')}
+                </span>
               )}
             </div>
           </div>
         </div>
         <p className="subtitle">{t('unitConverter.subtitle')}</p>
-      </div>
+      </header>
 
-      {error && <div className="error-message">{error}</div>}
+      {error && (
+        <div className="error-message" role="alert" aria-live="assertive" aria-atomic="true">
+          {error}
+        </div>
+      )}
 
-      <div className="converter-form">
+      <main id="main-content" className="converter-form" role="main" aria-label={t('unitConverter.title') || 'Unit converter'}>
         <div className="form-group">
           <label htmlFor="category">{t('common.category')}</label>
           <select
@@ -364,6 +373,8 @@ export function UnitConverter() {
               setUnitSearchFrom('');
               setUnitSearchTo('');
             }}
+            aria-label={t('common.selectCategory') || 'Select category'}
+            aria-required="true"
           >
             {categories.map((category) => (
               category && (
@@ -385,6 +396,8 @@ export function UnitConverter() {
                 placeholder={t('common.searchUnits')}
                 value={unitSearchFrom}
                 onChange={(e) => setUnitSearchFrom(e.target.value)}
+                aria-label={t('common.searchFromUnits') || 'Search from units'}
+                aria-controls="fromUnit"
               />
             )}
             <select
@@ -397,6 +410,9 @@ export function UnitConverter() {
                 }
               }}
               disabled={!selectedCategory || units.length === 0}
+              aria-label={t('common.selectFromUnit') || 'Select from unit'}
+              aria-required="true"
+              aria-describedby={units.length > 5 ? 'fromUnit-search-desc' : undefined}
             >
               {filteredUnitsFrom.length > 0 ? (
                 filteredUnitsFrom.map((unit) => (
@@ -416,10 +432,13 @@ export function UnitConverter() {
             className="swap-button"
             onClick={handleSwap}
             disabled={!fromUnit || !toUnit}
-            aria-label={t('common.swap')}
-            title={t('common.swap')}
+            aria-label={t('common.swapUnits') || t('common.swap')}
+            title={t('common.swapUnits') || t('common.swap')}
+            aria-keyshortcuts="s"
+            type="button"
           >
-            ⇄
+            <span aria-hidden="true">⇄</span>
+            <span className="sr-only">{t('common.swapUnits') || t('common.swap')}</span>
           </button>
 
           <div className="form-group">
@@ -431,6 +450,8 @@ export function UnitConverter() {
                 placeholder={t('common.searchUnits')}
                 value={unitSearchTo}
                 onChange={(e) => setUnitSearchTo(e.target.value)}
+                aria-label={t('common.searchToUnits') || 'Search to units'}
+                aria-controls="toUnit"
               />
             )}
             <select
@@ -443,6 +464,9 @@ export function UnitConverter() {
                 }
               }}
               disabled={!selectedCategory || units.length === 0}
+              aria-label={t('common.selectToUnit') || 'Select to unit'}
+              aria-required="true"
+              aria-describedby={units.length > 5 ? 'toUnit-search-desc' : undefined}
             >
               {filteredUnitsTo.length > 0 ? (
                 filteredUnitsTo.map((unit) => (
@@ -488,42 +512,50 @@ export function UnitConverter() {
             onClick={handleConvert}
             disabled={loading || !value || !fromUnit || !toUnit}
             title={t('common.convert')}
+            aria-label={loading ? t('common.converting') : t('common.convert')}
+            aria-busy={loading}
+            type="button"
           >
             {loading ? t('common.converting') : t('common.convert')}
           </button>
         </div>
 
         {loading && (
-          <div className="conversion-loading">
+          <div className="conversion-loading" role="status" aria-live="polite" aria-atomic="true">
             <span>{t('common.converting')}</span>
           </div>
         )}
 
         {result !== null && !loading && (
-          <div className="result">
+          <section className="result" role="region" aria-label={t('common.result') || 'Conversion result'}>
             <div className="result-header">
               <div className="result-label">{t('common.result')}</div>
               <button
                 className="copy-button"
                 onClick={handleCopyResult}
                 title={copied ? t('common.copied') : t('common.copy')}
-                aria-label={copied ? t('common.copied') : t('common.copy')}
+                aria-label={copied ? t('common.copied') : t('common.copyResult') || t('common.copy')}
+                aria-pressed={copied}
+                type="button"
               >
-                {copied ? '✓' : '📋'}
+                <span aria-hidden="true">{copied ? '✓' : '📋'}</span>
+                <span className="sr-only">{copied ? t('common.copied') : t('common.copy')}</span>
               </button>
             </div>
-            <div className="result-value">
+            <div className="result-value" aria-live="polite" aria-atomic="true">
               {formatResultNumber(parseFloat(value), locale)} {fromUnit} ={' '}
               <strong>{formatResultNumber(result, locale)}</strong> {toUnit}
             </div>
-          </div>
+          </section>
         )}
 
         {currentCategory && (
-          <div className="category-info">
+          <aside className="category-info" aria-label={t('common.categoryInformation') || 'Category information'}>
             <div className="category-info-item">
               <span className="category-info-label">{t('common.availableUnits')}</span>
-              <span className="category-info-value">{units.length}</span>
+              <span className="category-info-value" aria-label={`${units.length} ${t('common.availableUnits')}`}>
+                {units.length}
+              </span>
             </div>
             {baseUnit && (
               <div className="category-info-item">
@@ -534,9 +566,9 @@ export function UnitConverter() {
                 </span>
               </div>
             )}
-          </div>
+          </aside>
         )}
-      </div>
+      </main>
     </div>
   );
 }

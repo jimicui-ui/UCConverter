@@ -9,6 +9,39 @@
    Ultra-wide: ≥ 2560px
 */
 
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  padding: var(--spacing-2) var(--spacing-4);
+  text-decoration: none;
+  z-index: 10000;
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .unit-converter {
   max-width: 800px;
   margin: 0 auto;
@@ -17,7 +50,13 @@
   box-sizing: border-box;
   /* Prevent layout shifts */
   min-height: 0;
-  transition: opacity var(--transition-base);
+  position: relative;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .unit-converter {
+    transition: opacity var(--transition-base);
+  }
 }
 
 .unit-converter.language-changing {
@@ -245,6 +284,23 @@
   box-shadow: var(--shadow-focus);
 }
 
+/* Enhanced focus indicators for accessibility */
+.form-group select:focus-visible,
+.form-group input:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-color: var(--color-primary);
+}
+
+/* Ensure focus is visible even in high contrast mode */
+@media (prefers-contrast: high) {
+  .form-group select:focus-visible,
+  .form-group input:focus-visible {
+    outline: 3px solid;
+    outline-offset: 3px;
+  }
+}
+
 /* Blue theme input focus - more prominent */
 [data-theme="blue"] .form-group select:focus,
 [data-theme="blue"] .form-group input:focus {
@@ -379,6 +435,12 @@
   box-shadow: var(--shadow-focus);
 }
 
+.swap-button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  box-shadow: var(--shadow-focus);
+}
+
 .swap-button:disabled {
   background-color: var(--color-neutral-400);
   cursor: not-allowed;
@@ -429,6 +491,12 @@
   box-shadow: var(--shadow-focus);
 }
 
+.convert-button:focus-visible {
+  outline: 3px solid var(--color-success);
+  outline-offset: 2px;
+  box-shadow: var(--shadow-focus);
+}
+
 .convert-button:disabled {
   background-color: var(--color-neutral-400);
   cursor: not-allowed;
@@ -456,6 +524,20 @@
   }
   50% {
     opacity: 0.5;
+  }
+}
+
+/* Respect prefers-reduced-motion for animations */
+@media (prefers-reduced-motion: reduce) {
+  .result,
+  .error-message,
+  .success-message,
+  .conversion-loading {
+    animation: none !important;
+  }
+  
+  .conversion-loading {
+    opacity: 1;
   }
 }
 
@@ -536,6 +618,12 @@
 
 .copy-button:focus {
   outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.copy-button:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
 

@@ -17,17 +17,32 @@
 }
 
 /* Smooth theme transitions for key elements */
-body,
-.app,
-.converter-form,
-.form-group select,
-.form-group input,
-.result,
-.error-message,
-.success-message {
-  transition: background-color var(--transition-base), 
-              color var(--transition-base),
-              border-color var(--transition-base);
+/* Respect prefers-reduced-motion preference */
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  .app,
+  .converter-form,
+  .form-group select,
+  .form-group input,
+  .result,
+  .error-message,
+  .success-message {
+    transition: background-color var(--transition-base), 
+                color var(--transition-base),
+                border-color var(--transition-base);
+  }
+}
+
+/* Disable transitions for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Prevent layout shifts during responsive changes */
@@ -70,6 +85,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   width: 100%;
+  /* Respect browser font size preferences */
+  font-size: 100%;
+}
+
+/* Ensure font size respects browser zoom and user preferences */
+html {
+  font-size: 100%;
+}
+
+/* Allow users to zoom text up to 200% without horizontal scrolling */
+@media (max-width: 767px) {
+  body {
+    font-size: clamp(14px, 4vw, 16px);
+  }
 }
 
 /* Responsive typography base */

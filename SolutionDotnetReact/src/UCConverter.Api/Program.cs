@@ -62,12 +62,7 @@ See the examples section for each endpoint to see real-world usage scenarios.",
         Contact = new Microsoft.OpenApi.Models.OpenApiContact
         {
             Name = "Unit Converter Project",
-            Url = new Uri("https://github.com/yourusername/unit-converter")
-        },
-        License = new Microsoft.OpenApi.Models.OpenApiLicense
-        {
-            Name = "MIT License",
-            Url = new Uri("https://opensource.org/licenses/MIT")
+            Url = new Uri("https://github.com/jimicui-ui/UCConverter")
         }
     });
 

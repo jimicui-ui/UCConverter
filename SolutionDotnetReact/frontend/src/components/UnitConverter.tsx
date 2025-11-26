@@ -174,7 +174,7 @@ export function UnitConverter() {
       return;
     }
 
-    if (!category || !from || !to || !validation.number) {
+    if (!category || !from || !to || validation.number === undefined) {
       setValueError(null);
       setResult(null);
       return;

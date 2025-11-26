@@ -1,0 +1,64 @@
+{
+  "category": "fuelEfficiencyMass",
+  "categoryDisplayName": "Fuel Efficiency - Mass",
+  "group": "Heat",
+  "baseUnit": {
+    "symbol": "m/kg",
+    "name": "meter per kilogram",
+    "displayName": "Meter per Kilogram",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "m/kg",
+      "name": "meter per kilogram",
+      "displayName": "Meter per Kilogram",
+      "category": "fuelEfficiencyMass",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "km/kg",
+      "name": "kilometer per kilogram",
+      "displayName": "Kilometer per Kilogram",
+      "category": "fuelEfficiencyMass",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "mi/lb",
+      "name": "mile per pound",
+      "displayName": "Mile per Pound",
+      "category": "fuelEfficiencyMass",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 3218.69,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "ft/lb",
+      "name": "foot per pound",
+      "displayName": "Foot per Pound",
+      "category": "fuelEfficiencyMass",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.671969,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

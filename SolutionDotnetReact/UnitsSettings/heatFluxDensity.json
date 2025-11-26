@@ -1,0 +1,64 @@
+{
+  "category": "heatFluxDensity",
+  "categoryDisplayName": "Heat Flux Density",
+  "group": "Heat",
+  "baseUnit": {
+    "symbol": "W/m²",
+    "name": "watt per square meter",
+    "displayName": "Watt per Square Meter",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "W/m²",
+      "name": "watt per square meter",
+      "displayName": "Watt per Square Meter",
+      "category": "heatFluxDensity",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kW/m²",
+      "name": "kilowatt per square meter",
+      "displayName": "Kilowatt per Square Meter",
+      "category": "heatFluxDensity",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "BTU/(h·ft²)",
+      "name": "BTU per hour square foot",
+      "displayName": "BTU per Hour Square Foot",
+      "category": "heatFluxDensity",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 3.15459,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "cal/(s·cm²)",
+      "name": "calorie per second square centimeter",
+      "displayName": "Calorie per Second Square Centimeter",
+      "category": "heatFluxDensity",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 41840.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

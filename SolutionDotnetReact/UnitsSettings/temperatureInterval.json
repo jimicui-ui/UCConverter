@@ -1,0 +1,64 @@
+{
+  "category": "temperatureInterval",
+  "categoryDisplayName": "Temperature Interval",
+  "group": "Heat",
+  "baseUnit": {
+    "symbol": "K",
+    "name": "kelvin",
+    "displayName": "Kelvin",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "K",
+      "name": "kelvin",
+      "displayName": "Kelvin",
+      "category": "temperatureInterval",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "°C",
+      "name": "degree Celsius",
+      "displayName": "Degree Celsius",
+      "category": "temperatureInterval",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "°F",
+      "name": "degree Fahrenheit",
+      "displayName": "Degree Fahrenheit",
+      "category": "temperatureInterval",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 0.555556,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "°R",
+      "name": "degree Rankine",
+      "displayName": "Degree Rankine",
+      "category": "temperatureInterval",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 0.555556,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

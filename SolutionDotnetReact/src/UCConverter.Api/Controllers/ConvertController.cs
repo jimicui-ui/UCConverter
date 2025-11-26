@@ -41,6 +41,8 @@ public class ConvertController : ControllerBase
     /// - **Formula-Based Conversions**: Temperature conversions use formulas (e.g., Celsius to Fahrenheit)
     /// 
     /// **Category Examples:**
+    /// 
+    /// **Basic Categories:**
     /// - **Length**: Convert between meters, feet, inches, kilometers, miles, etc.
     /// - **Weight**: Convert between kilograms, pounds, ounces, grams, etc.
     /// - **Temperature**: Convert between Celsius, Fahrenheit, and Kelvin (formula-based)
@@ -48,6 +50,33 @@ public class ConvertController : ControllerBase
     /// - **Area**: Convert between square meters, square feet, acres, etc.
     /// - **Time**: Convert between seconds, minutes, hours, days, etc.
     /// - **Speed**: Convert between meters per second, miles per hour, kilometers per hour, etc.
+    /// 
+    /// **Pressure &amp; Energy:**
+    /// - **Pressure**: Convert between pascal, bar, psi, atmosphere, torr, etc.
+    /// - **Energy**: Convert between joule, calorie, kilowatt-hour, BTU, etc.
+    /// - **Power**: Convert between watt, horsepower, BTU/hour, etc.
+    /// 
+    /// **Electricity:**
+    /// - **Charge**: Convert between coulomb, ampere-hour, etc.
+    /// - **Current**: Convert between ampere, milliampere, etc.
+    /// - **Electric Potential**: Convert between volt, kilovolt, etc.
+    /// - **Electric Resistance**: Convert between ohm, kiloohm, etc.
+    /// - **Capacitance**: Convert between farad, microfarad, etc.
+    /// - **Inductance**: Convert between henry, millihenry, etc.
+    /// - And more electricity-related converters...
+    /// 
+    /// **Engineering:**
+    /// - **Angular Velocity**: Convert between radian per second, rpm, etc.
+    /// - **Acceleration**: Convert between meter per second squared, g, etc.
+    /// - **Density**: Convert between kilogram per cubic meter, pound per cubic foot, etc.
+    /// - **Torque**: Convert between newton meter, pound-force foot, etc.
+    /// - And more engineering converters...
+    /// 
+    /// **Heat:**
+    /// - **Thermal Conductivity**: Convert between watt per meter kelvin, BTU per hour foot degree Fahrenheit, etc.
+    /// - **Specific Heat Capacity**: Convert between joule per kilogram kelvin, BTU per pound degree Fahrenheit, etc.
+    /// - **Fuel Efficiency**: Convert between kilometer per liter, mpg, L/100km, etc.
+    /// - And more heat-related converters...
     /// 
     /// **Example Requests:**
     /// 

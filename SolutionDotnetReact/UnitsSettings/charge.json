@@ -1,0 +1,88 @@
+{
+  "category": "charge",
+  "categoryDisplayName": "Charge",
+  "group": "Electricity",
+  "baseUnit": {
+    "symbol": "C",
+    "name": "coulomb",
+    "displayName": "Coulomb",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "C",
+      "name": "coulomb",
+      "displayName": "Coulomb",
+      "category": "charge",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "mC",
+      "name": "millicoulomb",
+      "displayName": "Millicoulomb",
+      "category": "charge",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "µC",
+      "name": "microcoulomb",
+      "displayName": "Microcoulomb",
+      "category": "charge",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "nC",
+      "name": "nanocoulomb",
+      "displayName": "Nanocoulomb",
+      "category": "charge",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000000001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "A·h",
+      "name": "ampere-hour",
+      "displayName": "Ampere-hour",
+      "category": "charge",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Other",
+      "conversionFactor": 3600.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "mA·h",
+      "name": "milliampere-hour",
+      "displayName": "Milliampere-hour",
+      "category": "charge",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Other",
+      "conversionFactor": 3.6,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

@@ -1,0 +1,64 @@
+{
+  "category": "thermalResistance",
+  "categoryDisplayName": "Thermal Resistance",
+  "group": "Heat",
+  "baseUnit": {
+    "symbol": "K/W",
+    "name": "kelvin per watt",
+    "displayName": "Kelvin per Watt",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "K/W",
+      "name": "kelvin per watt",
+      "displayName": "Kelvin per Watt",
+      "category": "thermalResistance",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "°C/W",
+      "name": "degree Celsius per watt",
+      "displayName": "Degree Celsius per Watt",
+      "category": "thermalResistance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "m²·K/W",
+      "name": "square meter kelvin per watt",
+      "displayName": "Square Meter Kelvin per Watt",
+      "category": "thermalResistance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "h·ft²·°F/BTU",
+      "name": "hour square foot degree Fahrenheit per BTU",
+      "displayName": "Hour Square Foot Degree Fahrenheit per BTU",
+      "category": "thermalResistance",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.17611,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

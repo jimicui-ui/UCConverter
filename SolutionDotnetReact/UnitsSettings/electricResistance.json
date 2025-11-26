@@ -1,0 +1,88 @@
+{
+  "category": "electricResistance",
+  "categoryDisplayName": "Electric Resistance",
+  "group": "Electricity",
+  "baseUnit": {
+    "symbol": "Ω",
+    "name": "ohm",
+    "displayName": "Ohm",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "Ω",
+      "name": "ohm",
+      "displayName": "Ohm",
+      "category": "electricResistance",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "mΩ",
+      "name": "milliohm",
+      "displayName": "Milliohm",
+      "category": "electricResistance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "µΩ",
+      "name": "microohm",
+      "displayName": "Microohm",
+      "category": "electricResistance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kΩ",
+      "name": "kiloohm",
+      "displayName": "Kiloohm",
+      "category": "electricResistance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "MΩ",
+      "name": "megaohm",
+      "displayName": "Megaohm",
+      "category": "electricResistance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "GΩ",
+      "name": "gigaohm",
+      "displayName": "Gigaohm",
+      "category": "electricResistance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000000000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

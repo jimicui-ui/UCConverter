@@ -1,0 +1,64 @@
+{
+  "category": "inductance",
+  "categoryDisplayName": "Inductance",
+  "group": "Electricity",
+  "baseUnit": {
+    "symbol": "H",
+    "name": "henry",
+    "displayName": "Henry",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "H",
+      "name": "henry",
+      "displayName": "Henry",
+      "category": "inductance",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "mH",
+      "name": "millihenry",
+      "displayName": "Millihenry",
+      "category": "inductance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "µH",
+      "name": "microhenry",
+      "displayName": "Microhenry",
+      "category": "inductance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "nH",
+      "name": "nanohenry",
+      "displayName": "Nanohenry",
+      "category": "inductance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000000001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

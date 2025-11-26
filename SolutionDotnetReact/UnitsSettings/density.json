@@ -1,0 +1,100 @@
+{
+  "category": "density",
+  "categoryDisplayName": "Density",
+  "group": "Engineering",
+  "baseUnit": {
+    "symbol": "kg/m³",
+    "name": "kilogram per cubic meter",
+    "displayName": "Kilogram per Cubic Meter",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "kg/m³",
+      "name": "kilogram per cubic meter",
+      "displayName": "Kilogram per Cubic Meter",
+      "category": "density",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "g/cm³",
+      "name": "gram per cubic centimeter",
+      "displayName": "Gram per Cubic Centimeter",
+      "category": "density",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "g/L",
+      "name": "gram per liter",
+      "displayName": "Gram per Liter",
+      "category": "density",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kg/L",
+      "name": "kilogram per liter",
+      "displayName": "Kilogram per Liter",
+      "category": "density",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "lb/ft³",
+      "name": "pound per cubic foot",
+      "displayName": "Pound per Cubic Foot",
+      "category": "density",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 16.0185,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "lb/in³",
+      "name": "pound per cubic inch",
+      "displayName": "Pound per Cubic Inch",
+      "category": "density",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 27679.9,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "oz/in³",
+      "name": "ounce per cubic inch",
+      "displayName": "Ounce per Cubic Inch",
+      "category": "density",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 1729.99,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

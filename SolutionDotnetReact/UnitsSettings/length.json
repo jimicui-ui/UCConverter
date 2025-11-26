@@ -1,6 +1,7 @@
 {
   "category": "length",
   "categoryDisplayName": "Length / Distance",
+  "group": "Common",
   "baseUnit": {
     "symbol": "m",
     "name": "meter",

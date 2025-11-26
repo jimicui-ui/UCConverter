@@ -1,6 +1,7 @@
 {
   "category": "time",
   "categoryDisplayName": "Time",
+  "group": "Common",
   "baseUnit": {
     "symbol": "s",
     "name": "second",

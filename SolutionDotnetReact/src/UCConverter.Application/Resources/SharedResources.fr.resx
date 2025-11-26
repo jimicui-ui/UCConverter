@@ -79,6 +79,114 @@
   <data name="Category_speed" xml:space="preserve">
     <value>Vitesse</value>
   </data>
+  <data name="Category_pressure" xml:space="preserve">
+    <value>Pression</value>
+  </data>
+  <data name="Category_energy" xml:space="preserve">
+    <value>Énergie</value>
+  </data>
+  <data name="Category_power" xml:space="preserve">
+    <value>Puissance</value>
+  </data>
+  <data name="Category_charge" xml:space="preserve">
+    <value>Charge</value>
+  </data>
+  <data name="Category_linearChargeDensity" xml:space="preserve">
+    <value>Densité de Charge Linéaire</value>
+  </data>
+  <data name="Category_surfaceChargeDensity" xml:space="preserve">
+    <value>Densité de Charge de Surface</value>
+  </data>
+  <data name="Category_volumeChargeDensity" xml:space="preserve">
+    <value>Densité de Charge Volumique</value>
+  </data>
+  <data name="Category_current" xml:space="preserve">
+    <value>Courant</value>
+  </data>
+  <data name="Category_linearCurrentDensity" xml:space="preserve">
+    <value>Densité de Courant Linéaire</value>
+  </data>
+  <data name="Category_surfaceCurrentDensity" xml:space="preserve">
+    <value>Densité de Courant de Surface</value>
+  </data>
+  <data name="Category_electricFieldStrength" xml:space="preserve">
+    <value>Intensité du Champ Électrique</value>
+  </data>
+  <data name="Category_electricPotential" xml:space="preserve">
+    <value>Potentiel Électrique</value>
+  </data>
+  <data name="Category_electricResistance" xml:space="preserve">
+    <value>Résistance Électrique</value>
+  </data>
+  <data name="Category_electricResistivity" xml:space="preserve">
+    <value>Résistivité Électrique</value>
+  </data>
+  <data name="Category_electricConductance" xml:space="preserve">
+    <value>Conductance Électrique</value>
+  </data>
+  <data name="Category_electricConductivity" xml:space="preserve">
+    <value>Conductivité Électrique</value>
+  </data>
+  <data name="Category_capacitance" xml:space="preserve">
+    <value>Capacitance</value>
+  </data>
+  <data name="Category_inductance" xml:space="preserve">
+    <value>Inductance</value>
+  </data>
+  <data name="Category_angularVelocity" xml:space="preserve">
+    <value>Vitesse Angulaire</value>
+  </data>
+  <data name="Category_acceleration" xml:space="preserve">
+    <value>Accélération</value>
+  </data>
+  <data name="Category_angularAcceleration" xml:space="preserve">
+    <value>Accélération Angulaire</value>
+  </data>
+  <data name="Category_density" xml:space="preserve">
+    <value>Densité</value>
+  </data>
+  <data name="Category_specificVolume" xml:space="preserve">
+    <value>Volume Spécifique</value>
+  </data>
+  <data name="Category_momentOfInertia" xml:space="preserve">
+    <value>Moment d'Inertie</value>
+  </data>
+  <data name="Category_momentOfForce" xml:space="preserve">
+    <value>Moment de Force</value>
+  </data>
+  <data name="Category_torque" xml:space="preserve">
+    <value>Couple</value>
+  </data>
+  <data name="Category_fuelEfficiencyMass" xml:space="preserve">
+    <value>Efficacité du Carburant - Masse</value>
+  </data>
+  <data name="Category_fuelEfficiencyVolume" xml:space="preserve">
+    <value>Efficacité du Carburant - Volume</value>
+  </data>
+  <data name="Category_temperatureInterval" xml:space="preserve">
+    <value>Intervalle de Température</value>
+  </data>
+  <data name="Category_thermalExpansion" xml:space="preserve">
+    <value>Dilatation Thermique</value>
+  </data>
+  <data name="Category_thermalResistance" xml:space="preserve">
+    <value>Résistance Thermique</value>
+  </data>
+  <data name="Category_thermalConductivity" xml:space="preserve">
+    <value>Conductivité Thermique</value>
+  </data>
+  <data name="Category_specificHeatCapacity" xml:space="preserve">
+    <value>Capacité Thermique Massique</value>
+  </data>
+  <data name="Category_heatDensity" xml:space="preserve">
+    <value>Densité de Chaleur</value>
+  </data>
+  <data name="Category_heatFluxDensity" xml:space="preserve">
+    <value>Densité de Flux de Chaleur</value>
+  </data>
+  <data name="Category_heatTransferCoefficient" xml:space="preserve">
+    <value>Coefficient de Transfert de Chaleur</value>
+  </data>
   <data name="Error_CategoryNotFound" xml:space="preserve">
     <value>Catégorie '{0}' introuvable</value>
   </data>
@@ -275,8 +383,519 @@
   <data name="Unit_time_ns" xml:space="preserve">
     <value>Nanoseconde</value>
   </data>
-  <data name="Unit_volume_cup" xml:space="preserve">
-    <value>Tasse</value>
+  <!-- Pressure Units -->
+  <data name="Unit_pressure_Pa" xml:space="preserve">
+    <value>Pascal</value>
+  </data>
+  <data name="Unit_pressure_kPa" xml:space="preserve">
+    <value>Kilopascal</value>
+  </data>
+  <data name="Unit_pressure_MPa" xml:space="preserve">
+    <value>Mégapascal</value>
+  </data>
+  <data name="Unit_pressure_bar" xml:space="preserve">
+    <value>Bar</value>
+  </data>
+  <data name="Unit_pressure_mbar" xml:space="preserve">
+    <value>Millibar</value>
+  </data>
+  <data name="Unit_pressure_psi" xml:space="preserve">
+    <value>Livre par pouce carré</value>
+  </data>
+  <data name="Unit_pressure_psf" xml:space="preserve">
+    <value>Livre par pied carré</value>
+  </data>
+  <data name="Unit_pressure_atm" xml:space="preserve">
+    <value>Atmosphère</value>
+  </data>
+  <data name="Unit_pressure_torr" xml:space="preserve">
+    <value>Torr</value>
+  </data>
+  <data name="Unit_pressure_mmHg" xml:space="preserve">
+    <value>Millimètre de mercure</value>
+  </data>
+  <!-- Energy Units -->
+  <data name="Unit_energy_J" xml:space="preserve">
+    <value>Joule</value>
+  </data>
+  <data name="Unit_energy_kJ" xml:space="preserve">
+    <value>Kilojoule</value>
+  </data>
+  <data name="Unit_energy_MJ" xml:space="preserve">
+    <value>Mégajoule</value>
+  </data>
+  <data name="Unit_energy_GJ" xml:space="preserve">
+    <value>Gigajoule</value>
+  </data>
+  <data name="Unit_energy_cal" xml:space="preserve">
+    <value>Calorie</value>
+  </data>
+  <data name="Unit_energy_kcal" xml:space="preserve">
+    <value>Kilocalorie</value>
+  </data>
+  <data name="Unit_energy_kWh" xml:space="preserve">
+    <value>Kilowattheure</value>
+  </data>
+  <data name="Unit_energy_Wh" xml:space="preserve">
+    <value>Wattheure</value>
+  </data>
+  <data name="Unit_energy_BTU" xml:space="preserve">
+    <value>Unité thermique britannique</value>
+  </data>
+  <data name="Unit_energy_ft·lb" xml:space="preserve">
+    <value>Pied-livre</value>
+  </data>
+  <!-- Power Units -->
+  <data name="Unit_power_W" xml:space="preserve">
+    <value>Watt</value>
+  </data>
+  <data name="Unit_power_kW" xml:space="preserve">
+    <value>Kilowatt</value>
+  </data>
+  <data name="Unit_power_MW" xml:space="preserve">
+    <value>Mégawatt</value>
+  </data>
+  <data name="Unit_power_GW" xml:space="preserve">
+    <value>Gigawatt</value>
+  </data>
+  <data name="Unit_power_hp" xml:space="preserve">
+    <value>Cheval-vapeur</value>
+  </data>
+  <data name="Unit_power_BTU/h" xml:space="preserve">
+    <value>Unité thermique britannique par heure</value>
+  </data>
+  <data name="Unit_power_ft·lb/s" xml:space="preserve">
+    <value>Pied-livre par seconde</value>
+  </data>
+  <!-- Heat Transfer Coefficient Units -->
+  <data name="Unit_heatTransferCoefficient_W/(m²·K)" xml:space="preserve">
+    <value>Watt par mètre carré kelvin</value>
+  </data>
+  <data name="Unit_heatTransferCoefficient_kW/(m²·K)" xml:space="preserve">
+    <value>Kilowatt par mètre carré kelvin</value>
+  </data>
+  <data name="Unit_heatTransferCoefficient_BTU/(h·ft²·°F)" xml:space="preserve">
+    <value>Unité thermique britannique par heure pied carré degré Fahrenheit</value>
+  </data>
+  <data name="Unit_heatTransferCoefficient_cal/(s·cm²·°C)" xml:space="preserve">
+    <value>Calorie par seconde centimètre carré degré Celsius</value>
+  </data>
+  <data name="Unit_heatTransferCoefficient_kcal/(h·m²·°C)" xml:space="preserve">
+    <value>Kilocalorie par heure mètre carré degré Celsius</value>
+  </data>
+  <!-- Current Units -->
+  <data name="Unit_current_A" xml:space="preserve">
+    <value>Ampère</value>
+  </data>
+  <data name="Unit_current_mA" xml:space="preserve">
+    <value>Milliampère</value>
+  </data>
+  <data name="Unit_current_µA" xml:space="preserve">
+    <value>Microampère</value>
+  </data>
+  <data name="Unit_current_kA" xml:space="preserve">
+    <value>Kiloampère</value>
+  </data>
+  <!-- Electric Potential Units -->
+  <data name="Unit_electricPotential_V" xml:space="preserve">
+    <value>Volt</value>
+  </data>
+  <data name="Unit_electricPotential_mV" xml:space="preserve">
+    <value>Millivolt</value>
+  </data>
+  <data name="Unit_electricPotential_µV" xml:space="preserve">
+    <value>Microvolt</value>
+  </data>
+  <data name="Unit_electricPotential_kV" xml:space="preserve">
+    <value>Kilovolt</value>
+  </data>
+  <!-- Electric Resistance Units -->
+  <data name="Unit_electricResistance_Ω" xml:space="preserve">
+    <value>Ohm</value>
+  </data>
+  <data name="Unit_electricResistance_mΩ" xml:space="preserve">
+    <value>Milliohm</value>
+  </data>
+  <data name="Unit_electricResistance_µΩ" xml:space="preserve">
+    <value>Microohm</value>
+  </data>
+  <data name="Unit_electricResistance_kΩ" xml:space="preserve">
+    <value>Kiloohm</value>
+  </data>
+  <data name="Unit_electricResistance_GΩ" xml:space="preserve">
+    <value>Gigaohm</value>
+  </data>
+  <!-- Acceleration Units -->
+  <data name="Unit_acceleration_m/s²" xml:space="preserve">
+    <value>Mètre par seconde carrée</value>
+  </data>
+  <data name="Unit_acceleration_km/h²" xml:space="preserve">
+    <value>Kilomètre par heure carrée</value>
+  </data>
+  <data name="Unit_acceleration_ft/s²" xml:space="preserve">
+    <value>Pied par seconde carrée</value>
+  </data>
+  <data name="Unit_acceleration_in/s²" xml:space="preserve">
+    <value>Pouce par seconde carrée</value>
+  </data>
+  <data name="Unit_acceleration_g" xml:space="preserve">
+    <value>Gravité standard</value>
+  </data>
+  <data name="Unit_acceleration_Gal" xml:space="preserve">
+    <value>Gal</value>
+  </data>
+  <!-- Angular Velocity Units -->
+  <data name="Unit_angularVelocity_rad/s" xml:space="preserve">
+    <value>Radian par seconde</value>
+  </data>
+  <data name="Unit_angularVelocity_rad/min" xml:space="preserve">
+    <value>Radian par minute</value>
+  </data>
+  <data name="Unit_angularVelocity_°/s" xml:space="preserve">
+    <value>Degré par seconde</value>
+  </data>
+  <data name="Unit_angularVelocity_°/min" xml:space="preserve">
+    <value>Degré par minute</value>
+  </data>
+  <data name="Unit_angularVelocity_rpm" xml:space="preserve">
+    <value>Révolution par minute</value>
+  </data>
+  <data name="Unit_angularVelocity_rps" xml:space="preserve">
+    <value>Révolution par seconde</value>
+  </data>
+  <!-- Density Units -->
+  <data name="Unit_density_kg/m³" xml:space="preserve">
+    <value>Kilogramme par mètre cube</value>
+  </data>
+  <data name="Unit_density_g/cm³" xml:space="preserve">
+    <value>Gramme par centimètre cube</value>
+  </data>
+  <data name="Unit_density_g/L" xml:space="preserve">
+    <value>Gramme par litre</value>
+  </data>
+  <data name="Unit_density_kg/L" xml:space="preserve">
+    <value>Kilogramme par litre</value>
+  </data>
+  <data name="Unit_density_lb/ft³" xml:space="preserve">
+    <value>Livre par pied cube</value>
+  </data>
+  <data name="Unit_density_lb/in³" xml:space="preserve">
+    <value>Livre par pouce cube</value>
+  </data>
+  <data name="Unit_density_oz/in³" xml:space="preserve">
+    <value>Once par pouce cube</value>
+  </data>
+  <!-- Torque Units -->
+  <data name="Unit_torque_N·m" xml:space="preserve">
+    <value>Newton mètre</value>
+  </data>
+  <data name="Unit_torque_kN·m" xml:space="preserve">
+    <value>Kilonewton mètre</value>
+  </data>
+  <data name="Unit_torque_N·cm" xml:space="preserve">
+    <value>Newton centimètre</value>
+  </data>
+  <data name="Unit_torque_lbf·ft" xml:space="preserve">
+    <value>Livre-force pied</value>
+  </data>
+  <data name="Unit_torque_lbf·in" xml:space="preserve">
+    <value>Livre-force pouce</value>
+  </data>
+  <data name="Unit_torque_ozf·in" xml:space="preserve">
+    <value>Once-force pouce</value>
+  </data>
+  <data name="Unit_torque_kgf·m" xml:space="preserve">
+    <value>Kilogramme-force mètre</value>
+  </data>
+  <!-- Angular Acceleration Units -->
+  <data name="Unit_angularAcceleration_rad/s²" xml:space="preserve">
+    <value>Radian par seconde carrée</value>
+  </data>
+  <data name="Unit_angularAcceleration_°/s²" xml:space="preserve">
+    <value>Degré par seconde carrée</value>
+  </data>
+  <data name="Unit_angularAcceleration_rpm²" xml:space="preserve">
+    <value>Révolution par minute carrée</value>
+  </data>
+  <data name="Unit_angularAcceleration_rps²" xml:space="preserve">
+    <value>Révolution par seconde carrée</value>
+  </data>
+  <!-- Specific Volume Units -->
+  <data name="Unit_specificVolume_m³/kg" xml:space="preserve">
+    <value>Mètre cube par kilogramme</value>
+  </data>
+  <data name="Unit_specificVolume_L/kg" xml:space="preserve">
+    <value>Litre par kilogramme</value>
+  </data>
+  <data name="Unit_specificVolume_cm³/g" xml:space="preserve">
+    <value>Centimètre cube par gramme</value>
+  </data>
+  <data name="Unit_specificVolume_ft³/lb" xml:space="preserve">
+    <value>Pied cube par livre</value>
+  </data>
+  <data name="Unit_specificVolume_in³/lb" xml:space="preserve">
+    <value>Pouce cube par livre</value>
+  </data>
+  <data name="Unit_specificVolume_gal/lb" xml:space="preserve">
+    <value>Gallon par livre</value>
+  </data>
+  <!-- Moment of Inertia Units -->
+  <data name="Unit_momentOfInertia_kg·m²" xml:space="preserve">
+    <value>Kilogramme mètre carré</value>
+  </data>
+  <data name="Unit_momentOfInertia_g·cm²" xml:space="preserve">
+    <value>Gramme centimètre carré</value>
+  </data>
+  <data name="Unit_momentOfInertia_lb·ft²" xml:space="preserve">
+    <value>Livre pied carré</value>
+  </data>
+  <data name="Unit_momentOfInertia_lb·in²" xml:space="preserve">
+    <value>Livre pouce carré</value>
+  </data>
+  <data name="Unit_momentOfInertia_oz·in²" xml:space="preserve">
+    <value>Once pouce carré</value>
+  </data>
+  <!-- Moment of Force Units -->
+  <data name="Unit_momentOfForce_N·m" xml:space="preserve">
+    <value>Newton mètre</value>
+  </data>
+  <data name="Unit_momentOfForce_kN·m" xml:space="preserve">
+    <value>Kilonewton mètre</value>
+  </data>
+  <data name="Unit_momentOfForce_N·cm" xml:space="preserve">
+    <value>Newton centimètre</value>
+  </data>
+  <data name="Unit_momentOfForce_lbf·ft" xml:space="preserve">
+    <value>Livre-force pied</value>
+  </data>
+  <data name="Unit_momentOfForce_lbf·in" xml:space="preserve">
+    <value>Livre-force pouce</value>
+  </data>
+  <data name="Unit_momentOfForce_ozf·in" xml:space="preserve">
+    <value>Once-force pouce</value>
+  </data>
+  <data name="Unit_momentOfForce_kgf·m" xml:space="preserve">
+    <value>Kilogramme-force mètre</value>
+  </data>
+  <!-- Thermal Conductivity Units -->
+  <data name="Unit_thermalConductivity_W/(m·K)" xml:space="preserve">
+    <value>Watt par mètre kelvin</value>
+  </data>
+  <data name="Unit_thermalConductivity_W/(cm·K)" xml:space="preserve">
+    <value>Watt par centimètre kelvin</value>
+  </data>
+  <data name="Unit_thermalConductivity_BTU/(h·ft·°F)" xml:space="preserve">
+    <value>Unité thermique britannique par heure pied degré Fahrenheit</value>
+  </data>
+  <data name="Unit_thermalConductivity_cal/(s·cm·°C)" xml:space="preserve">
+    <value>Calorie par seconde centimètre degré Celsius</value>
+  </data>
+  <data name="Unit_thermalConductivity_kcal/(h·m·°C)" xml:space="preserve">
+    <value>Kilocalorie par heure mètre degré Celsius</value>
+  </data>
+  <!-- Thermal Resistance Units -->
+  <data name="Unit_thermalResistance_K/W" xml:space="preserve">
+    <value>Kelvin par watt</value>
+  </data>
+  <data name="Unit_thermalResistance_°C/W" xml:space="preserve">
+    <value>Degré Celsius par watt</value>
+  </data>
+  <data name="Unit_thermalResistance_m²·K/W" xml:space="preserve">
+    <value>Mètre carré kelvin par watt</value>
+  </data>
+  <data name="Unit_thermalResistance_h·ft²·°F/BTU" xml:space="preserve">
+    <value>Heure pied carré degré Fahrenheit par unité thermique britannique</value>
+  </data>
+  <!-- Specific Heat Capacity Units -->
+  <data name="Unit_specificHeatCapacity_J/(kg·K)" xml:space="preserve">
+    <value>Joule par kilogramme kelvin</value>
+  </data>
+  <data name="Unit_specificHeatCapacity_kJ/(kg·K)" xml:space="preserve">
+    <value>Kilojoule par kilogramme kelvin</value>
+  </data>
+  <data name="Unit_specificHeatCapacity_BTU/(lb·°F)" xml:space="preserve">
+    <value>Unité thermique britannique par livre degré Fahrenheit</value>
+  </data>
+  <data name="Unit_specificHeatCapacity_cal/(g·°C)" xml:space="preserve">
+    <value>Calorie par gramme degré Celsius</value>
+  </data>
+  <data name="Unit_specificHeatCapacity_kcal/(kg·°C)" xml:space="preserve">
+    <value>Kilocalorie par kilogramme degré Celsius</value>
+  </data>
+  <!-- Heat Flux Density Units -->
+  <data name="Unit_heatFluxDensity_W/m²" xml:space="preserve">
+    <value>Watt par mètre carré</value>
+  </data>
+  <data name="Unit_heatFluxDensity_kW/m²" xml:space="preserve">
+    <value>Kilowatt par mètre carré</value>
+  </data>
+  <data name="Unit_heatFluxDensity_BTU/(h·ft²)" xml:space="preserve">
+    <value>Unité thermique britannique par heure pied carré</value>
+  </data>
+  <data name="Unit_heatFluxDensity_cal/(s·cm²)" xml:space="preserve">
+    <value>Calorie par seconde centimètre carré</value>
+  </data>
+  <!-- Heat Density Units -->
+  <data name="Unit_heatDensity_J/m³" xml:space="preserve">
+    <value>Joule par mètre cube</value>
+  </data>
+  <data name="Unit_heatDensity_kJ/m³" xml:space="preserve">
+    <value>Kilojoule par mètre cube</value>
+  </data>
+  <data name="Unit_heatDensity_MJ/m³" xml:space="preserve">
+    <value>Mégajoule par mètre cube</value>
+  </data>
+  <data name="Unit_heatDensity_BTU/ft³" xml:space="preserve">
+    <value>Unité thermique britannique par pied cube</value>
+  </data>
+  <data name="Unit_heatDensity_cal/cm³" xml:space="preserve">
+    <value>Calorie par centimètre cube</value>
+  </data>
+  <!-- Thermal Expansion Units -->
+  <data name="Unit_thermalExpansion_1/K" xml:space="preserve">
+    <value>Par kelvin</value>
+  </data>
+  <data name="Unit_thermalExpansion_1/°C" xml:space="preserve">
+    <value>Par degré Celsius</value>
+  </data>
+  <data name="Unit_thermalExpansion_1/°F" xml:space="preserve">
+    <value>Par degré Fahrenheit</value>
+  </data>
+  <data name="Unit_thermalExpansion_1/°R" xml:space="preserve">
+    <value>Par degré Rankine</value>
+  </data>
+  <!-- Temperature Interval Units -->
+  <data name="Unit_temperatureInterval_K" xml:space="preserve">
+    <value>Kelvin</value>
+  </data>
+  <data name="Unit_temperatureInterval_°C" xml:space="preserve">
+    <value>Degré Celsius</value>
+  </data>
+  <data name="Unit_temperatureInterval_°F" xml:space="preserve">
+    <value>Degré Fahrenheit</value>
+  </data>
+  <data name="Unit_temperatureInterval_°R" xml:space="preserve">
+    <value>Degré Rankine</value>
+  </data>
+  <!-- Fuel Efficiency - Mass Units -->
+  <data name="Unit_fuelEfficiencyMass_m/kg" xml:space="preserve">
+    <value>Mètre par kilogramme</value>
+  </data>
+  <data name="Unit_fuelEfficiencyMass_km/kg" xml:space="preserve">
+    <value>Kilomètre par kilogramme</value>
+  </data>
+  <data name="Unit_fuelEfficiencyMass_mi/lb" xml:space="preserve">
+    <value>Mile par livre</value>
+  </data>
+  <data name="Unit_fuelEfficiencyMass_ft/lb" xml:space="preserve">
+    <value>Pied par livre</value>
+  </data>
+  <!-- Fuel Efficiency - Volume Units -->
+  <data name="Unit_fuelEfficiencyVolume_m/m³" xml:space="preserve">
+    <value>Mètre par mètre cube</value>
+  </data>
+  <data name="Unit_fuelEfficiencyVolume_km/L" xml:space="preserve">
+    <value>Kilomètre par litre</value>
+  </data>
+  <data name="Unit_fuelEfficiencyVolume_L/100km" xml:space="preserve">
+    <value>Litre par 100 kilomètres</value>
+  </data>
+  <data name="Unit_fuelEfficiencyVolume_mpg" xml:space="preserve">
+    <value>Mile par gallon (US)</value>
+  </data>
+  <data name="Unit_fuelEfficiencyVolume_mpg UK" xml:space="preserve">
+    <value>Mile par gallon (UK)</value>
+  </data>
+  <!-- Charge Units -->
+  <data name="Unit_charge_C" xml:space="preserve">
+    <value>Coulomb</value>
+  </data>
+  <data name="Unit_charge_mC" xml:space="preserve">
+    <value>Millicoulomb</value>
+  </data>
+  <data name="Unit_charge_µC" xml:space="preserve">
+    <value>Microcoulomb</value>
+  </data>
+  <data name="Unit_charge_nC" xml:space="preserve">
+    <value>Nanocoulomb</value>
+  </data>
+  <data name="Unit_charge_A·h" xml:space="preserve">
+    <value>Ampère-heure</value>
+  </data>
+  <data name="Unit_charge_mA·h" xml:space="preserve">
+    <value>Milliampère-heure</value>
+  </data>
+  <!-- Electric Field Strength Units -->
+  <data name="Unit_electricFieldStrength_V/m" xml:space="preserve">
+    <value>Volt par mètre</value>
+  </data>
+  <data name="Unit_electricFieldStrength_kV/m" xml:space="preserve">
+    <value>Kilovolt par mètre</value>
+  </data>
+  <data name="Unit_electricFieldStrength_V/cm" xml:space="preserve">
+    <value>Volt par centimètre</value>
+  </data>
+  <!-- Capacitance Units -->
+  <data name="Unit_capacitance_F" xml:space="preserve">
+    <value>Farad</value>
+  </data>
+  <data name="Unit_capacitance_mF" xml:space="preserve">
+    <value>Millifarad</value>
+  </data>
+  <data name="Unit_capacitance_µF" xml:space="preserve">
+    <value>Microfarad</value>
+  </data>
+  <data name="Unit_capacitance_nF" xml:space="preserve">
+    <value>Nanofarad</value>
+  </data>
+  <data name="Unit_capacitance_pF" xml:space="preserve">
+    <value>Picofarad</value>
+  </data>
+  <!-- Inductance Units -->
+  <data name="Unit_inductance_H" xml:space="preserve">
+    <value>Henry</value>
+  </data>
+  <data name="Unit_inductance_mH" xml:space="preserve">
+    <value>Millihenry</value>
+  </data>
+  <data name="Unit_inductance_µH" xml:space="preserve">
+    <value>Microhenry</value>
+  </data>
+  <data name="Unit_inductance_nH" xml:space="preserve">
+    <value>Nanohenry</value>
+  </data>
+  <!-- Electric Conductivity Units -->
+  <data name="Unit_electricConductivity_S/m" xml:space="preserve">
+    <value>Siemens par mètre</value>
+  </data>
+  <data name="Unit_electricConductivity_S/cm" xml:space="preserve">
+    <value>Siemens par centimètre</value>
+  </data>
+  <data name="Unit_electricConductivity_mS/m" xml:space="preserve">
+    <value>Millisiemens par mètre</value>
+  </data>
+  <!-- Electric Resistivity Units -->
+  <data name="Unit_electricResistivity_Ω·m" xml:space="preserve">
+    <value>Ohm mètre</value>
+  </data>
+  <data name="Unit_electricResistivity_Ω·cm" xml:space="preserve">
+    <value>Ohm centimètre</value>
+  </data>
+  <data name="Unit_electricResistivity_µΩ·m" xml:space="preserve">
+    <value>Microohm mètre</value>
+  </data>
+  <!-- Electric Conductance Units -->
+  <data name="Unit_electricConductance_S" xml:space="preserve">
+    <value>Siemens</value>
+  </data>
+  <data name="Unit_electricConductance_mS" xml:space="preserve">
+    <value>Millisiemens</value>
+  </data>
+  <data name="Unit_electricConductance_µS" xml:space="preserve">
+    <value>Microsiemens</value>
+  </data>
+  <data name="Unit_electricConductance_kS" xml:space="preserve">
+    <value>Kilosiemens</value>
   </data>
 </root>
 

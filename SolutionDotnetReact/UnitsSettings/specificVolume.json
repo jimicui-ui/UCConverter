@@ -1,0 +1,88 @@
+{
+  "category": "specificVolume",
+  "categoryDisplayName": "Specific Volume",
+  "group": "Engineering",
+  "baseUnit": {
+    "symbol": "m³/kg",
+    "name": "cubic meter per kilogram",
+    "displayName": "Cubic Meter per Kilogram",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "m³/kg",
+      "name": "cubic meter per kilogram",
+      "displayName": "Cubic Meter per Kilogram",
+      "category": "specificVolume",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "L/kg",
+      "name": "liter per kilogram",
+      "displayName": "Liter per Kilogram",
+      "category": "specificVolume",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "cm³/g",
+      "name": "cubic centimeter per gram",
+      "displayName": "Cubic Centimeter per Gram",
+      "category": "specificVolume",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "ft³/lb",
+      "name": "cubic foot per pound",
+      "displayName": "Cubic Foot per Pound",
+      "category": "specificVolume",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.062428,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "in³/lb",
+      "name": "cubic inch per pound",
+      "displayName": "Cubic Inch per Pound",
+      "category": "specificVolume",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.0000361273,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "gal/lb",
+      "name": "gallon per pound",
+      "displayName": "Gallon per Pound",
+      "category": "specificVolume",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.0083454,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

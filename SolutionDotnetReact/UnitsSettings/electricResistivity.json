@@ -1,0 +1,52 @@
+{
+  "category": "electricResistivity",
+  "categoryDisplayName": "Electric Resistivity",
+  "group": "Electricity",
+  "baseUnit": {
+    "symbol": "Ω·m",
+    "name": "ohm meter",
+    "displayName": "Ohm Meter",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "Ω·m",
+      "name": "ohm meter",
+      "displayName": "Ohm Meter",
+      "category": "electricResistivity",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "Ω·cm",
+      "name": "ohm centimeter",
+      "displayName": "Ohm Centimeter",
+      "category": "electricResistivity",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.01,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "µΩ·m",
+      "name": "microohm meter",
+      "displayName": "Microohm Meter",
+      "category": "electricResistivity",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

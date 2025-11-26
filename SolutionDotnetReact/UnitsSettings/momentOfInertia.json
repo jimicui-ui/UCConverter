@@ -1,0 +1,76 @@
+{
+  "category": "momentOfInertia",
+  "categoryDisplayName": "Moment of Inertia",
+  "group": "Engineering",
+  "baseUnit": {
+    "symbol": "kg·m²",
+    "name": "kilogram square meter",
+    "displayName": "Kilogram Square Meter",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "kg·m²",
+      "name": "kilogram square meter",
+      "displayName": "Kilogram Square Meter",
+      "category": "momentOfInertia",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "g·cm²",
+      "name": "gram square centimeter",
+      "displayName": "Gram Square Centimeter",
+      "category": "momentOfInertia",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.0000001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "lb·ft²",
+      "name": "pound square foot",
+      "displayName": "Pound Square Foot",
+      "category": "momentOfInertia",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.0421401,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "lb·in²",
+      "name": "pound square inch",
+      "displayName": "Pound Square Inch",
+      "category": "momentOfInertia",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.00029264,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "oz·in²",
+      "name": "ounce square inch",
+      "displayName": "Ounce Square Inch",
+      "category": "momentOfInertia",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.00001829,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

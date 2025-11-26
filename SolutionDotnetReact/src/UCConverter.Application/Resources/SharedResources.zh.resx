@@ -79,6 +79,114 @@
   <data name="Category_speed" xml:space="preserve">
     <value>速度</value>
   </data>
+  <data name="Category_pressure" xml:space="preserve">
+    <value>压力</value>
+  </data>
+  <data name="Category_energy" xml:space="preserve">
+    <value>能量</value>
+  </data>
+  <data name="Category_power" xml:space="preserve">
+    <value>功率</value>
+  </data>
+  <data name="Category_charge" xml:space="preserve">
+    <value>电荷</value>
+  </data>
+  <data name="Category_linearChargeDensity" xml:space="preserve">
+    <value>线电荷密度</value>
+  </data>
+  <data name="Category_surfaceChargeDensity" xml:space="preserve">
+    <value>面电荷密度</value>
+  </data>
+  <data name="Category_volumeChargeDensity" xml:space="preserve">
+    <value>体电荷密度</value>
+  </data>
+  <data name="Category_current" xml:space="preserve">
+    <value>电流</value>
+  </data>
+  <data name="Category_linearCurrentDensity" xml:space="preserve">
+    <value>线电流密度</value>
+  </data>
+  <data name="Category_surfaceCurrentDensity" xml:space="preserve">
+    <value>面电流密度</value>
+  </data>
+  <data name="Category_electricFieldStrength" xml:space="preserve">
+    <value>电场强度</value>
+  </data>
+  <data name="Category_electricPotential" xml:space="preserve">
+    <value>电势</value>
+  </data>
+  <data name="Category_electricResistance" xml:space="preserve">
+    <value>电阻</value>
+  </data>
+  <data name="Category_electricResistivity" xml:space="preserve">
+    <value>电阻率</value>
+  </data>
+  <data name="Category_electricConductance" xml:space="preserve">
+    <value>电导</value>
+  </data>
+  <data name="Category_electricConductivity" xml:space="preserve">
+    <value>电导率</value>
+  </data>
+  <data name="Category_capacitance" xml:space="preserve">
+    <value>电容</value>
+  </data>
+  <data name="Category_inductance" xml:space="preserve">
+    <value>电感</value>
+  </data>
+  <data name="Category_angularVelocity" xml:space="preserve">
+    <value>角速度</value>
+  </data>
+  <data name="Category_acceleration" xml:space="preserve">
+    <value>加速度</value>
+  </data>
+  <data name="Category_angularAcceleration" xml:space="preserve">
+    <value>角加速度</value>
+  </data>
+  <data name="Category_density" xml:space="preserve">
+    <value>密度</value>
+  </data>
+  <data name="Category_specificVolume" xml:space="preserve">
+    <value>比容</value>
+  </data>
+  <data name="Category_momentOfInertia" xml:space="preserve">
+    <value>转动惯量</value>
+  </data>
+  <data name="Category_momentOfForce" xml:space="preserve">
+    <value>力矩</value>
+  </data>
+  <data name="Category_torque" xml:space="preserve">
+    <value>扭矩</value>
+  </data>
+  <data name="Category_fuelEfficiencyMass" xml:space="preserve">
+    <value>燃料效率 - 质量</value>
+  </data>
+  <data name="Category_fuelEfficiencyVolume" xml:space="preserve">
+    <value>燃料效率 - 体积</value>
+  </data>
+  <data name="Category_temperatureInterval" xml:space="preserve">
+    <value>温度间隔</value>
+  </data>
+  <data name="Category_thermalExpansion" xml:space="preserve">
+    <value>热膨胀</value>
+  </data>
+  <data name="Category_thermalResistance" xml:space="preserve">
+    <value>热阻</value>
+  </data>
+  <data name="Category_thermalConductivity" xml:space="preserve">
+    <value>热导率</value>
+  </data>
+  <data name="Category_specificHeatCapacity" xml:space="preserve">
+    <value>比热容</value>
+  </data>
+  <data name="Category_heatDensity" xml:space="preserve">
+    <value>热密度</value>
+  </data>
+  <data name="Category_heatFluxDensity" xml:space="preserve">
+    <value>热流密度</value>
+  </data>
+  <data name="Category_heatTransferCoefficient" xml:space="preserve">
+    <value>传热系数</value>
+  </data>
   <data name="Error_CategoryNotFound" xml:space="preserve">
     <value>未找到类别 '{0}'</value>
   </data>
@@ -271,6 +379,520 @@
   </data>
   <data name="Unit_speed_cm/s" xml:space="preserve">
     <value>厘米每秒</value>
+  </data>
+  <!-- Pressure Units -->
+  <data name="Unit_pressure_Pa" xml:space="preserve">
+    <value>帕斯卡</value>
+  </data>
+  <data name="Unit_pressure_kPa" xml:space="preserve">
+    <value>千帕</value>
+  </data>
+  <data name="Unit_pressure_MPa" xml:space="preserve">
+    <value>兆帕</value>
+  </data>
+  <data name="Unit_pressure_bar" xml:space="preserve">
+    <value>巴</value>
+  </data>
+  <data name="Unit_pressure_mbar" xml:space="preserve">
+    <value>毫巴</value>
+  </data>
+  <data name="Unit_pressure_psi" xml:space="preserve">
+    <value>磅每平方英寸</value>
+  </data>
+  <data name="Unit_pressure_psf" xml:space="preserve">
+    <value>磅每平方英尺</value>
+  </data>
+  <data name="Unit_pressure_atm" xml:space="preserve">
+    <value>标准大气压</value>
+  </data>
+  <data name="Unit_pressure_torr" xml:space="preserve">
+    <value>托</value>
+  </data>
+  <data name="Unit_pressure_mmHg" xml:space="preserve">
+    <value>毫米汞柱</value>
+  </data>
+  <!-- Energy Units -->
+  <data name="Unit_energy_J" xml:space="preserve">
+    <value>焦耳</value>
+  </data>
+  <data name="Unit_energy_kJ" xml:space="preserve">
+    <value>千焦</value>
+  </data>
+  <data name="Unit_energy_MJ" xml:space="preserve">
+    <value>兆焦</value>
+  </data>
+  <data name="Unit_energy_GJ" xml:space="preserve">
+    <value>吉焦</value>
+  </data>
+  <data name="Unit_energy_cal" xml:space="preserve">
+    <value>卡路里</value>
+  </data>
+  <data name="Unit_energy_kcal" xml:space="preserve">
+    <value>千卡</value>
+  </data>
+  <data name="Unit_energy_kWh" xml:space="preserve">
+    <value>千瓦时</value>
+  </data>
+  <data name="Unit_energy_Wh" xml:space="preserve">
+    <value>瓦时</value>
+  </data>
+  <data name="Unit_energy_BTU" xml:space="preserve">
+    <value>英热单位</value>
+  </data>
+  <data name="Unit_energy_ft·lb" xml:space="preserve">
+    <value>英尺磅</value>
+  </data>
+  <!-- Power Units -->
+  <data name="Unit_power_W" xml:space="preserve">
+    <value>瓦特</value>
+  </data>
+  <data name="Unit_power_kW" xml:space="preserve">
+    <value>千瓦</value>
+  </data>
+  <data name="Unit_power_MW" xml:space="preserve">
+    <value>兆瓦</value>
+  </data>
+  <data name="Unit_power_GW" xml:space="preserve">
+    <value>吉瓦</value>
+  </data>
+  <data name="Unit_power_hp" xml:space="preserve">
+    <value>马力</value>
+  </data>
+  <data name="Unit_power_BTU/h" xml:space="preserve">
+    <value>英热单位每小时</value>
+  </data>
+  <data name="Unit_power_ft·lb/s" xml:space="preserve">
+    <value>英尺磅每秒</value>
+  </data>
+  <!-- Heat Transfer Coefficient Units -->
+  <data name="Unit_heatTransferCoefficient_W/(m²·K)" xml:space="preserve">
+    <value>瓦特每平方米开尔文</value>
+  </data>
+  <data name="Unit_heatTransferCoefficient_kW/(m²·K)" xml:space="preserve">
+    <value>千瓦每平方米开尔文</value>
+  </data>
+  <data name="Unit_heatTransferCoefficient_BTU/(h·ft²·°F)" xml:space="preserve">
+    <value>英热单位每小时平方英尺华氏度</value>
+  </data>
+  <data name="Unit_heatTransferCoefficient_cal/(s·cm²·°C)" xml:space="preserve">
+    <value>卡路里每秒平方厘米摄氏度</value>
+  </data>
+  <data name="Unit_heatTransferCoefficient_kcal/(h·m²·°C)" xml:space="preserve">
+    <value>千卡每小时平方米摄氏度</value>
+  </data>
+  <!-- Current Units -->
+  <data name="Unit_current_A" xml:space="preserve">
+    <value>安培</value>
+  </data>
+  <data name="Unit_current_mA" xml:space="preserve">
+    <value>毫安</value>
+  </data>
+  <data name="Unit_current_µA" xml:space="preserve">
+    <value>微安</value>
+  </data>
+  <data name="Unit_current_kA" xml:space="preserve">
+    <value>千安</value>
+  </data>
+  <!-- Electric Potential Units -->
+  <data name="Unit_electricPotential_V" xml:space="preserve">
+    <value>伏特</value>
+  </data>
+  <data name="Unit_electricPotential_mV" xml:space="preserve">
+    <value>毫伏</value>
+  </data>
+  <data name="Unit_electricPotential_µV" xml:space="preserve">
+    <value>微伏</value>
+  </data>
+  <data name="Unit_electricPotential_kV" xml:space="preserve">
+    <value>千伏</value>
+  </data>
+  <!-- Electric Resistance Units -->
+  <data name="Unit_electricResistance_Ω" xml:space="preserve">
+    <value>欧姆</value>
+  </data>
+  <data name="Unit_electricResistance_mΩ" xml:space="preserve">
+    <value>毫欧</value>
+  </data>
+  <data name="Unit_electricResistance_µΩ" xml:space="preserve">
+    <value>微欧</value>
+  </data>
+  <data name="Unit_electricResistance_kΩ" xml:space="preserve">
+    <value>千欧</value>
+  </data>
+  <data name="Unit_electricResistance_GΩ" xml:space="preserve">
+    <value>吉欧</value>
+  </data>
+  <!-- Acceleration Units -->
+  <data name="Unit_acceleration_m/s²" xml:space="preserve">
+    <value>米每秒平方</value>
+  </data>
+  <data name="Unit_acceleration_km/h²" xml:space="preserve">
+    <value>千米每小时平方</value>
+  </data>
+  <data name="Unit_acceleration_ft/s²" xml:space="preserve">
+    <value>英尺每秒平方</value>
+  </data>
+  <data name="Unit_acceleration_in/s²" xml:space="preserve">
+    <value>英寸每秒平方</value>
+  </data>
+  <data name="Unit_acceleration_g" xml:space="preserve">
+    <value>标准重力</value>
+  </data>
+  <data name="Unit_acceleration_Gal" xml:space="preserve">
+    <value>伽</value>
+  </data>
+  <!-- Angular Velocity Units -->
+  <data name="Unit_angularVelocity_rad/s" xml:space="preserve">
+    <value>弧度每秒</value>
+  </data>
+  <data name="Unit_angularVelocity_rad/min" xml:space="preserve">
+    <value>弧度每分钟</value>
+  </data>
+  <data name="Unit_angularVelocity_°/s" xml:space="preserve">
+    <value>度每秒</value>
+  </data>
+  <data name="Unit_angularVelocity_°/min" xml:space="preserve">
+    <value>度每分钟</value>
+  </data>
+  <data name="Unit_angularVelocity_rpm" xml:space="preserve">
+    <value>转每分钟</value>
+  </data>
+  <data name="Unit_angularVelocity_rps" xml:space="preserve">
+    <value>转每秒</value>
+  </data>
+  <!-- Density Units -->
+  <data name="Unit_density_kg/m³" xml:space="preserve">
+    <value>千克每立方米</value>
+  </data>
+  <data name="Unit_density_g/cm³" xml:space="preserve">
+    <value>克每立方厘米</value>
+  </data>
+  <data name="Unit_density_g/L" xml:space="preserve">
+    <value>克每升</value>
+  </data>
+  <data name="Unit_density_kg/L" xml:space="preserve">
+    <value>千克每升</value>
+  </data>
+  <data name="Unit_density_lb/ft³" xml:space="preserve">
+    <value>磅每立方英尺</value>
+  </data>
+  <data name="Unit_density_lb/in³" xml:space="preserve">
+    <value>磅每立方英寸</value>
+  </data>
+  <data name="Unit_density_oz/in³" xml:space="preserve">
+    <value>盎司每立方英寸</value>
+  </data>
+  <!-- Torque Units -->
+  <data name="Unit_torque_N·m" xml:space="preserve">
+    <value>牛米</value>
+  </data>
+  <data name="Unit_torque_kN·m" xml:space="preserve">
+    <value>千牛米</value>
+  </data>
+  <data name="Unit_torque_N·cm" xml:space="preserve">
+    <value>牛厘米</value>
+  </data>
+  <data name="Unit_torque_lbf·ft" xml:space="preserve">
+    <value>磅力英尺</value>
+  </data>
+  <data name="Unit_torque_lbf·in" xml:space="preserve">
+    <value>磅力英寸</value>
+  </data>
+  <data name="Unit_torque_ozf·in" xml:space="preserve">
+    <value>盎司力英寸</value>
+  </data>
+  <data name="Unit_torque_kgf·m" xml:space="preserve">
+    <value>千克力米</value>
+  </data>
+  <!-- Angular Acceleration Units -->
+  <data name="Unit_angularAcceleration_rad/s²" xml:space="preserve">
+    <value>弧度每秒平方</value>
+  </data>
+  <data name="Unit_angularAcceleration_°/s²" xml:space="preserve">
+    <value>度每秒平方</value>
+  </data>
+  <data name="Unit_angularAcceleration_rpm²" xml:space="preserve">
+    <value>转每分钟平方</value>
+  </data>
+  <data name="Unit_angularAcceleration_rps²" xml:space="preserve">
+    <value>转每秒平方</value>
+  </data>
+  <!-- Specific Volume Units -->
+  <data name="Unit_specificVolume_m³/kg" xml:space="preserve">
+    <value>立方米每千克</value>
+  </data>
+  <data name="Unit_specificVolume_L/kg" xml:space="preserve">
+    <value>升每千克</value>
+  </data>
+  <data name="Unit_specificVolume_cm³/g" xml:space="preserve">
+    <value>立方厘米每克</value>
+  </data>
+  <data name="Unit_specificVolume_ft³/lb" xml:space="preserve">
+    <value>立方英尺每磅</value>
+  </data>
+  <data name="Unit_specificVolume_in³/lb" xml:space="preserve">
+    <value>立方英寸每磅</value>
+  </data>
+  <data name="Unit_specificVolume_gal/lb" xml:space="preserve">
+    <value>加仑每磅</value>
+  </data>
+  <!-- Moment of Inertia Units -->
+  <data name="Unit_momentOfInertia_kg·m²" xml:space="preserve">
+    <value>千克平方米</value>
+  </data>
+  <data name="Unit_momentOfInertia_g·cm²" xml:space="preserve">
+    <value>克平方厘米</value>
+  </data>
+  <data name="Unit_momentOfInertia_lb·ft²" xml:space="preserve">
+    <value>磅平方英尺</value>
+  </data>
+  <data name="Unit_momentOfInertia_lb·in²" xml:space="preserve">
+    <value>磅平方英寸</value>
+  </data>
+  <data name="Unit_momentOfInertia_oz·in²" xml:space="preserve">
+    <value>盎司平方英寸</value>
+  </data>
+  <!-- Moment of Force Units -->
+  <data name="Unit_momentOfForce_N·m" xml:space="preserve">
+    <value>牛米</value>
+  </data>
+  <data name="Unit_momentOfForce_kN·m" xml:space="preserve">
+    <value>千牛米</value>
+  </data>
+  <data name="Unit_momentOfForce_N·cm" xml:space="preserve">
+    <value>牛厘米</value>
+  </data>
+  <data name="Unit_momentOfForce_lbf·ft" xml:space="preserve">
+    <value>磅力英尺</value>
+  </data>
+  <data name="Unit_momentOfForce_lbf·in" xml:space="preserve">
+    <value>磅力英寸</value>
+  </data>
+  <data name="Unit_momentOfForce_ozf·in" xml:space="preserve">
+    <value>盎司力英寸</value>
+  </data>
+  <data name="Unit_momentOfForce_kgf·m" xml:space="preserve">
+    <value>千克力米</value>
+  </data>
+  <!-- Thermal Conductivity Units -->
+  <data name="Unit_thermalConductivity_W/(m·K)" xml:space="preserve">
+    <value>瓦特每米开尔文</value>
+  </data>
+  <data name="Unit_thermalConductivity_W/(cm·K)" xml:space="preserve">
+    <value>瓦特每厘米开尔文</value>
+  </data>
+  <data name="Unit_thermalConductivity_BTU/(h·ft·°F)" xml:space="preserve">
+    <value>英热单位每小时英尺华氏度</value>
+  </data>
+  <data name="Unit_thermalConductivity_cal/(s·cm·°C)" xml:space="preserve">
+    <value>卡路里每秒厘米摄氏度</value>
+  </data>
+  <data name="Unit_thermalConductivity_kcal/(h·m·°C)" xml:space="preserve">
+    <value>千卡每小时米摄氏度</value>
+  </data>
+  <!-- Thermal Resistance Units -->
+  <data name="Unit_thermalResistance_K/W" xml:space="preserve">
+    <value>开尔文每瓦特</value>
+  </data>
+  <data name="Unit_thermalResistance_°C/W" xml:space="preserve">
+    <value>摄氏度每瓦特</value>
+  </data>
+  <data name="Unit_thermalResistance_m²·K/W" xml:space="preserve">
+    <value>平方米开尔文每瓦特</value>
+  </data>
+  <data name="Unit_thermalResistance_h·ft²·°F/BTU" xml:space="preserve">
+    <value>小时平方英尺华氏度每英热单位</value>
+  </data>
+  <!-- Specific Heat Capacity Units -->
+  <data name="Unit_specificHeatCapacity_J/(kg·K)" xml:space="preserve">
+    <value>焦耳每千克开尔文</value>
+  </data>
+  <data name="Unit_specificHeatCapacity_kJ/(kg·K)" xml:space="preserve">
+    <value>千焦每千克开尔文</value>
+  </data>
+  <data name="Unit_specificHeatCapacity_BTU/(lb·°F)" xml:space="preserve">
+    <value>英热单位每磅华氏度</value>
+  </data>
+  <data name="Unit_specificHeatCapacity_cal/(g·°C)" xml:space="preserve">
+    <value>卡路里每克摄氏度</value>
+  </data>
+  <data name="Unit_specificHeatCapacity_kcal/(kg·°C)" xml:space="preserve">
+    <value>千卡每千克摄氏度</value>
+  </data>
+  <!-- Heat Flux Density Units -->
+  <data name="Unit_heatFluxDensity_W/m²" xml:space="preserve">
+    <value>瓦特每平方米</value>
+  </data>
+  <data name="Unit_heatFluxDensity_kW/m²" xml:space="preserve">
+    <value>千瓦每平方米</value>
+  </data>
+  <data name="Unit_heatFluxDensity_BTU/(h·ft²)" xml:space="preserve">
+    <value>英热单位每小时平方英尺</value>
+  </data>
+  <data name="Unit_heatFluxDensity_cal/(s·cm²)" xml:space="preserve">
+    <value>卡路里每秒平方厘米</value>
+  </data>
+  <!-- Heat Density Units -->
+  <data name="Unit_heatDensity_J/m³" xml:space="preserve">
+    <value>焦耳每立方米</value>
+  </data>
+  <data name="Unit_heatDensity_kJ/m³" xml:space="preserve">
+    <value>千焦每立方米</value>
+  </data>
+  <data name="Unit_heatDensity_MJ/m³" xml:space="preserve">
+    <value>兆焦每立方米</value>
+  </data>
+  <data name="Unit_heatDensity_BTU/ft³" xml:space="preserve">
+    <value>英热单位每立方英尺</value>
+  </data>
+  <data name="Unit_heatDensity_cal/cm³" xml:space="preserve">
+    <value>卡路里每立方厘米</value>
+  </data>
+  <!-- Thermal Expansion Units -->
+  <data name="Unit_thermalExpansion_1/K" xml:space="preserve">
+    <value>每开尔文</value>
+  </data>
+  <data name="Unit_thermalExpansion_1/°C" xml:space="preserve">
+    <value>每摄氏度</value>
+  </data>
+  <data name="Unit_thermalExpansion_1/°F" xml:space="preserve">
+    <value>每华氏度</value>
+  </data>
+  <data name="Unit_thermalExpansion_1/°R" xml:space="preserve">
+    <value>每兰氏度</value>
+  </data>
+  <!-- Temperature Interval Units -->
+  <data name="Unit_temperatureInterval_K" xml:space="preserve">
+    <value>开尔文</value>
+  </data>
+  <data name="Unit_temperatureInterval_°C" xml:space="preserve">
+    <value>摄氏度</value>
+  </data>
+  <data name="Unit_temperatureInterval_°F" xml:space="preserve">
+    <value>华氏度</value>
+  </data>
+  <data name="Unit_temperatureInterval_°R" xml:space="preserve">
+    <value>兰氏度</value>
+  </data>
+  <!-- Fuel Efficiency - Mass Units -->
+  <data name="Unit_fuelEfficiencyMass_m/kg" xml:space="preserve">
+    <value>米每千克</value>
+  </data>
+  <data name="Unit_fuelEfficiencyMass_km/kg" xml:space="preserve">
+    <value>千米每千克</value>
+  </data>
+  <data name="Unit_fuelEfficiencyMass_mi/lb" xml:space="preserve">
+    <value>英里每磅</value>
+  </data>
+  <data name="Unit_fuelEfficiencyMass_ft/lb" xml:space="preserve">
+    <value>英尺每磅</value>
+  </data>
+  <!-- Fuel Efficiency - Volume Units -->
+  <data name="Unit_fuelEfficiencyVolume_m/m³" xml:space="preserve">
+    <value>米每立方米</value>
+  </data>
+  <data name="Unit_fuelEfficiencyVolume_km/L" xml:space="preserve">
+    <value>千米每升</value>
+  </data>
+  <data name="Unit_fuelEfficiencyVolume_L/100km" xml:space="preserve">
+    <value>升每100千米</value>
+  </data>
+  <data name="Unit_fuelEfficiencyVolume_mpg" xml:space="preserve">
+    <value>英里每加仑(美制)</value>
+  </data>
+  <data name="Unit_fuelEfficiencyVolume_mpg UK" xml:space="preserve">
+    <value>英里每加仑(英制)</value>
+  </data>
+  <!-- Charge Units -->
+  <data name="Unit_charge_C" xml:space="preserve">
+    <value>库仑</value>
+  </data>
+  <data name="Unit_charge_mC" xml:space="preserve">
+    <value>毫库仑</value>
+  </data>
+  <data name="Unit_charge_µC" xml:space="preserve">
+    <value>微库仑</value>
+  </data>
+  <data name="Unit_charge_nC" xml:space="preserve">
+    <value>纳库仑</value>
+  </data>
+  <data name="Unit_charge_A·h" xml:space="preserve">
+    <value>安时</value>
+  </data>
+  <data name="Unit_charge_mA·h" xml:space="preserve">
+    <value>毫安时</value>
+  </data>
+  <!-- Electric Field Strength Units -->
+  <data name="Unit_electricFieldStrength_V/m" xml:space="preserve">
+    <value>伏特每米</value>
+  </data>
+  <data name="Unit_electricFieldStrength_kV/m" xml:space="preserve">
+    <value>千伏每米</value>
+  </data>
+  <data name="Unit_electricFieldStrength_V/cm" xml:space="preserve">
+    <value>伏特每厘米</value>
+  </data>
+  <!-- Capacitance Units -->
+  <data name="Unit_capacitance_F" xml:space="preserve">
+    <value>法拉</value>
+  </data>
+  <data name="Unit_capacitance_mF" xml:space="preserve">
+    <value>毫法</value>
+  </data>
+  <data name="Unit_capacitance_µF" xml:space="preserve">
+    <value>微法</value>
+  </data>
+  <data name="Unit_capacitance_nF" xml:space="preserve">
+    <value>纳法</value>
+  </data>
+  <data name="Unit_capacitance_pF" xml:space="preserve">
+    <value>皮法</value>
+  </data>
+  <!-- Inductance Units -->
+  <data name="Unit_inductance_H" xml:space="preserve">
+    <value>亨利</value>
+  </data>
+  <data name="Unit_inductance_mH" xml:space="preserve">
+    <value>毫亨</value>
+  </data>
+  <data name="Unit_inductance_µH" xml:space="preserve">
+    <value>微亨</value>
+  </data>
+  <data name="Unit_inductance_nH" xml:space="preserve">
+    <value>纳亨</value>
+  </data>
+  <!-- Electric Conductivity Units -->
+  <data name="Unit_electricConductivity_S/m" xml:space="preserve">
+    <value>西门子每米</value>
+  </data>
+  <data name="Unit_electricConductivity_S/cm" xml:space="preserve">
+    <value>西门子每厘米</value>
+  </data>
+  <data name="Unit_electricConductivity_mS/m" xml:space="preserve">
+    <value>毫西门子每米</value>
+  </data>
+  <!-- Electric Resistivity Units -->
+  <data name="Unit_electricResistivity_Ω·m" xml:space="preserve">
+    <value>欧米</value>
+  </data>
+  <data name="Unit_electricResistivity_Ω·cm" xml:space="preserve">
+    <value>欧厘米</value>
+  </data>
+  <data name="Unit_electricResistivity_µΩ·m" xml:space="preserve">
+    <value>微欧米</value>
+  </data>
+  <!-- Electric Conductance Units -->
+  <data name="Unit_electricConductance_S" xml:space="preserve">
+    <value>西门子</value>
+  </data>
+  <data name="Unit_electricConductance_mS" xml:space="preserve">
+    <value>毫西门子</value>
+  </data>
+  <data name="Unit_electricConductance_µS" xml:space="preserve">
+    <value>微西门子</value>
+  </data>
+  <data name="Unit_electricConductance_kS" xml:space="preserve">
+    <value>千西门子</value>
   </data>
 </root>
 

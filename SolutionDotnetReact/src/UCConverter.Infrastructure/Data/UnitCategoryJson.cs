@@ -7,6 +7,7 @@ public class UnitCategoryJson
 {
     public string Category { get; set; } = string.Empty;
     public string CategoryDisplayName { get; set; } = string.Empty;
+    public string? Group { get; set; }
     public UnitJson BaseUnit { get; set; } = null!;
     public List<UnitJson> Units { get; set; } = new();
 }

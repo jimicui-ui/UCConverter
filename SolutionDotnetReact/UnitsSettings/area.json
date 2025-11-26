@@ -1,6 +1,7 @@
 {
   "category": "area",
   "categoryDisplayName": "Area",
+  "group": "Common",
   "baseUnit": {
     "symbol": "m²",
     "name": "square meter",

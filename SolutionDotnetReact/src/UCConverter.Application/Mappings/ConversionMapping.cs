@@ -43,7 +43,8 @@ public static class ConversionMapping
         return new CategoryDto
         {
             Name = category.Name,
-            DisplayName = displayName
+            DisplayName = displayName,
+            Group = category.Group
         };
     }
 

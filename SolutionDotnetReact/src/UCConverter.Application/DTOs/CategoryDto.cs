@@ -24,4 +24,11 @@ public class CategoryDto
     /// </summary>
     /// <example>Length / Distance</example>
     public string DisplayName { get; set; } = string.Empty;
+
+    /// <summary>
+    /// The group this category belongs to (e.g., "Common", "Engineering", "Electricity", "Heat").
+    /// Used for organizing categories in the UI.
+    /// </summary>
+    /// <example>Common</example>
+    public string Group { get; set; } = string.Empty;
 }

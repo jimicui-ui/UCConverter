@@ -1,0 +1,64 @@
+{
+  "category": "angularAcceleration",
+  "categoryDisplayName": "Angular Acceleration",
+  "group": "Engineering",
+  "baseUnit": {
+    "symbol": "rad/s²",
+    "name": "radian per second squared",
+    "displayName": "Radian per Second Squared",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "rad/s²",
+      "name": "radian per second squared",
+      "displayName": "Radian per Second Squared",
+      "category": "angularAcceleration",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "°/s²",
+      "name": "degree per second squared",
+      "displayName": "Degree per Second Squared",
+      "category": "angularAcceleration",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 0.0174533,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "rpm²",
+      "name": "revolution per minute squared",
+      "displayName": "Revolution per Minute Squared",
+      "category": "angularAcceleration",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 0.00174533,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "rps²",
+      "name": "revolution per second squared",
+      "displayName": "Revolution per Second Squared",
+      "category": "angularAcceleration",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 39.4784,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

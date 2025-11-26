@@ -1,0 +1,40 @@
+{
+  "category": "volumeChargeDensity",
+  "categoryDisplayName": "Volume Charge Density",
+  "group": "Electricity",
+  "baseUnit": {
+    "symbol": "C/m³",
+    "name": "coulomb per cubic meter",
+    "displayName": "Coulomb per Cubic Meter",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "C/m³",
+      "name": "coulomb per cubic meter",
+      "displayName": "Coulomb per Cubic Meter",
+      "category": "volumeChargeDensity",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "C/cm³",
+      "name": "coulomb per cubic centimeter",
+      "displayName": "Coulomb per Cubic Centimeter",
+      "category": "volumeChargeDensity",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

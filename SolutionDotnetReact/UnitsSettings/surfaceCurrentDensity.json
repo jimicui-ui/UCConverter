@@ -1,0 +1,40 @@
+{
+  "category": "surfaceCurrentDensity",
+  "categoryDisplayName": "Surface Current Density",
+  "group": "Electricity",
+  "baseUnit": {
+    "symbol": "A/m",
+    "name": "ampere per meter",
+    "displayName": "Ampere per Meter",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "A/m",
+      "name": "ampere per meter",
+      "displayName": "Ampere per Meter",
+      "category": "surfaceCurrentDensity",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "A/cm",
+      "name": "ampere per centimeter",
+      "displayName": "Ampere per Centimeter",
+      "category": "surfaceCurrentDensity",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 100.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

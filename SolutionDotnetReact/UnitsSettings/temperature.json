@@ -1,6 +1,7 @@
 {
   "category": "temperature",
   "categoryDisplayName": "Temperature",
+  "group": "Common",
   "baseUnit": {
     "symbol": "K",
     "name": "kelvin",

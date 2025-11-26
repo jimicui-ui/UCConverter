@@ -1,0 +1,64 @@
+{
+  "category": "thermalExpansion",
+  "categoryDisplayName": "Thermal Expansion",
+  "group": "Heat",
+  "baseUnit": {
+    "symbol": "1/K",
+    "name": "per kelvin",
+    "displayName": "Per Kelvin",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "1/K",
+      "name": "per kelvin",
+      "displayName": "Per Kelvin",
+      "category": "thermalExpansion",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "1/°C",
+      "name": "per degree Celsius",
+      "displayName": "Per Degree Celsius",
+      "category": "thermalExpansion",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "1/°F",
+      "name": "per degree Fahrenheit",
+      "displayName": "Per Degree Fahrenheit",
+      "category": "thermalExpansion",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 1.8,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "1/°R",
+      "name": "per degree Rankine",
+      "displayName": "Per Degree Rankine",
+      "category": "thermalExpansion",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 1.8,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

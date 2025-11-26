@@ -1,0 +1,76 @@
+{
+  "category": "thermalConductivity",
+  "categoryDisplayName": "Thermal Conductivity",
+  "group": "Heat",
+  "baseUnit": {
+    "symbol": "W/(m·K)",
+    "name": "watt per meter kelvin",
+    "displayName": "Watt per Meter Kelvin",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "W/(m·K)",
+      "name": "watt per meter kelvin",
+      "displayName": "Watt per Meter Kelvin",
+      "category": "thermalConductivity",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "W/(cm·K)",
+      "name": "watt per centimeter kelvin",
+      "displayName": "Watt per Centimeter Kelvin",
+      "category": "thermalConductivity",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 100.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "BTU/(h·ft·°F)",
+      "name": "BTU per hour foot degree Fahrenheit",
+      "displayName": "BTU per Hour Foot Degree Fahrenheit",
+      "category": "thermalConductivity",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 1.73073,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "cal/(s·cm·°C)",
+      "name": "calorie per second centimeter degree Celsius",
+      "displayName": "Calorie per Second Centimeter Degree Celsius",
+      "category": "thermalConductivity",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 418.4,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kcal/(h·m·°C)",
+      "name": "kilocalorie per hour meter degree Celsius",
+      "displayName": "Kilocalorie per Hour Meter Degree Celsius",
+      "category": "thermalConductivity",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Other",
+      "conversionFactor": 1.163,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

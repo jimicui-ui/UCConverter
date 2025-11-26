@@ -1,0 +1,124 @@
+{
+  "category": "energy",
+  "categoryDisplayName": "Energy",
+  "group": "Common",
+  "baseUnit": {
+    "symbol": "J",
+    "name": "joule",
+    "displayName": "Joule",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "J",
+      "name": "joule",
+      "displayName": "Joule",
+      "category": "energy",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kJ",
+      "name": "kilojoule",
+      "displayName": "Kilojoule",
+      "category": "energy",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "MJ",
+      "name": "megajoule",
+      "displayName": "Megajoule",
+      "category": "energy",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "cal",
+      "name": "calorie",
+      "displayName": "Calorie",
+      "category": "energy",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI Metric",
+      "conversionFactor": 4.184,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kcal",
+      "name": "kilocalorie",
+      "displayName": "Kilocalorie",
+      "category": "energy",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI Metric",
+      "conversionFactor": 4184.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kWh",
+      "name": "kilowatt-hour",
+      "displayName": "Kilowatt-hour",
+      "category": "energy",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI Metric",
+      "conversionFactor": 3600000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "Wh",
+      "name": "watt-hour",
+      "displayName": "Watt-hour",
+      "category": "energy",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI Metric",
+      "conversionFactor": 3600.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "BTU",
+      "name": "British Thermal Unit",
+      "displayName": "British Thermal Unit",
+      "category": "energy",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 1055.06,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "ft·lb",
+      "name": "foot-pound",
+      "displayName": "Foot-pound",
+      "category": "energy",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 1.35582,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

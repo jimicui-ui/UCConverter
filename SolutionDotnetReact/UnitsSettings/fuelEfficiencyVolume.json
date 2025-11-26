@@ -1,0 +1,76 @@
+{
+  "category": "fuelEfficiencyVolume",
+  "categoryDisplayName": "Fuel Efficiency - Volume",
+  "group": "Heat",
+  "baseUnit": {
+    "symbol": "m/m³",
+    "name": "meter per cubic meter",
+    "displayName": "Meter per Cubic Meter",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "m/m³",
+      "name": "meter per cubic meter",
+      "displayName": "Meter per Cubic Meter",
+      "category": "fuelEfficiencyVolume",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "km/L",
+      "name": "kilometer per liter",
+      "displayName": "Kilometer per Liter",
+      "category": "fuelEfficiencyVolume",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "L/100km",
+      "name": "liter per 100 kilometers",
+      "displayName": "Liter per 100 Kilometers",
+      "category": "fuelEfficiencyVolume",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.00001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "mpg",
+      "name": "mile per gallon (US)",
+      "displayName": "Mile per Gallon (US)",
+      "category": "fuelEfficiencyVolume",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 425143.7,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "mpg UK",
+      "name": "mile per gallon (UK)",
+      "displayName": "Mile per Gallon (UK)",
+      "category": "fuelEfficiencyVolume",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 354006.2,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

@@ -5,6 +5,7 @@ import type { CategoryDto, UnitDto, ConvertRequestDto } from '../types/api';
 import { ThemeToggle } from './ThemeToggle';
 import { useDebounce } from '../hooks/useDebounce';
 import { formatResultNumber, validateNumber } from '../utils/numberFormatter';
+import { formatUnitSymbol } from '../utils/unitSymbolFormatter';
 import './UnitConverter.css';
 
 const STORAGE_KEY_PREFIX = 'uc_lastUnits_';
@@ -26,6 +27,8 @@ export function UnitConverter() {
   const [copied, setCopied] = useState(false);
   const [unitSearchFrom, setUnitSearchFrom] = useState<string>('');
   const [unitSearchTo, setUnitSearchTo] = useState<string>('');
+  const [categorySearch, setCategorySearch] = useState<string>('');
+  const [selectedGroup, setSelectedGroup] = useState<string>('All');
 
   // Debounced value for real-time conversion
   const debouncedValue = useDebounce(value, DEBOUNCE_DELAY);
@@ -269,7 +272,7 @@ export function UnitConverter() {
   const handleCopyResult = async () => {
     if (result === null || !value) return;
 
-    const resultText = `${formatResultNumber(parseFloat(value), locale)} ${fromUnit} = ${formatResultNumber(result, locale)} ${toUnit}`;
+    const resultText = `${formatResultNumber(parseFloat(value), locale)} ${formatUnitSymbol(fromUnit)} = ${formatResultNumber(result, locale)} ${formatUnitSymbol(toUnit)}`;
     
     try {
       await navigator.clipboard.writeText(resultText);
@@ -315,6 +318,47 @@ export function UnitConverter() {
       (unit.name && unit.name.toLowerCase().includes(searchLower))
     );
   }, [units, unitSearchTo]);
+
+  // Get unique groups from categories
+  const availableGroups = useMemo(() => {
+    const groups = new Set<string>();
+    categories.forEach(cat => {
+      if (cat?.group) {
+        groups.add(cat.group);
+      }
+    });
+    return Array.from(groups).sort();
+  }, [categories]);
+
+  // Sort categories alphabetically by displayName
+  const sortedCategories = useMemo(() => {
+    return [...categories].sort((a, b) => {
+      const aName = a?.displayName || a?.name || '';
+      const bName = b?.displayName || b?.name || '';
+      return aName.localeCompare(bName, i18n.language, { sensitivity: 'base' });
+    });
+  }, [categories, i18n.language]);
+
+  // Filter categories based on group and search
+  const filteredCategories = useMemo(() => {
+    let filtered = sortedCategories;
+    
+    // Filter by group
+    if (selectedGroup !== 'All') {
+      filtered = filtered.filter(cat => cat?.group === selectedGroup);
+    }
+    
+    // Filter by search
+    if (categorySearch.trim()) {
+      const searchLower = categorySearch.toLowerCase();
+      filtered = filtered.filter(cat => 
+        (cat?.displayName || '').toLowerCase().includes(searchLower) ||
+        (cat?.name || '').toLowerCase().includes(searchLower)
+      );
+    }
+    
+    return filtered;
+  }, [sortedCategories, selectedGroup, categorySearch]);
 
   const currentCategory = categories.find((c) => c && c.name === selectedCategory);
   const baseUnit = units.find(u => u && u.isBaseUnit);
@@ -362,6 +406,54 @@ export function UnitConverter() {
       <main id="main-content" className="converter-form" role="main" aria-label={t('unitConverter.title') || 'Unit converter'}>
         <div className="form-group">
           <label htmlFor="category">{t('common.category')}</label>
+          
+          {/* Group Selection Radio Buttons */}
+          {availableGroups.length > 0 && (
+            <div className="group-selection" role="radiogroup" aria-label="Select converter group">
+              <label className="radio-option">
+                <input
+                  type="radio"
+                  name="group"
+                  value="All"
+                  checked={selectedGroup === 'All'}
+                  onChange={(e) => {
+                    setSelectedGroup(e.target.value);
+                    setCategorySearch('');
+                  }}
+                  aria-label="All groups"
+                />
+                <span>{t('groups.all', 'All')}</span>
+              </label>
+              {availableGroups.map(group => (
+                <label key={group} className="radio-option">
+                  <input
+                    type="radio"
+                    name="group"
+                    value={group}
+                    checked={selectedGroup === group}
+                    onChange={(e) => {
+                      setSelectedGroup(e.target.value);
+                      setCategorySearch('');
+                    }}
+                    aria-label={`${group} group`}
+                  />
+                  <span>{t(`groups.${group.toLowerCase()}`, group)}</span>
+                </label>
+              ))}
+            </div>
+          )}
+          
+          {filteredCategories.length > 10 && (
+            <input
+              type="text"
+              className="category-search"
+              placeholder="Search categories..."
+              value={categorySearch}
+              onChange={(e) => setCategorySearch(e.target.value)}
+              aria-label="Search categories"
+              aria-controls="category"
+            />
+          )}
           <select
             id="category"
             value={selectedCategory}
@@ -372,11 +464,12 @@ export function UnitConverter() {
               setValueError(null);
               setUnitSearchFrom('');
               setUnitSearchTo('');
+              setCategorySearch('');
             }}
             aria-label={t('common.selectCategory') || 'Select category'}
             aria-required="true"
           >
-            {categories.map((category) => (
+            {filteredCategories.map((category) => (
               category && (
                 <option key={category.name} value={category.name}>
                   {category.displayName || category.name}
@@ -417,7 +510,7 @@ export function UnitConverter() {
               {filteredUnitsFrom.length > 0 ? (
                 filteredUnitsFrom.map((unit) => (
                   <option key={unit.symbol} value={unit.symbol}>
-                    {unit.displayName} ({unit.symbol})
+                    {unit.displayName} ({formatUnitSymbol(unit.symbol)})
                     {unit.isSIUnit && ` [${t('units.si')}]`}
                     {unit.isBaseUnit && ` [${t('units.base')}]`}
                   </option>
@@ -471,7 +564,7 @@ export function UnitConverter() {
               {filteredUnitsTo.length > 0 ? (
                 filteredUnitsTo.map((unit) => (
                   <option key={unit.symbol} value={unit.symbol}>
-                    {unit.displayName} ({unit.symbol})
+                    {unit.displayName} ({formatUnitSymbol(unit.symbol)})
                     {unit.isSIUnit && ` [${t('units.si')}]`}
                     {unit.isBaseUnit && ` [${t('units.base')}]`}
                   </option>
@@ -543,8 +636,8 @@ export function UnitConverter() {
               </button>
             </div>
             <div className="result-value" aria-live="polite" aria-atomic="true">
-              {formatResultNumber(parseFloat(value), locale)} {fromUnit} ={' '}
-              <strong>{formatResultNumber(result, locale)}</strong> {toUnit}
+              {formatResultNumber(parseFloat(value), locale)} <span className="unit-symbol">{formatUnitSymbol(fromUnit)}</span> ={' '}
+              <strong>{formatResultNumber(result, locale)}</strong> <span className="unit-symbol">{formatUnitSymbol(toUnit)}</span>
             </div>
           </section>
         )}
@@ -561,7 +654,7 @@ export function UnitConverter() {
               <div className="category-info-item">
                 <span className="category-info-label">{t('common.baseUnit')}</span>
                 <span className="category-info-value">
-                  {baseUnit.displayName || baseUnit.name} ({baseUnit.symbol})
+                  {baseUnit.displayName || baseUnit.name} (<span className="unit-symbol">{formatUnitSymbol(baseUnit.symbol)}</span>)
                   {baseUnit.isSIUnit && ` [${t('units.si')}]`}
                 </span>
               </div>

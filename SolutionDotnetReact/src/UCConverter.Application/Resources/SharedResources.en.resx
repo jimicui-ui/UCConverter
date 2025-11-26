@@ -79,6 +79,114 @@
   <data name="Category_speed" xml:space="preserve">
     <value>Speed / Velocity</value>
   </data>
+  <data name="Category_pressure" xml:space="preserve">
+    <value>Pressure</value>
+  </data>
+  <data name="Category_energy" xml:space="preserve">
+    <value>Energy</value>
+  </data>
+  <data name="Category_power" xml:space="preserve">
+    <value>Power</value>
+  </data>
+  <data name="Category_charge" xml:space="preserve">
+    <value>Charge</value>
+  </data>
+  <data name="Category_linearChargeDensity" xml:space="preserve">
+    <value>Linear Charge Density</value>
+  </data>
+  <data name="Category_surfaceChargeDensity" xml:space="preserve">
+    <value>Surface Charge Density</value>
+  </data>
+  <data name="Category_volumeChargeDensity" xml:space="preserve">
+    <value>Volume Charge Density</value>
+  </data>
+  <data name="Category_current" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="Category_linearCurrentDensity" xml:space="preserve">
+    <value>Linear Current Density</value>
+  </data>
+  <data name="Category_surfaceCurrentDensity" xml:space="preserve">
+    <value>Surface Current Density</value>
+  </data>
+  <data name="Category_electricFieldStrength" xml:space="preserve">
+    <value>Electric Field Strength</value>
+  </data>
+  <data name="Category_electricPotential" xml:space="preserve">
+    <value>Electric Potential</value>
+  </data>
+  <data name="Category_electricResistance" xml:space="preserve">
+    <value>Electric Resistance</value>
+  </data>
+  <data name="Category_electricResistivity" xml:space="preserve">
+    <value>Electric Resistivity</value>
+  </data>
+  <data name="Category_electricConductance" xml:space="preserve">
+    <value>Electric Conductance</value>
+  </data>
+  <data name="Category_electricConductivity" xml:space="preserve">
+    <value>Electric Conductivity</value>
+  </data>
+  <data name="Category_capacitance" xml:space="preserve">
+    <value>Capacitance</value>
+  </data>
+  <data name="Category_inductance" xml:space="preserve">
+    <value>Inductance</value>
+  </data>
+  <data name="Category_angularVelocity" xml:space="preserve">
+    <value>Angular Velocity</value>
+  </data>
+  <data name="Category_acceleration" xml:space="preserve">
+    <value>Acceleration</value>
+  </data>
+  <data name="Category_angularAcceleration" xml:space="preserve">
+    <value>Angular Acceleration</value>
+  </data>
+  <data name="Category_density" xml:space="preserve">
+    <value>Density</value>
+  </data>
+  <data name="Category_specificVolume" xml:space="preserve">
+    <value>Specific Volume</value>
+  </data>
+  <data name="Category_momentOfInertia" xml:space="preserve">
+    <value>Moment of Inertia</value>
+  </data>
+  <data name="Category_momentOfForce" xml:space="preserve">
+    <value>Moment of Force</value>
+  </data>
+  <data name="Category_torque" xml:space="preserve">
+    <value>Torque</value>
+  </data>
+  <data name="Category_fuelEfficiencyMass" xml:space="preserve">
+    <value>Fuel Efficiency - Mass</value>
+  </data>
+  <data name="Category_fuelEfficiencyVolume" xml:space="preserve">
+    <value>Fuel Efficiency - Volume</value>
+  </data>
+  <data name="Category_temperatureInterval" xml:space="preserve">
+    <value>Temperature Interval</value>
+  </data>
+  <data name="Category_thermalExpansion" xml:space="preserve">
+    <value>Thermal Expansion</value>
+  </data>
+  <data name="Category_thermalResistance" xml:space="preserve">
+    <value>Thermal Resistance</value>
+  </data>
+  <data name="Category_thermalConductivity" xml:space="preserve">
+    <value>Thermal Conductivity</value>
+  </data>
+  <data name="Category_specificHeatCapacity" xml:space="preserve">
+    <value>Specific Heat Capacity</value>
+  </data>
+  <data name="Category_heatDensity" xml:space="preserve">
+    <value>Heat Density</value>
+  </data>
+  <data name="Category_heatFluxDensity" xml:space="preserve">
+    <value>Heat Flux Density</value>
+  </data>
+  <data name="Category_heatTransferCoefficient" xml:space="preserve">
+    <value>Heat Transfer Coefficient</value>
+  </data>
   <data name="Error_CategoryNotFound" xml:space="preserve">
     <value>Category '{0}' not found</value>
   </data>

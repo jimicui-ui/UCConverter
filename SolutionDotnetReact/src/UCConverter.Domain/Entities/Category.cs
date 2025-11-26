@@ -7,6 +7,7 @@ public class Category
 {
     public string Name { get; set; } = string.Empty;
     public string DisplayName { get; set; } = string.Empty;
+    public string Group { get; set; } = string.Empty;
     public Unit BaseUnit { get; set; } = null!;
     public List<Unit> Units { get; set; } = new();
 

@@ -1,0 +1,52 @@
+{
+  "category": "electricConductivity",
+  "categoryDisplayName": "Electric Conductivity",
+  "group": "Electricity",
+  "baseUnit": {
+    "symbol": "S/m",
+    "name": "siemens per meter",
+    "displayName": "Siemens per Meter",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "S/m",
+      "name": "siemens per meter",
+      "displayName": "Siemens per Meter",
+      "category": "electricConductivity",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "S/cm",
+      "name": "siemens per centimeter",
+      "displayName": "Siemens per Centimeter",
+      "category": "electricConductivity",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 100.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "mS/m",
+      "name": "millisiemens per meter",
+      "displayName": "Millisiemens per Meter",
+      "category": "electricConductivity",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

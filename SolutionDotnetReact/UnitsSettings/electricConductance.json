@@ -1,0 +1,64 @@
+{
+  "category": "electricConductance",
+  "categoryDisplayName": "Electric Conductance",
+  "group": "Electricity",
+  "baseUnit": {
+    "symbol": "S",
+    "name": "siemens",
+    "displayName": "Siemens",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "S",
+      "name": "siemens",
+      "displayName": "Siemens",
+      "category": "electricConductance",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "mS",
+      "name": "millisiemens",
+      "displayName": "Millisiemens",
+      "category": "electricConductance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "µS",
+      "name": "microsiemens",
+      "displayName": "Microsiemens",
+      "category": "electricConductance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kS",
+      "name": "kilosiemens",
+      "displayName": "Kilosiemens",
+      "category": "electricConductance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

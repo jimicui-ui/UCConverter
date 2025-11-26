@@ -1,0 +1,52 @@
+{
+  "category": "electricFieldStrength",
+  "categoryDisplayName": "Electric Field Strength",
+  "group": "Electricity",
+  "baseUnit": {
+    "symbol": "V/m",
+    "name": "volt per meter",
+    "displayName": "Volt per Meter",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "V/m",
+      "name": "volt per meter",
+      "displayName": "Volt per Meter",
+      "category": "electricFieldStrength",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kV/m",
+      "name": "kilovolt per meter",
+      "displayName": "Kilovolt per Meter",
+      "category": "electricFieldStrength",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "V/cm",
+      "name": "volt per centimeter",
+      "displayName": "Volt per Centimeter",
+      "category": "electricFieldStrength",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 100.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

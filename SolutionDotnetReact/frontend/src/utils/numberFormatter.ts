@@ -38,13 +38,48 @@ export function formatNumber(
 
 /**
  * Format a number for display in result, with smart formatting
+ * Uses scientific notation for very large or very small numbers
  * 
  * @param value - The number to format
  * @param locale - Locale string
  * @returns Formatted number string
  */
 export function formatResultNumber(value: number, locale: string = 'en-US'): string {
-  return formatNumber(value, locale, 10);
+  // Handle special cases
+  if (value === 0) return '0';
+  if (!isFinite(value)) {
+    if (isNaN(value)) return 'NaN';
+    return value > 0 ? '∞' : '-∞';
+  }
+
+  const absValue = Math.abs(value);
+  
+  // Use scientific notation for very large or very small numbers
+  // Threshold: numbers >= 1e6 or < 1e-3 (excluding 0)
+  if (absValue >= 1e6 || (absValue < 1e-3 && absValue > 0)) {
+    return value.toExponential(4);
+  }
+  
+  // Format with appropriate decimal places based on magnitude
+  if (absValue >= 1000) {
+    return value.toLocaleString(locale, { 
+      maximumFractionDigits: 2,
+      minimumFractionDigits: 0,
+      useGrouping: true
+    });
+  } else if (absValue >= 1) {
+    return value.toLocaleString(locale, { 
+      maximumFractionDigits: 4,
+      minimumFractionDigits: 0,
+      useGrouping: true
+    });
+  } else {
+    return value.toLocaleString(locale, { 
+      maximumFractionDigits: 6,
+      minimumFractionDigits: 0,
+      useGrouping: false
+    });
+  }
 }
 
 /**

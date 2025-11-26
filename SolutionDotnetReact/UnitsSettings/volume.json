@@ -1,5 +1,6 @@
 {
   "category": "volume",
+  "group": "Common",
   "categoryDisplayName": "Volume",
   "baseUnit": {
     "symbol": "m³",

@@ -12,8 +12,9 @@ export interface UnitDto {
 export interface CategoryDto {
   name: string;
   displayName: string;
-  baseUnit: UnitDto;
-  units: UnitDto[];
+  group: string;
+  baseUnit?: UnitDto;
+  units?: UnitDto[];
 }
 
 export interface ConvertRequestDto {

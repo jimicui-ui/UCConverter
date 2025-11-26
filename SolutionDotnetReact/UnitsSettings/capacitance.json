@@ -1,0 +1,76 @@
+{
+  "category": "capacitance",
+  "categoryDisplayName": "Capacitance",
+  "group": "Electricity",
+  "baseUnit": {
+    "symbol": "F",
+    "name": "farad",
+    "displayName": "Farad",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "F",
+      "name": "farad",
+      "displayName": "Farad",
+      "category": "capacitance",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "mF",
+      "name": "millifarad",
+      "displayName": "Millifarad",
+      "category": "capacitance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "µF",
+      "name": "microfarad",
+      "displayName": "Microfarad",
+      "category": "capacitance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "nF",
+      "name": "nanofarad",
+      "displayName": "Nanofarad",
+      "category": "capacitance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000000001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "pF",
+      "name": "picofarad",
+      "displayName": "Picofarad",
+      "category": "capacitance",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000000000001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

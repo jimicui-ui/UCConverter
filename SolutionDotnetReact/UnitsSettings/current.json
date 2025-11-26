@@ -1,0 +1,76 @@
+{
+  "category": "current",
+  "categoryDisplayName": "Current",
+  "group": "Electricity",
+  "baseUnit": {
+    "symbol": "A",
+    "name": "ampere",
+    "displayName": "Ampere",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "A",
+      "name": "ampere",
+      "displayName": "Ampere",
+      "category": "current",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "mA",
+      "name": "milliampere",
+      "displayName": "Milliampere",
+      "category": "current",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "µA",
+      "name": "microampere",
+      "displayName": "Microampere",
+      "category": "current",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "nA",
+      "name": "nanoampere",
+      "displayName": "Nanoampere",
+      "category": "current",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000000001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kA",
+      "name": "kiloampere",
+      "displayName": "Kiloampere",
+      "category": "current",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

@@ -1,0 +1,76 @@
+{
+  "category": "heatDensity",
+  "categoryDisplayName": "Heat Density",
+  "group": "Heat",
+  "baseUnit": {
+    "symbol": "J/m³",
+    "name": "joule per cubic meter",
+    "displayName": "Joule per Cubic Meter",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "J/m³",
+      "name": "joule per cubic meter",
+      "displayName": "Joule per Cubic Meter",
+      "category": "heatDensity",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kJ/m³",
+      "name": "kilojoule per cubic meter",
+      "displayName": "Kilojoule per Cubic Meter",
+      "category": "heatDensity",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "MJ/m³",
+      "name": "megajoule per cubic meter",
+      "displayName": "Megajoule per Cubic Meter",
+      "category": "heatDensity",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "BTU/ft³",
+      "name": "BTU per cubic foot",
+      "displayName": "BTU per Cubic Foot",
+      "category": "heatDensity",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 37258.9,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "cal/cm³",
+      "name": "calorie per cubic centimeter",
+      "displayName": "Calorie per Cubic Centimeter",
+      "category": "heatDensity",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 4184000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

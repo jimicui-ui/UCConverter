@@ -1,0 +1,76 @@
+{
+  "category": "specificHeatCapacity",
+  "categoryDisplayName": "Specific Heat Capacity",
+  "group": "Heat",
+  "baseUnit": {
+    "symbol": "J/(kg·K)",
+    "name": "joule per kilogram kelvin",
+    "displayName": "Joule per Kilogram Kelvin",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "J/(kg·K)",
+      "name": "joule per kilogram kelvin",
+      "displayName": "Joule per Kilogram Kelvin",
+      "category": "specificHeatCapacity",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kJ/(kg·K)",
+      "name": "kilojoule per kilogram kelvin",
+      "displayName": "Kilojoule per Kilogram Kelvin",
+      "category": "specificHeatCapacity",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "BTU/(lb·°F)",
+      "name": "BTU per pound degree Fahrenheit",
+      "displayName": "BTU per Pound Degree Fahrenheit",
+      "category": "specificHeatCapacity",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 4186.8,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "cal/(g·°C)",
+      "name": "calorie per gram degree Celsius",
+      "displayName": "Calorie per Gram Degree Celsius",
+      "category": "specificHeatCapacity",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 4184.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kcal/(kg·°C)",
+      "name": "kilocalorie per kilogram degree Celsius",
+      "displayName": "Kilocalorie per Kilogram Degree Celsius",
+      "category": "specificHeatCapacity",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Other",
+      "conversionFactor": 4184.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

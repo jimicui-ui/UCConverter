@@ -1,0 +1,136 @@
+{
+  "category": "pressure",
+  "categoryDisplayName": "Pressure",
+  "group": "Common",
+  "baseUnit": {
+    "symbol": "Pa",
+    "name": "pascal",
+    "displayName": "Pascal",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "Pa",
+      "name": "pascal",
+      "displayName": "Pascal",
+      "category": "pressure",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kPa",
+      "name": "kilopascal",
+      "displayName": "Kilopascal",
+      "category": "pressure",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "MPa",
+      "name": "megapascal",
+      "displayName": "Megapascal",
+      "category": "pressure",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "bar",
+      "name": "bar",
+      "displayName": "Bar",
+      "category": "pressure",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI Metric",
+      "conversionFactor": 100000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "mbar",
+      "name": "millibar",
+      "displayName": "Millibar",
+      "category": "pressure",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI Metric",
+      "conversionFactor": 100.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "psi",
+      "name": "pound per square inch",
+      "displayName": "Pound per Square Inch",
+      "category": "pressure",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 6894.76,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "psf",
+      "name": "pound per square foot",
+      "displayName": "Pound per Square Foot",
+      "category": "pressure",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 47.8803,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "atm",
+      "name": "atmosphere",
+      "displayName": "Atmosphere",
+      "category": "pressure",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Other",
+      "conversionFactor": 101325.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "torr",
+      "name": "torr",
+      "displayName": "Torr",
+      "category": "pressure",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Other",
+      "conversionFactor": 133.322,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "mmHg",
+      "name": "millimeter of mercury",
+      "displayName": "Millimeter of Mercury",
+      "category": "pressure",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Other",
+      "conversionFactor": 133.322,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

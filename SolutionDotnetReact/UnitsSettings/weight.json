@@ -1,6 +1,7 @@
 {
   "category": "weight",
   "categoryDisplayName": "Weight / Mass",
+  "group": "Common",
   "baseUnit": {
     "symbol": "kg",
     "name": "kilogram",

@@ -365,6 +365,118 @@
   color: var(--color-text-tertiary);
 }
 
+/* Category search input */
+.category-search {
+  width: 100%;
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-2);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.category-search:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-focus);
+}
+
+.category-search::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+/* Group Selection Radio Buttons */
+.group-selection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
+  padding: var(--spacing-3);
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-default);
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  cursor: pointer;
+  user-select: none;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-base), color var(--transition-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.radio-option:hover {
+  background-color: var(--color-bg-tertiary);
+}
+
+.radio-option input[type="radio"] {
+  margin: 0;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.radio-option input[type="radio"]:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 50%;
+}
+
+.radio-option span {
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.radio-option input[type="radio"]:checked + span {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Responsive adjustments for group selection */
+@media (max-width: 768px) {
+  .group-selection {
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+  
+  .radio-option {
+    width: 100%;
+    padding: var(--spacing-3);
+  }
+}
+
+/* Unit symbol formatting - support complex symbols */
+.unit-symbol {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-variant-numeric: normal;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.unit-symbol sup {
+  font-size: 0.7em;
+  vertical-align: super;
+  line-height: 0;
+  position: relative;
+  top: -0.5em;
+}
+
+.unit-symbol sub {
+  font-size: 0.7em;
+  vertical-align: sub;
+  line-height: 0;
+}
+
 /* Enhanced Unit Selection - Show SI/Base indicators */
 .form-group select option {
   padding: var(--spacing-2);

@@ -1,0 +1,40 @@
+{
+  "category": "linearChargeDensity",
+  "categoryDisplayName": "Linear Charge Density",
+  "group": "Electricity",
+  "baseUnit": {
+    "symbol": "C/m",
+    "name": "coulomb per meter",
+    "displayName": "Coulomb per Meter",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "C/m",
+      "name": "coulomb per meter",
+      "displayName": "Coulomb per Meter",
+      "category": "linearChargeDensity",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "C/cm",
+      "name": "coulomb per centimeter",
+      "displayName": "Coulomb per Centimeter",
+      "category": "linearChargeDensity",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 100.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

@@ -1,0 +1,88 @@
+{
+  "category": "angularVelocity",
+  "categoryDisplayName": "Angular Velocity",
+  "group": "Engineering",
+  "baseUnit": {
+    "symbol": "rad/s",
+    "name": "radian per second",
+    "displayName": "Radian per Second",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "rad/s",
+      "name": "radian per second",
+      "displayName": "Radian per Second",
+      "category": "angularVelocity",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "rad/min",
+      "name": "radian per minute",
+      "displayName": "Radian per Minute",
+      "category": "angularVelocity",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.0166667,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "°/s",
+      "name": "degree per second",
+      "displayName": "Degree per Second",
+      "category": "angularVelocity",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 0.0174533,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "°/min",
+      "name": "degree per minute",
+      "displayName": "Degree per Minute",
+      "category": "angularVelocity",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 0.000290888,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "rpm",
+      "name": "revolution per minute",
+      "displayName": "Revolution per Minute",
+      "category": "angularVelocity",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 0.10472,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "rps",
+      "name": "revolution per second",
+      "displayName": "Revolution per Second",
+      "category": "angularVelocity",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Non-SI",
+      "conversionFactor": 6.28319,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

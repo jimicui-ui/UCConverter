@@ -1,0 +1,40 @@
+{
+  "category": "surfaceChargeDensity",
+  "categoryDisplayName": "Surface Charge Density",
+  "group": "Electricity",
+  "baseUnit": {
+    "symbol": "C/m²",
+    "name": "coulomb per square meter",
+    "displayName": "Coulomb per Square Meter",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "C/m²",
+      "name": "coulomb per square meter",
+      "displayName": "Coulomb per Square Meter",
+      "category": "surfaceChargeDensity",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "C/cm²",
+      "name": "coulomb per square centimeter",
+      "displayName": "Coulomb per Square Centimeter",
+      "category": "surfaceChargeDensity",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 10000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

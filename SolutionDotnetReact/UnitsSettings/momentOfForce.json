@@ -1,0 +1,100 @@
+{
+  "category": "momentOfForce",
+  "categoryDisplayName": "Moment of Force",
+  "group": "Engineering",
+  "baseUnit": {
+    "symbol": "N·m",
+    "name": "newton meter",
+    "displayName": "Newton Meter",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "N·m",
+      "name": "newton meter",
+      "displayName": "Newton Meter",
+      "category": "momentOfForce",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kN·m",
+      "name": "kilonewton meter",
+      "displayName": "Kilonewton Meter",
+      "category": "momentOfForce",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "N·cm",
+      "name": "newton centimeter",
+      "displayName": "Newton Centimeter",
+      "category": "momentOfForce",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.01,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "lbf·ft",
+      "name": "pound-force foot",
+      "displayName": "Pound-force Foot",
+      "category": "momentOfForce",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 1.35582,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "lbf·in",
+      "name": "pound-force inch",
+      "displayName": "Pound-force Inch",
+      "category": "momentOfForce",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.112985,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "ozf·in",
+      "name": "ounce-force inch",
+      "displayName": "Ounce-force Inch",
+      "category": "momentOfForce",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.00706155,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kgf·m",
+      "name": "kilogram-force meter",
+      "displayName": "Kilogram-force Meter",
+      "category": "momentOfForce",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Other",
+      "conversionFactor": 9.80665,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

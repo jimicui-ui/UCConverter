@@ -1,6 +1,7 @@
 {
   "category": "speed",
   "categoryDisplayName": "Speed / Velocity",
+  "group": "Common",
   "baseUnit": {
     "symbol": "m/s",
     "name": "meter per second",

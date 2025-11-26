@@ -1,0 +1,76 @@
+{
+  "category": "electricPotential",
+  "categoryDisplayName": "Electric Potential",
+  "group": "Electricity",
+  "baseUnit": {
+    "symbol": "V",
+    "name": "volt",
+    "displayName": "Volt",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "V",
+      "name": "volt",
+      "displayName": "Volt",
+      "category": "electricPotential",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "mV",
+      "name": "millivolt",
+      "displayName": "Millivolt",
+      "category": "electricPotential",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "µV",
+      "name": "microvolt",
+      "displayName": "Microvolt",
+      "category": "electricPotential",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.000001,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kV",
+      "name": "kilovolt",
+      "displayName": "Kilovolt",
+      "category": "electricPotential",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "MV",
+      "name": "megavolt",
+      "displayName": "Megavolt",
+      "category": "electricPotential",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

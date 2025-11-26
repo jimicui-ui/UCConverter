@@ -1,0 +1,100 @@
+{
+  "category": "power",
+  "categoryDisplayName": "Power",
+  "group": "Common",
+  "baseUnit": {
+    "symbol": "W",
+    "name": "watt",
+    "displayName": "Watt",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "W",
+      "name": "watt",
+      "displayName": "Watt",
+      "category": "power",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kW",
+      "name": "kilowatt",
+      "displayName": "Kilowatt",
+      "category": "power",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "MW",
+      "name": "megawatt",
+      "displayName": "Megawatt",
+      "category": "power",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "GW",
+      "name": "gigawatt",
+      "displayName": "Gigawatt",
+      "category": "power",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000000000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "hp",
+      "name": "horsepower",
+      "displayName": "Horsepower",
+      "category": "power",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 745.7,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "BTU/h",
+      "name": "BTU per hour",
+      "displayName": "BTU per Hour",
+      "category": "power",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.293071,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "ft·lb/s",
+      "name": "foot-pound per second",
+      "displayName": "Foot-pound per Second",
+      "category": "power",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 1.35582,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

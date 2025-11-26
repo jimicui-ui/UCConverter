@@ -1,0 +1,88 @@
+{
+  "category": "acceleration",
+  "categoryDisplayName": "Acceleration",
+  "group": "Engineering",
+  "baseUnit": {
+    "symbol": "m/s²",
+    "name": "meter per second squared",
+    "displayName": "Meter per Second Squared",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "m/s²",
+      "name": "meter per second squared",
+      "displayName": "Meter per Second Squared",
+      "category": "acceleration",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "km/h²",
+      "name": "kilometer per hour squared",
+      "displayName": "Kilometer per Hour Squared",
+      "category": "acceleration",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 0.0000771605,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "ft/s²",
+      "name": "foot per second squared",
+      "displayName": "Foot per Second Squared",
+      "category": "acceleration",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.3048,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "in/s²",
+      "name": "inch per second squared",
+      "displayName": "Inch per Second Squared",
+      "category": "acceleration",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 0.0254,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "g",
+      "name": "standard gravity",
+      "displayName": "Standard Gravity",
+      "category": "acceleration",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Other",
+      "conversionFactor": 9.80665,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "Gal",
+      "name": "gal",
+      "displayName": "Gal",
+      "category": "acceleration",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Other",
+      "conversionFactor": 0.01,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

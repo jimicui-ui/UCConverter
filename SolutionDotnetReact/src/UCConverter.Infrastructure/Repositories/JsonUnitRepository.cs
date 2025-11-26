@@ -45,6 +45,8 @@ public class JsonUnitRepository : IUnitRepository
 
             try
             {
+                var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+                
                 if (!Directory.Exists(_unitsSettingsPath))
                 {
                     _logger.LogWarning("UnitsSettings directory not found at: {Path}", _unitsSettingsPath);
@@ -54,21 +56,32 @@ public class JsonUnitRepository : IUnitRepository
                 var jsonFiles = Directory.GetFiles(_unitsSettingsPath, "*.json");
                 _logger.LogInformation("Loading {Count} unit configuration files from {Path}", jsonFiles.Length, _unitsSettingsPath);
 
+                int successCount = 0;
+                int failureCount = 0;
+
                 foreach (var jsonFile in jsonFiles)
                 {
                     try
                     {
                         LoadCategoryFromFile(jsonFile);
+                        successCount++;
                     }
                     catch (Exception ex)
                     {
+                        failureCount++;
                         _logger.LogError(ex, "Failed to load unit configuration from file: {File}", jsonFile);
                         // Continue loading other files even if one fails (graceful degradation)
                     }
                 }
 
+                stopwatch.Stop();
                 _isInitialized = true;
-                _logger.LogInformation("Successfully loaded {Count} categories", _categoriesCache.Count);
+                _logger.LogInformation(
+                    "Successfully loaded {Count} categories in {ElapsedMs}ms (Success: {SuccessCount}, Failed: {FailureCount})", 
+                    _categoriesCache.Count, 
+                    stopwatch.ElapsedMilliseconds,
+                    successCount,
+                    failureCount);
             }
             catch (Exception ex)
             {
@@ -102,6 +115,7 @@ public class JsonUnitRepository : IUnitRepository
         {
             Name = categoryJson.Category,
             DisplayName = categoryJson.CategoryDisplayName,
+            Group = categoryJson.Group ?? "Common",
             BaseUnit = MapUnitJson(categoryJson.BaseUnit, categoryJson.Category),
             Units = categoryJson.Units?.Select(u => MapUnitJson(u, categoryJson.Category)).ToList() ?? new List<Unit>()
         };

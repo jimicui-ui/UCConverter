@@ -1,0 +1,76 @@
+{
+  "category": "heatTransferCoefficient",
+  "categoryDisplayName": "Heat Transfer Coefficient",
+  "group": "Heat",
+  "baseUnit": {
+    "symbol": "W/(m²·K)",
+    "name": "watt per square meter kelvin",
+    "displayName": "Watt per Square Meter Kelvin",
+    "isBaseUnit": true,
+    "isSIUnit": true,
+    "unitSystem": "SI"
+  },
+  "units": [
+    {
+      "symbol": "W/(m²·K)",
+      "name": "watt per square meter kelvin",
+      "displayName": "Watt per Square Meter Kelvin",
+      "category": "heatTransferCoefficient",
+      "isBaseUnit": true,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kW/(m²·K)",
+      "name": "kilowatt per square meter kelvin",
+      "displayName": "Kilowatt per Square Meter Kelvin",
+      "category": "heatTransferCoefficient",
+      "isBaseUnit": false,
+      "isSIUnit": true,
+      "unitSystem": "SI",
+      "conversionFactor": 1000.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "BTU/(h·ft²·°F)",
+      "name": "BTU per hour square foot degree Fahrenheit",
+      "displayName": "BTU per Hour Square Foot Degree Fahrenheit",
+      "category": "heatTransferCoefficient",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 5.67826,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "cal/(s·cm²·°C)",
+      "name": "calorie per second square centimeter degree Celsius",
+      "displayName": "Calorie per Second Square Centimeter Degree Celsius",
+      "category": "heatTransferCoefficient",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Imperial",
+      "conversionFactor": 41840.0,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    },
+    {
+      "symbol": "kcal/(h·m²·°C)",
+      "name": "kilocalorie per hour square meter degree Celsius",
+      "displayName": "Kilocalorie per Hour Square Meter Degree Celsius",
+      "category": "heatTransferCoefficient",
+      "isBaseUnit": false,
+      "isSIUnit": false,
+      "unitSystem": "Other",
+      "conversionFactor": 1.163,
+      "conversionFormula": null,
+      "conversionInverseFormula": null
+    }
+  ]
+}
+

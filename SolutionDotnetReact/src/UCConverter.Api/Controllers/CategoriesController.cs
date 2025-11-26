@@ -37,6 +37,8 @@ public class CategoriesController : ControllerBase
     /// Returns all available unit categories in the system. Categories are returned with localized display names based on the locale parameter or Accept-Language header.
     /// 
     /// **Supported Categories:**
+    /// 
+    /// **Basic Categories:**
     /// - length: Length / Distance units (meter, foot, inch, etc.)
     /// - weight: Weight / Mass units (kilogram, pound, ounce, etc.)
     /// - temperature: Temperature units (Celsius, Fahrenheit, Kelvin)
@@ -44,6 +46,50 @@ public class CategoriesController : ControllerBase
     /// - area: Area units (square meter, square foot, acre, etc.)
     /// - time: Time units (second, minute, hour, etc.)
     /// - speed: Speed units (meter per second, mile per hour, etc.)
+    /// 
+    /// **Pressure &amp; Energy:**
+    /// - pressure: Pressure units (pascal, bar, psi, atmosphere, etc.)
+    /// - energy: Energy / Work units (joule, calorie, kilowatt-hour, BTU, etc.)
+    /// - power: Power units (watt, horsepower, BTU/hour, etc.)
+    /// 
+    /// **Electricity Converters:**
+    /// - charge: Electric charge (coulomb, ampere-hour, etc.)
+    /// - linearChargeDensity: Linear charge density (coulomb per meter)
+    /// - surfaceChargeDensity: Surface charge density (coulomb per square meter)
+    /// - volumeChargeDensity: Volume charge density (coulomb per cubic meter)
+    /// - current: Electric current (ampere, milliampere, etc.)
+    /// - linearCurrentDensity: Linear current density (ampere per meter)
+    /// - surfaceCurrentDensity: Surface current density (ampere per meter)
+    /// - electricFieldStrength: Electric field strength (volt per meter)
+    /// - electricPotential: Electric potential / Voltage (volt, kilovolt, etc.)
+    /// - electricResistance: Electric resistance (ohm, kiloohm, etc.)
+    /// - electricResistivity: Electric resistivity (ohm meter)
+    /// - electricConductance: Electric conductance (siemens)
+    /// - electricConductivity: Electric conductivity (siemens per meter)
+    /// - capacitance: Electrostatic capacitance (farad, microfarad, etc.)
+    /// - inductance: Inductance (henry, millihenry, etc.)
+    /// 
+    /// **Engineering Converters:**
+    /// - angularVelocity: Angular velocity (radian per second, rpm, etc.)
+    /// - acceleration: Acceleration (meter per second squared, g, etc.)
+    /// - angularAcceleration: Angular acceleration (radian per second squared)
+    /// - density: Density (kilogram per cubic meter, pound per cubic foot, etc.)
+    /// - specificVolume: Specific volume (cubic meter per kilogram)
+    /// - momentOfInertia: Moment of inertia (kilogram square meter)
+    /// - momentOfForce: Moment of force (newton meter)
+    /// - torque: Torque (newton meter, pound-force foot, etc.)
+    /// 
+    /// **Heat Converters:**
+    /// - fuelEfficiencyMass: Fuel efficiency - mass (meter per kilogram, mile per pound)
+    /// - fuelEfficiencyVolume: Fuel efficiency - volume (kilometer per liter, mpg, L/100km)
+    /// - temperatureInterval: Temperature interval (kelvin, degree Celsius, degree Fahrenheit)
+    /// - thermalExpansion: Thermal expansion coefficient (per kelvin)
+    /// - thermalResistance: Thermal resistance (kelvin per watt)
+    /// - thermalConductivity: Thermal conductivity (watt per meter kelvin)
+    /// - specificHeatCapacity: Specific heat capacity (joule per kilogram kelvin)
+    /// - heatDensity: Heat density (joule per cubic meter)
+    /// - heatFluxDensity: Heat flux density (watt per square meter)
+    /// - heatTransferCoefficient: Heat transfer coefficient (watt per square meter kelvin)
     /// 
     /// **Example Usage:**
     /// - Get categories in English: `GET /api/categories?locale=en`

@@ -27,6 +27,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\UCConverter.Api\UCConverter.Api.csproj" />
+    <ProjectReference Include="..\..\src\UCConverter.Domain\UCConverter.Domain.csproj" />
+    <ProjectReference Include="..\..\src\UCConverter.Infrastructure\UCConverter.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

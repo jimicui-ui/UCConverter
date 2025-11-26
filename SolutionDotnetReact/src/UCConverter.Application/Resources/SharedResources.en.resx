@@ -91,5 +91,29 @@
   <data name="Error_InvalidInput" xml:space="preserve">
     <value>Invalid input</value>
   </data>
+  <data name="Error_RequestBodyRequired" xml:space="preserve">
+    <value>Request body is required</value>
+  </data>
+  <data name="Error_CategoryRequired" xml:space="preserve">
+    <value>Category is required</value>
+  </data>
+  <data name="Error_FromUnitRequired" xml:space="preserve">
+    <value>FromUnit is required</value>
+  </data>
+  <data name="Error_ToUnitRequired" xml:space="preserve">
+    <value>ToUnit is required</value>
+  </data>
+  <data name="Error_InternalServerError" xml:space="preserve">
+    <value>An error occurred while processing the request</value>
+  </data>
+  <data name="Error_InternalServerErrorConversion" xml:space="preserve">
+    <value>An error occurred while performing the conversion</value>
+  </data>
+  <data name="Error_InternalServerErrorCategories" xml:space="preserve">
+    <value>An error occurred while retrieving categories</value>
+  </data>
+  <data name="Error_InternalServerErrorUnits" xml:space="preserve">
+    <value>An error occurred while retrieving units</value>
+  </data>
 </root>
 

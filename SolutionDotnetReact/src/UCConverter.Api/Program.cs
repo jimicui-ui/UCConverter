@@ -12,19 +12,27 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 // Add localization support - resources are in Application layer
-builder.Services.AddLocalization(options => 
-{
-    options.ResourcesPath = "Resources";
-});
+// For .resx files, ResourcesPath is not needed (they're embedded in assembly)
+builder.Services.AddLocalization();
+
+// Configure request localization with proper culture fallback
 builder.Services.Configure<Microsoft.AspNetCore.Builder.RequestLocalizationOptions>(options =>
 {
-    var supportedCultures = new[] { "en", "zh", "en-US", "zh-CN" };
+    var supportedCultures = new[] { "en", "zh", "fr", "en-US", "zh-CN", "fr-FR" };
     options.SetDefaultCulture("en")
            .AddSupportedCultures(supportedCultures)
            .AddSupportedUICultures(supportedCultures);
+    
+    // Clear default providers and add our own with proper order
     options.RequestCultureProviders.Clear();
+    // Query string provider first (highest priority)
     options.RequestCultureProviders.Add(new Microsoft.AspNetCore.Localization.QueryStringRequestCultureProvider());
+    // Accept-Language header provider second
     options.RequestCultureProviders.Add(new Microsoft.AspNetCore.Localization.AcceptLanguageHeaderRequestCultureProvider());
+    
+    // Enable culture fallback (zh-CN -> zh, fr-FR -> fr)
+    options.FallBackToParentCultures = true;
+    options.FallBackToParentUICultures = true;
 });
 
 // Register localization service
@@ -49,7 +57,7 @@ Built with Clean Architecture and SOLID principles.
 - Support for multiple unit categories
 - SI base unit conversions
 - Formula-based conversions (e.g., temperature)
-- Localization support (English, Chinese)
+- Localization support (English, Chinese, French)
 - Comprehensive error handling
 
 ## Getting Started
@@ -162,9 +170,11 @@ app.UseSwaggerUI(options =>
 
 app.UseCors("AllowFrontend");
 
-// Use localization middleware
+// Use localization middleware - MUST be early in pipeline to set culture for IStringLocalizer
 var localizationOptions = app.Services.GetRequiredService<Microsoft.Extensions.Options.IOptions<Microsoft.AspNetCore.Builder.RequestLocalizationOptions>>().Value;
 app.UseRequestLocalization(localizationOptions);
+
+app.UseRouting();
 
 app.UseHttpsRedirection();
 app.UseAuthorization();

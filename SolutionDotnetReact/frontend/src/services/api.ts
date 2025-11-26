@@ -22,13 +22,15 @@ class ApiService {
    */
   async getCategories(locale?: string): Promise<CategoryDto[]> {
     const headers: HeadersInit = {};
-    if (locale) {
-      headers['Accept-Language'] = locale;
+    // Map language codes to full locale codes for Accept-Language header and query parameter
+    const localeHeader = locale === 'zh' ? 'zh-CN' : locale === 'fr' ? 'fr-FR' : locale;
+    if (localeHeader) {
+      headers['Accept-Language'] = localeHeader;
     }
     
     const basePath = this.baseUrl || '';
-    const url = locale 
-      ? `${basePath}/api/categories?locale=${locale}` 
+    const url = localeHeader 
+      ? `${basePath}/api/categories?locale=${localeHeader}` 
       : `${basePath}/api/categories`;
     const response = await fetch(url, { headers });
     
@@ -44,13 +46,15 @@ class ApiService {
    */
   async getUnitsByCategory(categoryName: string, locale?: string): Promise<UnitDto[]> {
     const headers: HeadersInit = {};
-    if (locale) {
-      headers['Accept-Language'] = locale;
+    // Map language codes to full locale codes for Accept-Language header and query parameter
+    const localeHeader = locale === 'zh' ? 'zh-CN' : locale === 'fr' ? 'fr-FR' : locale;
+    if (localeHeader) {
+      headers['Accept-Language'] = localeHeader;
     }
     
     const basePath = this.baseUrl || '';
-    const url = locale 
-      ? `${basePath}/api/categories/${encodeURIComponent(categoryName)}/units?locale=${locale}`
+    const url = localeHeader 
+      ? `${basePath}/api/categories/${encodeURIComponent(categoryName)}/units?locale=${localeHeader}`
       : `${basePath}/api/categories/${encodeURIComponent(categoryName)}/units`;
     const response = await fetch(url, { headers });
     
@@ -69,9 +73,10 @@ class ApiService {
       'Content-Type': 'application/json',
     };
     
-    // Add locale to headers if provided
+    // Add locale to headers if provided, mapping language codes to full locale codes
     if (request.locale) {
-      headers['Accept-Language'] = request.locale;
+      const localeHeader = request.locale === 'zh' ? 'zh-CN' : request.locale === 'fr' ? 'fr-FR' : request.locale;
+      headers['Accept-Language'] = localeHeader;
     }
     
     const basePath = this.baseUrl || '';

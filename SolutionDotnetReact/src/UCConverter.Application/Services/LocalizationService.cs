@@ -32,7 +32,8 @@ public class LocalizationService : ILocalizationService
         var key = $"Category_{categoryName}";
         var localized = _localizer[key];
         
-        // If translation not found, return the key or a default
+        // IStringLocalizer automatically handles culture fallback (zh-CN -> zh, fr-FR -> fr)
+        // If translation not found, return a default
         if (localized.ResourceNotFound)
         {
             // Fallback: capitalize first letter
@@ -47,6 +48,7 @@ public class LocalizationService : ILocalizationService
         var key = $"Unit_{categoryName}_{unitSymbol}";
         var localized = _localizer[key];
         
+        // IStringLocalizer automatically handles culture fallback (zh-CN -> zh, fr-FR -> fr)
         // If translation not found, return the default name
         if (localized.ResourceNotFound)
         {
@@ -78,6 +80,14 @@ public class LocalizationService : ILocalizationService
             "UnitNotFound" => $"Unit '{args[0]}' not found",
             "InvalidConversion" => "Invalid conversion",
             "InvalidInput" => "Invalid input",
+            "RequestBodyRequired" => "Request body is required",
+            "CategoryRequired" => "Category is required",
+            "FromUnitRequired" => "FromUnit is required",
+            "ToUnitRequired" => "ToUnit is required",
+            "InternalServerError" => "An error occurred while processing the request",
+            "InternalServerErrorConversion" => "An error occurred while performing the conversion",
+            "InternalServerErrorCategories" => "An error occurred while retrieving categories",
+            "InternalServerErrorUnits" => "An error occurred while retrieving units",
             _ => "An error occurred"
         };
     }

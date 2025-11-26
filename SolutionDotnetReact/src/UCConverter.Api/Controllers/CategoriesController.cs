@@ -73,7 +73,8 @@ public class CategoriesController : ControllerBase
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error retrieving categories");
-            return StatusCode(500, new { error = "An error occurred while retrieving categories" });
+            var errorMessage = _localizationService.GetErrorMessage("InternalServerErrorCategories");
+            return StatusCode(500, new { error = errorMessage });
         }
     }
 
@@ -132,7 +133,8 @@ public class CategoriesController : ControllerBase
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error retrieving units for category: {Category}", name);
-            return StatusCode(500, new { error = "An error occurred while retrieving units" });
+            var errorMessage = _localizationService.GetErrorMessage("InternalServerErrorUnits");
+            return StatusCode(500, new { error = errorMessage });
         }
     }
 }

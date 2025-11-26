@@ -139,22 +139,26 @@ public class ConvertController : ControllerBase
     {
         if (request == null)
         {
-            return BadRequest(new { error = "Request body is required" });
+            var errorMessage = _localizationService.GetErrorMessage("RequestBodyRequired");
+            return BadRequest(new { error = errorMessage });
         }
 
         if (string.IsNullOrWhiteSpace(request.Category))
         {
-            return BadRequest(new { error = "Category is required" });
+            var errorMessage = _localizationService.GetErrorMessage("CategoryRequired");
+            return BadRequest(new { error = errorMessage });
         }
 
         if (string.IsNullOrWhiteSpace(request.FromUnit))
         {
-            return BadRequest(new { error = "FromUnit is required" });
+            var errorMessage = _localizationService.GetErrorMessage("FromUnitRequired");
+            return BadRequest(new { error = errorMessage });
         }
 
         if (string.IsNullOrWhiteSpace(request.ToUnit))
         {
-            return BadRequest(new { error = "ToUnit is required" });
+            var errorMessage = _localizationService.GetErrorMessage("ToUnitRequired");
+            return BadRequest(new { error = errorMessage });
         }
 
         try
@@ -183,7 +187,8 @@ public class ConvertController : ControllerBase
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error performing conversion");
-            return StatusCode(500, new { error = "An error occurred while performing the conversion" });
+            var errorMessage = _localizationService.GetErrorMessage("InternalServerErrorConversion");
+            return StatusCode(500, new { error = errorMessage });
         }
     }
 }

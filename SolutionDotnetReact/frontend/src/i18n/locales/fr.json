@@ -1,0 +1,57 @@
+{
+  "common": {
+    "convert": "Convertir",
+    "converting": "Conversion en cours...",
+    "result": "Résultat :",
+    "category": "Catégorie",
+    "from": "De",
+    "to": "Vers",
+    "value": "Valeur",
+    "enterValue": "Entrer une valeur",
+    "swap": "Échanger",
+    "baseUnit": "Unité de base :",
+    "availableUnits": "Unités disponibles :",
+    "language": "Langue",
+    "switchToDark": "Passer au mode sombre",
+    "switchToLight": "Passer au mode clair",
+    "switchToBlue": "Passer au thème bleu",
+    "switchTheme": "Changer de thème",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "searchUnits": "Rechercher des unités...",
+    "noUnitsFound": "Aucune unité trouvée",
+    "loading": "Chargement...",
+    "headerControls": "Contrôles d'en-tête",
+    "selectLanguage": "Sélectionner la langue",
+    "selectCategory": "Sélectionner une catégorie",
+    "selectFromUnit": "Sélectionner l'unité source",
+    "selectToUnit": "Sélectionner l'unité cible",
+    "searchFromUnits": "Rechercher des unités source",
+    "searchToUnits": "Rechercher des unités cible",
+    "swapUnits": "Échanger les unités",
+    "copyResult": "Copier le résultat",
+    "categoryInformation": "Informations sur la catégorie"
+  },
+  "unitConverter": {
+    "title": "Convertisseur d'Unités",
+    "subtitle": "Convertir entre différentes unités de mesure"
+  },
+  "errors": {
+    "fillAllFields": "Veuillez remplir tous les champs",
+    "invalidNumber": "Veuillez entrer un nombre valide",
+    "failedToLoadCategories": "Échec du chargement des catégories",
+    "failedToLoadUnits": "Échec du chargement des unités",
+    "conversionFailed": "Échec de la conversion",
+    "emptyValue": "Veuillez entrer une valeur",
+    "invalidNumberFormat": "Format de nombre invalide",
+    "valueRequired": "Une valeur est requise"
+  },
+  "units": {
+    "si": "SI",
+    "base": "Base"
+  },
+  "accessibility": {
+    "skipToMainContent": "Aller au contenu principal"
+  }
+}
+

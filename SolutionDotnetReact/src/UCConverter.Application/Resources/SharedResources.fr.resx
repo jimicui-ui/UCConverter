@@ -59,218 +59,224 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Category_length" xml:space="preserve">
-    <value>长度 / 距离</value>
+    <value>Longueur / Distance</value>
   </data>
   <data name="Category_weight" xml:space="preserve">
-    <value>重量 / 质量</value>
+    <value>Masse / Poids</value>
   </data>
   <data name="Category_volume" xml:space="preserve">
-    <value>体积</value>
+    <value>Volume</value>
   </data>
   <data name="Category_temperature" xml:space="preserve">
-    <value>温度</value>
+    <value>Température</value>
   </data>
   <data name="Category_area" xml:space="preserve">
-    <value>面积</value>
+    <value>Superficie</value>
   </data>
   <data name="Category_time" xml:space="preserve">
-    <value>时间</value>
+    <value>Temps</value>
   </data>
   <data name="Category_speed" xml:space="preserve">
-    <value>速度</value>
+    <value>Vitesse</value>
   </data>
   <data name="Error_CategoryNotFound" xml:space="preserve">
-    <value>未找到类别 '{0}'</value>
+    <value>Catégorie '{0}' introuvable</value>
   </data>
   <data name="Error_UnitNotFound" xml:space="preserve">
-    <value>未找到单位 '{0}'</value>
+    <value>Unité '{0}' introuvable</value>
   </data>
   <data name="Error_InvalidConversion" xml:space="preserve">
-    <value>无效的转换</value>
+    <value>Conversion invalide</value>
   </data>
   <data name="Error_InvalidInput" xml:space="preserve">
-    <value>无效的输入</value>
+    <value>Entrée invalide</value>
   </data>
   <data name="Error_RequestBodyRequired" xml:space="preserve">
-    <value>请求体是必需的</value>
+    <value>Le corps de la requête est requis</value>
   </data>
   <data name="Error_CategoryRequired" xml:space="preserve">
-    <value>类别是必需的</value>
+    <value>La catégorie est requise</value>
   </data>
   <data name="Error_FromUnitRequired" xml:space="preserve">
-    <value>源单位是必需的</value>
+    <value>L'unité source est requise</value>
   </data>
   <data name="Error_ToUnitRequired" xml:space="preserve">
-    <value>目标单位是必需的</value>
+    <value>L'unité cible est requise</value>
   </data>
   <data name="Error_InternalServerError" xml:space="preserve">
-    <value>处理请求时发生错误</value>
+    <value>Une erreur s'est produite lors du traitement de la requête</value>
   </data>
   <data name="Error_InternalServerErrorConversion" xml:space="preserve">
-    <value>执行转换时发生错误</value>
+    <value>Une erreur s'est produite lors de la conversion</value>
   </data>
   <data name="Error_InternalServerErrorCategories" xml:space="preserve">
-    <value>检索类别时发生错误</value>
+    <value>Une erreur s'est produite lors de la récupération des catégories</value>
   </data>
   <data name="Error_InternalServerErrorUnits" xml:space="preserve">
-    <value>检索单位时发生错误</value>
+    <value>Une erreur s'est produite lors de la récupération des unités</value>
   </data>
   <!-- Length Units -->
   <data name="Unit_length_m" xml:space="preserve">
-    <value>米</value>
+    <value>Mètre</value>
   </data>
   <data name="Unit_length_km" xml:space="preserve">
-    <value>千米</value>
+    <value>Kilomètre</value>
   </data>
   <data name="Unit_length_cm" xml:space="preserve">
-    <value>厘米</value>
+    <value>Centimètre</value>
   </data>
   <data name="Unit_length_mm" xml:space="preserve">
-    <value>毫米</value>
+    <value>Millimètre</value>
   </data>
   <data name="Unit_length_ft" xml:space="preserve">
-    <value>英尺</value>
+    <value>Pied</value>
   </data>
   <data name="Unit_length_in" xml:space="preserve">
-    <value>英寸</value>
+    <value>Pouce</value>
   </data>
   <data name="Unit_length_mi" xml:space="preserve">
-    <value>英里</value>
+    <value>Mille</value>
   </data>
   <data name="Unit_length_yd" xml:space="preserve">
-    <value>码</value>
+    <value>Yard</value>
   </data>
   <!-- Weight Units -->
   <data name="Unit_weight_kg" xml:space="preserve">
-    <value>千克</value>
+    <value>Kilogramme</value>
   </data>
   <data name="Unit_weight_g" xml:space="preserve">
-    <value>克</value>
-  </data>
-  <data name="Unit_weight_mg" xml:space="preserve">
-    <value>毫克</value>
-  </data>
-  <data name="Unit_weight_t" xml:space="preserve">
-    <value>公吨</value>
+    <value>Gramme</value>
   </data>
   <data name="Unit_weight_lb" xml:space="preserve">
-    <value>磅</value>
+    <value>Livre</value>
   </data>
   <data name="Unit_weight_oz" xml:space="preserve">
-    <value>盎司</value>
+    <value>Once</value>
+  </data>
+  <data name="Unit_weight_mg" xml:space="preserve">
+    <value>Milligramme</value>
+  </data>
+  <data name="Unit_weight_t" xml:space="preserve">
+    <value>Tonne</value>
   </data>
   <!-- Temperature Units -->
   <data name="Unit_temperature_K" xml:space="preserve">
-    <value>开尔文</value>
+    <value>Kelvin</value>
   </data>
   <data name="Unit_temperature_°C" xml:space="preserve">
-    <value>摄氏度</value>
+    <value>Celsius</value>
   </data>
   <data name="Unit_temperature_°F" xml:space="preserve">
-    <value>华氏度</value>
+    <value>Fahrenheit</value>
   </data>
   <!-- Area Units -->
   <data name="Unit_area_m²" xml:space="preserve">
-    <value>平方米</value>
+    <value>Mètre carré</value>
   </data>
   <data name="Unit_area_km²" xml:space="preserve">
-    <value>平方千米</value>
+    <value>Kilomètre carré</value>
   </data>
   <data name="Unit_area_ha" xml:space="preserve">
-    <value>公顷</value>
+    <value>Hectare</value>
   </data>
   <data name="Unit_area_cm²" xml:space="preserve">
-    <value>平方厘米</value>
+    <value>Centimètre carré</value>
   </data>
   <data name="Unit_area_mm²" xml:space="preserve">
-    <value>平方毫米</value>
+    <value>Millimètre carré</value>
   </data>
   <data name="Unit_area_ft²" xml:space="preserve">
-    <value>平方英尺</value>
+    <value>Pied carré</value>
   </data>
   <data name="Unit_area_in²" xml:space="preserve">
-    <value>平方英寸</value>
+    <value>Pouce carré</value>
   </data>
   <data name="Unit_area_acre" xml:space="preserve">
-    <value>英亩</value>
+    <value>Acre</value>
   </data>
   <data name="Unit_area_mi²" xml:space="preserve">
-    <value>平方英里</value>
+    <value>Mille carré</value>
   </data>
   <!-- Volume Units -->
   <data name="Unit_volume_m³" xml:space="preserve">
-    <value>立方米</value>
+    <value>Mètre cube</value>
   </data>
   <data name="Unit_volume_L" xml:space="preserve">
-    <value>升</value>
+    <value>Litre</value>
   </data>
   <data name="Unit_volume_mL" xml:space="preserve">
-    <value>毫升</value>
+    <value>Millilitre</value>
   </data>
   <data name="Unit_volume_gal" xml:space="preserve">
-    <value>加仑</value>
+    <value>Gallon</value>
   </data>
   <data name="Unit_volume_qt" xml:space="preserve">
-    <value>夸脱</value>
+    <value>Quart</value>
   </data>
   <data name="Unit_volume_pt" xml:space="preserve">
-    <value>品脱</value>
+    <value>Pinte</value>
+  </data>
+  <data name="Unit_volume_cup" xml:space="preserve">
+    <value>Tasse</value>
   </data>
   <data name="Unit_volume_fl oz" xml:space="preserve">
-    <value>液量盎司</value>
+    <value>Once liquide</value>
   </data>
   <!-- Time Units -->
   <data name="Unit_time_s" xml:space="preserve">
-    <value>秒</value>
+    <value>Seconde</value>
   </data>
   <data name="Unit_time_ms" xml:space="preserve">
-    <value>毫秒</value>
-  </data>
-  <data name="Unit_time_µs" xml:space="preserve">
-    <value>微秒</value>
-  </data>
-  <data name="Unit_time_ns" xml:space="preserve">
-    <value>纳秒</value>
+    <value>Milliseconde</value>
   </data>
   <data name="Unit_time_min" xml:space="preserve">
-    <value>分钟</value>
+    <value>Minute</value>
   </data>
   <data name="Unit_time_h" xml:space="preserve">
-    <value>小时</value>
+    <value>Heure</value>
   </data>
   <data name="Unit_time_d" xml:space="preserve">
-    <value>天</value>
+    <value>Jour</value>
   </data>
   <data name="Unit_time_wk" xml:space="preserve">
-    <value>周</value>
+    <value>Semaine</value>
   </data>
   <data name="Unit_time_mo" xml:space="preserve">
-    <value>月</value>
+    <value>Mois</value>
   </data>
   <data name="Unit_time_yr" xml:space="preserve">
-    <value>年</value>
+    <value>Année</value>
   </data>
   <!-- Speed Units -->
   <data name="Unit_speed_m/s" xml:space="preserve">
-    <value>米每秒</value>
+    <value>Mètre par seconde</value>
   </data>
   <data name="Unit_speed_km/h" xml:space="preserve">
-    <value>千米每小时</value>
+    <value>Kilomètre par heure</value>
   </data>
   <data name="Unit_speed_mph" xml:space="preserve">
-    <value>英里每小时</value>
+    <value>Mille par heure</value>
   </data>
   <data name="Unit_speed_ft/s" xml:space="preserve">
-    <value>英尺每秒</value>
+    <value>Pied par seconde</value>
   </data>
   <data name="Unit_speed_kn" xml:space="preserve">
-    <value>节</value>
+    <value>Nœud</value>
   </data>
   <data name="Unit_speed_km/s" xml:space="preserve">
-    <value>千米每秒</value>
+    <value>Kilomètre par seconde</value>
   </data>
   <data name="Unit_speed_cm/s" xml:space="preserve">
-    <value>厘米每秒</value>
+    <value>Centimètre par seconde</value>
+  </data>
+  <data name="Unit_time_µs" xml:space="preserve">
+    <value>Microseconde</value>
+  </data>
+  <data name="Unit_time_ns" xml:space="preserve">
+    <value>Nanoseconde</value>
+  </data>
+  <data name="Unit_volume_cup" xml:space="preserve">
+    <value>Tasse</value>
   </data>
 </root>
 

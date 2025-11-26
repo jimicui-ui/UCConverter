@@ -49,6 +49,9 @@
   "units": {
     "si": "SI",
     "base": "基准"
+  },
+  "accessibility": {
+    "skipToMainContent": "跳转到主要内容"
   }
 }
 

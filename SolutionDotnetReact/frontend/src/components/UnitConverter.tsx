@@ -40,7 +40,7 @@ export function UnitConverter() {
   };
 
   // Get locale string for number formatting
-  const locale = i18n.language === 'zh' ? 'zh-CN' : 'en-US';
+  const locale = i18n.language === 'zh' ? 'zh-CN' : i18n.language === 'fr' ? 'fr-FR' : 'en-US';
 
   // Enhanced language switching with smooth transitions
   const changeLanguage = (lng: string) => {
@@ -50,9 +50,8 @@ export function UnitConverter() {
       if (typeof window !== 'undefined' && window.localStorage) {
         localStorage.setItem('language', lng);
       }
-      // Reload categories to get localized names
-      loadCategories().catch(err => console.error('Error reloading categories:', err));
       // Reset language changing state after a short delay
+      // Categories and units will be reloaded automatically by useEffect hooks
       setTimeout(() => setLanguageChanging(false), 300);
     } catch (err) {
       console.error('Error changing language:', err);
@@ -60,7 +59,7 @@ export function UnitConverter() {
     }
   };
 
-  // Load categories on mount
+  // Load categories on mount and when language changes
   useEffect(() => {
     const timer = setTimeout(() => {
       loadCategories().catch(err => {
@@ -70,9 +69,9 @@ export function UnitConverter() {
     }, 100);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [i18n.language]);
 
-  // Load units when category changes
+  // Load units when category changes or language changes
   useEffect(() => {
     if (selectedCategory) {
       loadUnits(selectedCategory).catch(err => {
@@ -322,7 +321,7 @@ export function UnitConverter() {
 
   return (
     <div className={`unit-converter ${languageChanging ? 'language-changing' : ''}`}>
-      <a href="#main-content" className="skip-link">Skip to main content</a>
+      <a href="#main-content" className="skip-link">{t('accessibility.skipToMainContent')}</a>
       <header className="converter-header" role="banner">
         <div className="header-top">
           <h1>{t('unitConverter.title')}</h1>
@@ -341,6 +340,7 @@ export function UnitConverter() {
               >
                 <option value="en">English</option>
                 <option value="zh">中文</option>
+                <option value="fr">Français</option>
               </select>
               {languageChanging && (
                 <span className="language-loading" aria-live="polite" aria-atomic="true">

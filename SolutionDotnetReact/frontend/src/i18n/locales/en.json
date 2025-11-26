@@ -49,6 +49,9 @@
   "units": {
     "si": "SI",
     "base": "Base"
+  },
+  "accessibility": {
+    "skipToMainContent": "Skip to main content"
   }
 }
 

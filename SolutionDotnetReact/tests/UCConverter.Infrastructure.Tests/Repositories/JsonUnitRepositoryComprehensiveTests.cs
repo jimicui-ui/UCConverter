@@ -54,7 +54,7 @@ public class JsonUnitRepositoryComprehensiveTests : IDisposable
     }
 
     [Fact]
-    public void Initialize_WhenMultipleFilesWithSomeFailures_ContinuesAndLogsBothSuccessAndFailure()
+    public async Task Initialize_WhenMultipleFilesWithSomeFailures_ContinuesAndLogsBothSuccessAndFailure()
     {
         // Arrange
         var validJsonContent = @"{
@@ -92,7 +92,7 @@ public class JsonUnitRepositoryComprehensiveTests : IDisposable
             Times.Once);
 
         // Verify success count includes valid file
-        var categories = repository.GetAllCategoriesAsync().Result;
+        var categories = await repository.GetAllCategoriesAsync();
         Assert.Single(categories);
     }
 
@@ -157,7 +157,7 @@ public class JsonUnitRepositoryComprehensiveTests : IDisposable
     #region Thread Safety Tests
 
     [Fact]
-    public void Initialize_WhenCalledConcurrently_OnlyInitializesOnce()
+    public async Task Initialize_WhenCalledConcurrently_OnlyInitializesOnce()
     {
         // Arrange
         var jsonContent = @"{
@@ -184,7 +184,7 @@ public class JsonUnitRepositoryComprehensiveTests : IDisposable
         {
             tasks.Add(Task.Run(() => repository.Initialize()));
         }
-        Task.WaitAll(tasks.ToArray());
+        await Task.WhenAll(tasks.ToArray());
 
         // Assert
         _mockLogger.Verify(
@@ -555,7 +555,7 @@ public class JsonUnitRepositoryComprehensiveTests : IDisposable
     #region Error Handling Tests
 
     [Fact]
-    public void Initialize_WhenFileReadThrowsException_LogsErrorAndContinues()
+    public async Task Initialize_WhenFileReadThrowsException_LogsErrorAndContinues()
     {
         // Arrange
         var validPath = Path.Combine(_testUnitsSettingsPath, "valid.json");
@@ -588,7 +588,7 @@ public class JsonUnitRepositoryComprehensiveTests : IDisposable
 
         // Assert
         // Should still load the valid file
-        var categories = repository.GetAllCategoriesAsync().Result;
+        var categories = await repository.GetAllCategoriesAsync();
         Assert.Single(categories);
     }
 

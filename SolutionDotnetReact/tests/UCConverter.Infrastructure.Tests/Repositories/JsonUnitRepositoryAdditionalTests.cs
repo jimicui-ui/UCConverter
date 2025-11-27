@@ -143,7 +143,7 @@ public class JsonUnitRepositoryAdditionalTests : IDisposable
     }
 
     [Fact]
-    public void Initialize_WhenCalledMultipleTimes_OnlyInitializesOnce()
+    public async Task Initialize_WhenCalledMultipleTimes_OnlyInitializesOnce()
     {
         // Arrange
         var jsonContent = @"{
@@ -181,7 +181,7 @@ public class JsonUnitRepositoryAdditionalTests : IDisposable
         repository.Initialize();
 
         // Assert - Should not throw and should only load once
-        var categories = repository.GetAllCategoriesAsync().Result;
+        var categories = await repository.GetAllCategoriesAsync();
         Assert.Single(categories);
     }
 

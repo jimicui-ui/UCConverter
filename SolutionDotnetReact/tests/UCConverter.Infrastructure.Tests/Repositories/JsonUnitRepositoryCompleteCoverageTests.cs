@@ -22,7 +22,7 @@ public class JsonUnitRepositoryCompleteCoverageTests : IDisposable
     }
 
     [Fact]
-    public void LoadCategoryFromFile_WhenBaseUnitNotInUnitsList_AddsBaseUnit()
+    public async Task LoadCategoryFromFile_WhenBaseUnitNotInUnitsList_AddsBaseUnit()
     {
         // Arrange
         var jsonContent = @"{
@@ -55,7 +55,7 @@ public class JsonUnitRepositoryCompleteCoverageTests : IDisposable
         repository.Initialize();
 
         // Act
-        var category = repository.GetCategoryByNameAsync("test").Result;
+        var category = await repository.GetCategoryByNameAsync("test");
 
         // Assert
         Assert.NotNull(category);
@@ -64,7 +64,7 @@ public class JsonUnitRepositoryCompleteCoverageTests : IDisposable
     }
 
     [Fact]
-    public void LoadCategoryFromFile_WhenBaseUnitSymbolCaseDiffers_DoesNotAddDuplicate()
+    public async Task LoadCategoryFromFile_WhenBaseUnitSymbolCaseDiffers_DoesNotAddDuplicate()
     {
         // Arrange - The comparison is case-insensitive, so T and t are considered the same
         var jsonContent = @"{
@@ -97,7 +97,7 @@ public class JsonUnitRepositoryCompleteCoverageTests : IDisposable
         repository.Initialize();
 
         // Act
-        var category = repository.GetCategoryByNameAsync("test").Result;
+        var category = await repository.GetCategoryByNameAsync("test");
 
         // Assert
         Assert.NotNull(category);
@@ -106,7 +106,7 @@ public class JsonUnitRepositoryCompleteCoverageTests : IDisposable
     }
 
     [Fact]
-    public void LoadCategoryFromFile_WhenCategoryAddedToCache_CanRetrieveIt()
+    public async Task LoadCategoryFromFile_WhenCategoryAddedToCache_CanRetrieveIt()
     {
         // Arrange
         var jsonContent = @"{
@@ -129,8 +129,8 @@ public class JsonUnitRepositoryCompleteCoverageTests : IDisposable
         repository.Initialize();
 
         // Act
-        var category1 = repository.GetCategoryByNameAsync("test").Result;
-        var category2 = repository.GetCategoryByNameAsync("test").Result;
+        var category1 = await repository.GetCategoryByNameAsync("test");
+        var category2 = await repository.GetCategoryByNameAsync("test");
 
         // Assert
         Assert.NotNull(category1);
@@ -285,7 +285,7 @@ public class JsonUnitRepositoryCompleteCoverageTests : IDisposable
     }
 
     [Fact]
-    public void MapUnitJson_WhenAllPropertiesSet_MapsCorrectly()
+    public async Task MapUnitJson_WhenAllPropertiesSet_MapsCorrectly()
     {
         // Arrange
         var jsonContent = @"{
@@ -310,7 +310,7 @@ public class JsonUnitRepositoryCompleteCoverageTests : IDisposable
         repository.Initialize();
 
         // Act
-        var category = repository.GetCategoryByNameAsync("test").Result;
+        var category = await repository.GetCategoryByNameAsync("test");
 
         // Assert
         Assert.NotNull(category);
@@ -328,7 +328,7 @@ public class JsonUnitRepositoryCompleteCoverageTests : IDisposable
     }
 
     [Fact]
-    public void MapUnitJson_WhenNullCoalescingUsed_MapsToEmptyString()
+    public async Task MapUnitJson_WhenNullCoalescingUsed_MapsToEmptyString()
     {
         // Arrange
         var jsonContent = @"{
@@ -351,7 +351,7 @@ public class JsonUnitRepositoryCompleteCoverageTests : IDisposable
         repository.Initialize();
 
         // Act
-        var category = repository.GetCategoryByNameAsync("test").Result;
+        var category = await repository.GetCategoryByNameAsync("test");
 
         // Assert
         Assert.NotNull(category);

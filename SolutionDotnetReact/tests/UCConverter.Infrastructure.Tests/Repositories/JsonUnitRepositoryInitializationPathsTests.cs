@@ -60,7 +60,7 @@ public class JsonUnitRepositoryInitializationPathsTests : IDisposable
     }
 
     [Fact]
-    public void Initialize_WhenLockedAndAlreadyInitialized_ReturnsEarly()
+    public async Task Initialize_WhenLockedAndAlreadyInitialized_ReturnsEarly()
     {
         // Arrange
         var jsonContent = @"{
@@ -87,7 +87,7 @@ public class JsonUnitRepositoryInitializationPathsTests : IDisposable
         // Simulate concurrent access - second thread checking after lock
         var task1 = Task.Run(() => repository.Initialize());
         var task2 = Task.Run(() => repository.Initialize());
-        Task.WaitAll(task1, task2);
+        await Task.WhenAll(task1, task2);
 
         // Assert
         // Should only log success once total
@@ -102,7 +102,7 @@ public class JsonUnitRepositoryInitializationPathsTests : IDisposable
     }
 
     [Fact]
-    public void Initialize_WhenMultipleFiles_ProcessesAllFiles()
+    public async Task Initialize_WhenMultipleFiles_ProcessesAllFiles()
     {
         // Arrange
         for (int i = 1; i <= 5; i++)
@@ -130,12 +130,12 @@ public class JsonUnitRepositoryInitializationPathsTests : IDisposable
         repository.Initialize();
 
         // Assert
-        var categories = repository.GetAllCategoriesAsync().Result;
+        var categories = await repository.GetAllCategoriesAsync();
         Assert.Equal(5, categories.Count());
     }
 
     [Fact]
-    public void Initialize_WhenFileReadThrowsException_ContinuesWithOtherFiles()
+    public async Task Initialize_WhenFileReadThrowsException_ContinuesWithOtherFiles()
     {
         // Arrange
         var validJsonContent = @"{
@@ -164,7 +164,7 @@ public class JsonUnitRepositoryInitializationPathsTests : IDisposable
         repository.Initialize();
 
         // Assert
-        var categories = repository.GetAllCategoriesAsync().Result;
+        var categories = await repository.GetAllCategoriesAsync();
         Assert.Single(categories); // Should still load valid file
 
         _mockLogger.Verify(

@@ -22,7 +22,7 @@ public class JsonUnitRepositoryEdgeCaseCoverageTests : IDisposable
     }
 
     [Fact]
-    public void LoadCategoryFromFile_WhenUnitsListIsNull_UsesEmptyList()
+    public async Task LoadCategoryFromFile_WhenUnitsListIsNull_UsesEmptyList()
     {
         // Arrange
         var jsonContent = @"{
@@ -45,7 +45,7 @@ public class JsonUnitRepositoryEdgeCaseCoverageTests : IDisposable
         repository.Initialize();
 
         // Act
-        var category = repository.GetCategoryByNameAsync("test").Result;
+        var category = await repository.GetCategoryByNameAsync("test");
 
         // Assert
         Assert.NotNull(category);
@@ -54,7 +54,7 @@ public class JsonUnitRepositoryEdgeCaseCoverageTests : IDisposable
     }
 
     [Fact]
-    public void LoadCategoryFromFile_WhenBaseUnitAlreadyInUnitsList_DoesNotAddDuplicate()
+    public async Task LoadCategoryFromFile_WhenBaseUnitAlreadyInUnitsList_DoesNotAddDuplicate()
     {
         // Arrange
         var jsonContent = @"{
@@ -87,7 +87,7 @@ public class JsonUnitRepositoryEdgeCaseCoverageTests : IDisposable
         repository.Initialize();
 
         // Act
-        var category = repository.GetCategoryByNameAsync("test").Result;
+        var category = await repository.GetCategoryByNameAsync("test");
 
         // Assert
         Assert.NotNull(category);
@@ -95,7 +95,7 @@ public class JsonUnitRepositoryEdgeCaseCoverageTests : IDisposable
     }
 
     [Fact]
-    public void LoadCategoryFromFile_WhenGroupIsNull_DefaultsToCommon()
+    public async Task LoadCategoryFromFile_WhenGroupIsNull_DefaultsToCommon()
     {
         // Arrange
         var jsonContent = @"{
@@ -119,7 +119,7 @@ public class JsonUnitRepositoryEdgeCaseCoverageTests : IDisposable
         repository.Initialize();
 
         // Act
-        var category = repository.GetCategoryByNameAsync("test").Result;
+        var category = await repository.GetCategoryByNameAsync("test");
 
         // Assert
         Assert.NotNull(category);
@@ -127,7 +127,7 @@ public class JsonUnitRepositoryEdgeCaseCoverageTests : IDisposable
     }
 
     [Fact]
-    public void LoadCategoryFromFile_WhenGroupIsProvided_UsesProvidedGroup()
+    public async Task LoadCategoryFromFile_WhenGroupIsProvided_UsesProvidedGroup()
     {
         // Arrange
         var jsonContent = @"{
@@ -151,7 +151,7 @@ public class JsonUnitRepositoryEdgeCaseCoverageTests : IDisposable
         repository.Initialize();
 
         // Act
-        var category = repository.GetCategoryByNameAsync("test").Result;
+        var category = await repository.GetCategoryByNameAsync("test");
 
         // Assert
         Assert.NotNull(category);
@@ -159,7 +159,7 @@ public class JsonUnitRepositoryEdgeCaseCoverageTests : IDisposable
     }
 
     [Fact]
-    public void LoadCategoryFromFile_WhenCategoryJsonIsNull_LogsWarningAndReturns()
+    public async Task LoadCategoryFromFile_WhenCategoryJsonIsNull_LogsWarningAndReturns()
     {
         // Arrange
         var invalidJsonContent = @"null";
@@ -180,12 +180,12 @@ public class JsonUnitRepositoryEdgeCaseCoverageTests : IDisposable
                 It.IsAny<Func<It.IsAnyType, Exception?, string>>()),
             Times.Once);
 
-        var categories = repository.GetAllCategoriesAsync().Result;
+        var categories = await repository.GetAllCategoriesAsync();
         Assert.Empty(categories);
     }
 
     [Fact]
-    public void LoadCategoryFromFile_WhenBaseUnitIsNull_LogsWarningAndReturns()
+    public async Task LoadCategoryFromFile_WhenBaseUnitIsNull_LogsWarningAndReturns()
     {
         // Arrange
         var jsonContent = @"{
@@ -211,7 +211,7 @@ public class JsonUnitRepositoryEdgeCaseCoverageTests : IDisposable
                 It.IsAny<Func<It.IsAnyType, Exception?, string>>()),
             Times.Once);
 
-        var categories = repository.GetAllCategoriesAsync().Result;
+        var categories = await repository.GetAllCategoriesAsync();
         Assert.Empty(categories);
     }
 

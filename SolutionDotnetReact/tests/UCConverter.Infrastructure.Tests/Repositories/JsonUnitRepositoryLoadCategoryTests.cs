@@ -20,7 +20,7 @@ public class JsonUnitRepositoryLoadCategoryTests : IDisposable
     }
 
     [Fact]
-    public void LoadCategoryFromFile_WhenUnitsArrayIsNull_StillCreatesCategory()
+    public async Task LoadCategoryFromFile_WhenUnitsArrayIsNull_StillCreatesCategory()
     {
         // Arrange
         var jsonContent = @"{
@@ -46,13 +46,13 @@ public class JsonUnitRepositoryLoadCategoryTests : IDisposable
         repository.Initialize();
 
         // Assert
-        var category = repository.GetCategoryByNameAsync("test").Result;
+        var category = await repository.GetCategoryByNameAsync("test");
         Assert.NotNull(category);
         Assert.Single(category!.Units); // Should have base unit
     }
 
     [Fact]
-    public void LoadCategoryFromFile_WhenUnitHasNullSymbol_UsesEmptyString()
+    public async Task LoadCategoryFromFile_WhenUnitHasNullSymbol_UsesEmptyString()
     {
         // Arrange
         var jsonContent = @"{
@@ -88,7 +88,7 @@ public class JsonUnitRepositoryLoadCategoryTests : IDisposable
         repository.Initialize();
 
         // Assert
-        var category = repository.GetCategoryByNameAsync("test").Result;
+        var category = await repository.GetCategoryByNameAsync("test");
         Assert.NotNull(category);
         var unitWithNullSymbol = category!.Units.FirstOrDefault(u => u.Name == "test2");
         Assert.NotNull(unitWithNullSymbol);
@@ -96,7 +96,7 @@ public class JsonUnitRepositoryLoadCategoryTests : IDisposable
     }
 
     [Fact]
-    public void LoadCategoryFromFile_WhenUnitHasNullName_UsesEmptyString()
+    public async Task LoadCategoryFromFile_WhenUnitHasNullName_UsesEmptyString()
     {
         // Arrange
         var jsonContent = @"{
@@ -132,7 +132,7 @@ public class JsonUnitRepositoryLoadCategoryTests : IDisposable
         repository.Initialize();
 
         // Assert
-        var category = repository.GetCategoryByNameAsync("test").Result;
+        var category = await repository.GetCategoryByNameAsync("test");
         Assert.NotNull(category);
         var unitWithNullName = category!.Units.FirstOrDefault(u => u.Symbol == "t2");
         Assert.NotNull(unitWithNullName);
@@ -140,7 +140,7 @@ public class JsonUnitRepositoryLoadCategoryTests : IDisposable
     }
 
     [Fact]
-    public void LoadCategoryFromFile_WhenUnitHasNullDisplayName_UsesEmptyString()
+    public async Task LoadCategoryFromFile_WhenUnitHasNullDisplayName_UsesEmptyString()
     {
         // Arrange
         var jsonContent = @"{
@@ -176,7 +176,7 @@ public class JsonUnitRepositoryLoadCategoryTests : IDisposable
         repository.Initialize();
 
         // Assert
-        var category = repository.GetCategoryByNameAsync("test").Result;
+        var category = await repository.GetCategoryByNameAsync("test");
         Assert.NotNull(category);
         var unitWithNullDisplayName = category!.Units.FirstOrDefault(u => u.Symbol == "t2");
         Assert.NotNull(unitWithNullDisplayName);
@@ -184,7 +184,7 @@ public class JsonUnitRepositoryLoadCategoryTests : IDisposable
     }
 
     [Fact]
-    public void LoadCategoryFromFile_WhenUnitHasNullUnitSystem_UsesEmptyString()
+    public async Task LoadCategoryFromFile_WhenUnitHasNullUnitSystem_UsesEmptyString()
     {
         // Arrange
         var jsonContent = @"{
@@ -220,7 +220,7 @@ public class JsonUnitRepositoryLoadCategoryTests : IDisposable
         repository.Initialize();
 
         // Assert
-        var category = repository.GetCategoryByNameAsync("test").Result;
+        var category = await repository.GetCategoryByNameAsync("test");
         Assert.NotNull(category);
         var unitWithNullUnitSystem = category!.Units.FirstOrDefault(u => u.Symbol == "t2");
         Assert.NotNull(unitWithNullUnitSystem);
@@ -228,7 +228,7 @@ public class JsonUnitRepositoryLoadCategoryTests : IDisposable
     }
 
     [Fact]
-    public void Initialize_WhenSomeFilesFailToLoad_ContinuesLoadingOthers()
+    public async Task Initialize_WhenSomeFilesFailToLoad_ContinuesLoadingOthers()
     {
         // Arrange
         var validJson = @"{
@@ -265,7 +265,7 @@ public class JsonUnitRepositoryLoadCategoryTests : IDisposable
         repository.Initialize();
 
         // Assert
-        var validCategory = repository.GetCategoryByNameAsync("valid").Result;
+        var validCategory = await repository.GetCategoryByNameAsync("valid");
         Assert.NotNull(validCategory);
         _mockLogger.Verify(
             x => x.Log(
@@ -278,7 +278,7 @@ public class JsonUnitRepositoryLoadCategoryTests : IDisposable
     }
 
     [Fact]
-    public void LoadCategoryFromFile_WhenBaseUnitJsonIsNull_LogsWarningAndReturns()
+    public async Task LoadCategoryFromFile_WhenBaseUnitJsonIsNull_LogsWarningAndReturns()
     {
         // Arrange
         var jsonContent = @"{
@@ -296,7 +296,7 @@ public class JsonUnitRepositoryLoadCategoryTests : IDisposable
         repository.Initialize();
 
         // Assert
-        var category = repository.GetCategoryByNameAsync("test").Result;
+        var category = await repository.GetCategoryByNameAsync("test");
         Assert.Null(category);
         _mockLogger.Verify(
             x => x.Log(
@@ -309,7 +309,7 @@ public class JsonUnitRepositoryLoadCategoryTests : IDisposable
     }
 
     [Fact]
-    public void LoadCategoryFromFile_WhenGroupIsNull_UsesCommonAsDefault()
+    public async Task LoadCategoryFromFile_WhenGroupIsNull_UsesCommonAsDefault()
     {
         // Arrange
         var jsonContent = @"{
@@ -345,7 +345,7 @@ public class JsonUnitRepositoryLoadCategoryTests : IDisposable
         repository.Initialize();
 
         // Assert
-        var category = repository.GetCategoryByNameAsync("test").Result;
+        var category = await repository.GetCategoryByNameAsync("test");
         Assert.NotNull(category);
         Assert.Equal("Common", category!.Group);
     }

@@ -466,11 +466,12 @@ public class ComprehensiveUnitConversionTests : IClassFixture<WebApplicationFact
 
                     Assert.NotNull(result);
                     
-                    // Zero should remain zero
-                    if (testValue == 0.0)
+                    // Zero should remain zero (except for temperature conversions which use formulas)
+                    if (testValue == 0.0 && category.Name != "temperature")
                     {
                         Assert.Equal(0.0, result.Result, 4);
                     }
+                    // For temperature, 0K = -273.15°C, so we skip the zero check
                 }
                 catch (Exception ex)
                 {

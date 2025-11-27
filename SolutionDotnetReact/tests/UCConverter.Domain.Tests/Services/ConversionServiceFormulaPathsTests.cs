@@ -73,7 +73,8 @@ public class ConversionServiceFormulaPathsTests
             Name = "celsius",
             Category = "test",
             IsBaseUnit = false,
-            ConversionFormula = "x + 273.15"
+            ConversionFormula = "x + 273.15",
+            ConversionInverseFormula = "x - 273.15" // Required inverse formula
         };
         var category = new Category
         {
@@ -159,7 +160,7 @@ public class ConversionServiceFormulaPathsTests
         // Act & Assert
         var exception = await Assert.ThrowsAsync<UnitConversionException>(() =>
             _conversionService.ConvertAsync("test", "K", "complex", 273.15));
-        Assert.Contains("Complex inverse formula conversion not yet supported", exception.Message);
+        Assert.Contains("Inverse formula is required for unit with formula", exception.Message);
     }
 }
 

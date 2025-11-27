@@ -73,7 +73,8 @@ public class ConversionServiceFormulaTests
             Name = "celsius",
             Category = "temperature",
             IsBaseUnit = false,
-            ConversionFormula = "x + 273.15"
+            ConversionFormula = "x + 273.15",
+            ConversionInverseFormula = "x - 273.15" // Required inverse formula
         };
         var category = new Category
         {
@@ -194,7 +195,8 @@ public class ConversionServiceFormulaTests
             Name = "celsius",
             Category = "temperature",
             IsBaseUnit = false,
-            ConversionFormula = "x + 273.15"
+            ConversionFormula = "x + 273.15",
+            ConversionInverseFormula = "x - 273.15" // Required inverse formula
         };
         var category = new Category
         {

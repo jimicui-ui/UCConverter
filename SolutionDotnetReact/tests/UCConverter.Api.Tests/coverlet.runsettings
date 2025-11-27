@@ -5,11 +5,10 @@
       <DataCollector friendlyName="XPlat code coverage">
         <Configuration>
           <Format>opencover,cobertura,json</Format>
-          <Exclude>[*.Tests]*</Exclude>
-          <ExcludeByAttribute>Obsolete,GeneratedCodeAttribute,CompilerGeneratedAttribute</ExcludeByAttribute>
-          <ExcludeByFile>**/Migrations/**,**/DTOs/**,**/Resources/**,**/Domain/**,**/Infrastructure/**,**/Application/**,**/Program.cs,**/Properties/**,**/*.http,**/appsettings*.json</ExcludeByFile>
           <Exclude>[*.Tests]*,*Program*</Exclude>
-          <IncludeDirectory>../src/UCConverter.Api/Controllers/</IncludeDirectory>
+          <ExcludeByAttribute>Obsolete,GeneratedCodeAttribute,CompilerGeneratedAttribute</ExcludeByAttribute>
+          <ExcludeByFile>**/Migrations/**,**/DTOs/**,**/Resources/**,**/Domain/**,**/Infrastructure/**,**/Program.cs,**/Properties/**,**/*.http,**/appsettings*.json</ExcludeByFile>
+          <IncludeDirectory>../../src/UCConverter.Api/</IncludeDirectory>
           <SingleHit>false</SingleHit>
           <UseSourceLink>true</UseSourceLink>
           <IncludeTestAssembly>false</IncludeTestAssembly>

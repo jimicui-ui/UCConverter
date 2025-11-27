@@ -102,7 +102,8 @@ public class ConversionServiceFormulaEvaluationTests
             Name = "celsius",
             Category = "test",
             IsBaseUnit = false,
-            ConversionFormula = "x + 273.15" // Exact match for inverse
+            ConversionFormula = "x + 273.15", // Exact match for inverse
+            ConversionInverseFormula = "x - 273.15" // Required inverse formula
         };
         var category = new Category
         {

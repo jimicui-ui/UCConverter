@@ -158,7 +158,7 @@ public class ConversionServiceErrorPathTests
         // Act & Assert
         var exception = await Assert.ThrowsAsync<UnitConversionException>(() =>
             _service.ConvertAsync("test", "from", "to", 100.0));
-        Assert.Contains("Complex inverse formula conversion not yet supported", exception.Message);
+        Assert.Contains("Inverse formula is required for unit with formula", exception.Message);
     }
 }
 

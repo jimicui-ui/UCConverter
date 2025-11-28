@@ -1,0 +1,40 @@
+Summary
+  Generated on: 2025-11-28 - 12:58:10 PM
+  Parser: MultiReport (15x OpenCover)
+  Assemblies: 4
+  Classes: 13
+  Files: 14
+  Line coverage: 70%
+  Covered lines: 308
+  Uncovered lines: 132
+  Coverable lines: 440
+  Total lines: 1403
+  Branch coverage: 75.5% (145 of 192)
+  Covered branches: 145
+  Total branches: 192
+  Method coverage: 82.5% (33 of 40)
+  Full method coverage: 72.5% (29 of 40)
+  Covered methods: 33
+  Fully covered methods: 29
+  Total methods: 40
+
+UCConverter.Api                                                 100%
+  UCConverter.Api.Controllers.CategoriesController              100%
+  UCConverter.Api.Controllers.ConvertController                 100%
+
+UCConverter.Application                                         100%
+  UCConverter.Application.Mappings.ConversionMapping            100%
+  UCConverter.Application.Services.LocalizationService          100%
+  UCConverter.Application.Services.UnitConverterService         100%
+
+UCConverter.Domain                                              100%
+  UCConverter.Domain.Entities.Category                          100%
+  UCConverter.Domain.Entities.Unit                              100%
+  UCConverter.Domain.Exceptions.CategoryNotFoundException       100%
+  UCConverter.Domain.Exceptions.InvalidConversionException      100%
+  UCConverter.Domain.Exceptions.UnitConversionException         100%
+  UCConverter.Domain.Exceptions.UnitNotFoundException           100%
+  UCConverter.Domain.Services.ConversionService                 100%
+
+UCConverter.Infrastructure                                     42.6%
+  UCConverter.Infrastructure.Repositories.JsonUnitRepository   42.6%

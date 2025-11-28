@@ -1,0 +1,33 @@
+Summary
+  Generated on: 2025-11-28 - 12:54:03 PM
+  Parser: OpenCover
+  Assemblies: 2
+  Classes: 10
+  Files: 10
+  Line coverage: 54.1%
+  Covered lines: 104
+  Uncovered lines: 88
+  Coverable lines: 192
+  Total lines: 596
+  Branch coverage: 74% (80 of 108)
+  Covered branches: 80
+  Total branches: 108
+  Method coverage: 45.8% (11 of 24)
+  Full method coverage: 45.8% (11 of 24)
+  Covered methods: 11
+  Fully covered methods: 11
+  Total methods: 24
+
+UCConverter.Application                                       100%
+  UCConverter.Application.Mappings.ConversionMapping          100%
+  UCConverter.Application.Services.LocalizationService        100%
+  UCConverter.Application.Services.UnitConverterService       100%
+
+UCConverter.Domain                                              0%
+  UCConverter.Domain.Entities.Category                          0%
+  UCConverter.Domain.Entities.Unit                              0%
+  UCConverter.Domain.Exceptions.CategoryNotFoundException       0%
+  UCConverter.Domain.Exceptions.InvalidConversionException      0%
+  UCConverter.Domain.Exceptions.UnitConversionException         0%
+  UCConverter.Domain.Exceptions.UnitNotFoundException           0%
+  UCConverter.Domain.Services.ConversionService                 0%

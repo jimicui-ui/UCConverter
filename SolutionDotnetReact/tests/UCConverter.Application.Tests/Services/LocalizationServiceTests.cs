@@ -304,5 +304,229 @@ public class LocalizationServiceTests
         // Assert
         Assert.Equal("Error arg1 and arg2", result);
     }
+
+    [Fact]
+    public void GetCategoryDisplayName_WhenTranslationExists_ReturnsLocalizedValue()
+    {
+        // Arrange
+        var localizedString = new LocalizedString("Category_weight", "Weight / Mass");
+        _mockLocalizer.Setup(l => l["Category_weight"]).Returns(localizedString);
+
+        // Act
+        var result = _service.GetCategoryDisplayName("weight");
+
+        // Assert
+        Assert.Equal("Weight / Mass", result);
+    }
+
+    [Fact]
+    public void GetUnitDisplayName_WhenTranslationExists_ReturnsLocalizedValue()
+    {
+        // Arrange
+        var localizedString = new LocalizedString("Unit_weight_kg", "Kilogram");
+        _mockLocalizer.Setup(l => l["Unit_weight_kg"]).Returns(localizedString);
+
+        // Act
+        var result = _service.GetUnitDisplayName("weight", "kg", "kilogram");
+
+        // Assert
+        Assert.Equal("Kilogram", result);
+    }
+
+    [Fact]
+    public void GetErrorMessage_WhenTranslationExistsWithArgs_FormatsString()
+    {
+        // Arrange
+        var localizedString = new LocalizedString("Error_CategoryNotFound", "La catégorie '{0}' n'a pas été trouvée");
+        _mockLocalizer.Setup(l => l["Error_CategoryNotFound"]).Returns(localizedString);
+
+        // Act
+        var result = _service.GetErrorMessage("CategoryNotFound", "test");
+
+        // Assert
+        Assert.Equal("La catégorie 'test' n'a pas été trouvée", result);
+    }
+
+    [Fact]
+    public void GetErrorMessage_WhenTranslationExistsWithoutArgs_ReturnsLocalizedValue()
+    {
+        // Arrange
+        var localizedString = new LocalizedString("Error_InvalidConversion", "Conversion invalide");
+        _mockLocalizer.Setup(l => l["Error_InvalidConversion"]).Returns(localizedString);
+
+        // Act
+        var result = _service.GetErrorMessage("InvalidConversion");
+
+        // Assert
+        Assert.Equal("Conversion invalide", result);
+    }
+
+    [Fact]
+    public void GetString_WithMultipleArgs_FormatsCorrectly()
+    {
+        // Arrange
+        var localizedString = new LocalizedString("TestKey", "Hello {0}, {1}, and {2}");
+        _mockLocalizer.Setup(l => l["TestKey"]).Returns(localizedString);
+
+        // Act
+        var result = _service.GetString("TestKey", "Alice", "Bob", "Charlie");
+
+        // Assert
+        Assert.Equal("Hello Alice, Bob, and Charlie", result);
+    }
+
+    [Fact]
+    public void GetErrorMessage_WithRequestBodyRequiredKey_ReturnsDefaultMessage()
+    {
+        // Arrange
+        var localizedString = new LocalizedString("Error_RequestBodyRequired", "Error_RequestBodyRequired", resourceNotFound: true);
+        _mockLocalizer.Setup(l => l["Error_RequestBodyRequired"]).Returns(localizedString);
+
+        // Act
+        var result = _service.GetErrorMessage("RequestBodyRequired");
+
+        // Assert
+        Assert.Equal("Request body is required", result);
+    }
+
+    [Fact]
+    public void GetErrorMessage_WithCategoryRequiredKey_ReturnsDefaultMessage()
+    {
+        // Arrange
+        var localizedString = new LocalizedString("Error_CategoryRequired", "Error_CategoryRequired", resourceNotFound: true);
+        _mockLocalizer.Setup(l => l["Error_CategoryRequired"]).Returns(localizedString);
+
+        // Act
+        var result = _service.GetErrorMessage("CategoryRequired");
+
+        // Assert
+        Assert.Equal("Category is required", result);
+    }
+
+    [Fact]
+    public void GetErrorMessage_WithFromUnitRequiredKey_ReturnsDefaultMessage()
+    {
+        // Arrange
+        var localizedString = new LocalizedString("Error_FromUnitRequired", "Error_FromUnitRequired", resourceNotFound: true);
+        _mockLocalizer.Setup(l => l["Error_FromUnitRequired"]).Returns(localizedString);
+
+        // Act
+        var result = _service.GetErrorMessage("FromUnitRequired");
+
+        // Assert
+        Assert.Equal("FromUnit is required", result);
+    }
+
+    [Fact]
+    public void GetErrorMessage_WithToUnitRequiredKey_ReturnsDefaultMessage()
+    {
+        // Arrange
+        var localizedString = new LocalizedString("Error_ToUnitRequired", "Error_ToUnitRequired", resourceNotFound: true);
+        _mockLocalizer.Setup(l => l["Error_ToUnitRequired"]).Returns(localizedString);
+
+        // Act
+        var result = _service.GetErrorMessage("ToUnitRequired");
+
+        // Assert
+        Assert.Equal("ToUnit is required", result);
+    }
+
+    [Fact]
+    public void GetErrorMessage_WithInternalServerErrorKey_ReturnsDefaultMessage()
+    {
+        // Arrange
+        var localizedString = new LocalizedString("Error_InternalServerError", "Error_InternalServerError", resourceNotFound: true);
+        _mockLocalizer.Setup(l => l["Error_InternalServerError"]).Returns(localizedString);
+
+        // Act
+        var result = _service.GetErrorMessage("InternalServerError");
+
+        // Assert
+        Assert.Equal("An error occurred while processing the request", result);
+    }
+
+    [Fact]
+    public void GetErrorMessage_WithInternalServerErrorConversionKey_ReturnsDefaultMessage()
+    {
+        // Arrange
+        var localizedString = new LocalizedString("Error_InternalServerErrorConversion", "Error_InternalServerErrorConversion", resourceNotFound: true);
+        _mockLocalizer.Setup(l => l["Error_InternalServerErrorConversion"]).Returns(localizedString);
+
+        // Act
+        var result = _service.GetErrorMessage("InternalServerErrorConversion");
+
+        // Assert
+        Assert.Equal("An error occurred while performing the conversion", result);
+    }
+
+    [Fact]
+    public void GetErrorMessage_WithInternalServerErrorCategoriesKey_ReturnsDefaultMessage()
+    {
+        // Arrange
+        var localizedString = new LocalizedString("Error_InternalServerErrorCategories", "Error_InternalServerErrorCategories", resourceNotFound: true);
+        _mockLocalizer.Setup(l => l["Error_InternalServerErrorCategories"]).Returns(localizedString);
+
+        // Act
+        var result = _service.GetErrorMessage("InternalServerErrorCategories");
+
+        // Assert
+        Assert.Equal("An error occurred while retrieving categories", result);
+    }
+
+    [Fact]
+    public void GetErrorMessage_WithInternalServerErrorUnitsKey_ReturnsDefaultMessage()
+    {
+        // Arrange
+        var localizedString = new LocalizedString("Error_InternalServerErrorUnits", "Error_InternalServerErrorUnits", resourceNotFound: true);
+        _mockLocalizer.Setup(l => l["Error_InternalServerErrorUnits"]).Returns(localizedString);
+
+        // Act
+        var result = _service.GetErrorMessage("InternalServerErrorUnits");
+
+        // Assert
+        Assert.Equal("An error occurred while retrieving units", result);
+    }
+
+    [Fact]
+    public void GetErrorMessage_WithUnknownErrorKey_ReturnsGenericDefaultMessage()
+    {
+        // Arrange
+        var localizedString = new LocalizedString("Error_SomeUnknownError", "Error_SomeUnknownError", resourceNotFound: true);
+        _mockLocalizer.Setup(l => l["Error_SomeUnknownError"]).Returns(localizedString);
+
+        // Act
+        var result = _service.GetErrorMessage("SomeUnknownError");
+
+        // Assert
+        Assert.Equal("An error occurred", result);
+    }
+
+    [Fact]
+    public void GetErrorMessage_WithDefaultErrorKeyAndNoArgs_ReturnsGenericMessage()
+    {
+        // Arrange
+        var localizedString = new LocalizedString("Error_UnknownKey", "Error_UnknownKey", resourceNotFound: true);
+        _mockLocalizer.Setup(l => l["Error_UnknownKey"]).Returns(localizedString);
+
+        // Act
+        var result = _service.GetErrorMessage("UnknownKey");
+
+        // Assert
+        Assert.Equal("An error occurred", result);
+    }
+
+    [Fact]
+    public void GetCategoryDisplayName_WhenCategoryNameIsWhitespace_ReturnsWhitespace()
+    {
+        // Arrange
+        var localizedString = new LocalizedString("Category_ ", "Category_ ", resourceNotFound: true);
+        _mockLocalizer.Setup(l => l["Category_ "]).Returns(localizedString);
+
+        // Act
+        var result = _service.GetCategoryDisplayName(" ");
+
+        // Assert
+        Assert.Equal(" ", result);
+    }
 }
 

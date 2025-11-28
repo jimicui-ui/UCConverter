@@ -51,6 +51,10 @@
   /* Prevent layout shifts */
   min-height: 0;
   position: relative;
+  /* Prevent horizontal overflow */
+  overflow-x: hidden;
+  /* Ensure smooth resizing */
+  transition: padding var(--transition-base);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -75,12 +79,19 @@
   align-items: center;
   margin-bottom: var(--spacing-2);
   gap: var(--spacing-4);
+  flex-wrap: wrap;
+  /* Prevent overflow */
+  min-width: 0;
 }
 
 .header-controls {
   display: flex;
   align-items: center;
   gap: var(--spacing-3);
+  flex-wrap: wrap;
+  /* Prevent overflow */
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .header-top h1 {
@@ -88,15 +99,23 @@
   margin: 0;
   color: var(--color-text-primary);
   flex: 1;
+  min-width: 0;
   line-height: var(--line-height-tight);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-tight);
+  /* Prevent text overflow */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .language-selector {
   display: flex;
   align-items: center;
   gap: var(--spacing-2);
+  flex-wrap: wrap;
+  min-width: 0;
+  flex-shrink: 0;
 }
 
 .language-selector label {
@@ -145,6 +164,10 @@
   font-size: var(--font-size-lg);
   margin: 0;
   font-weight: var(--font-weight-normal);
+  /* Prevent text overflow */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 /* Error Message - Enhanced */
@@ -215,11 +238,13 @@
   border-radius: var(--radius-lg);
   padding: var(--spacing-8);
   box-shadow: var(--shadow-md);
-  transition: box-shadow var(--transition-base);
+  transition: box-shadow var(--transition-base), padding var(--transition-base);
   width: 100%;
   box-sizing: border-box;
   /* Prevent layout shifts */
   min-width: 0;
+  /* Prevent horizontal overflow */
+  overflow-x: hidden;
 }
 
 .converter-form:hover {
@@ -392,21 +417,25 @@
 .group-selection {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-3);
-  margin-bottom: var(--spacing-4);
-  padding: var(--spacing-3);
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-3);
+  padding: var(--spacing-2);
   background-color: var(--color-bg-secondary);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border-default);
+  /* Only take width needed, don't stretch */
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .radio-option {
   display: flex;
   align-items: center;
-  gap: var(--spacing-2);
+  gap: var(--spacing-1);
   cursor: pointer;
   user-select: none;
-  padding: var(--spacing-2) var(--spacing-3);
+  padding: var(--spacing-1) var(--spacing-2);
   border-radius: var(--radius-sm);
   transition: background-color var(--transition-base), color var(--transition-base);
   font-size: var(--font-size-sm);
@@ -435,6 +464,10 @@
 .radio-option span {
   color: var(--color-text-primary);
   white-space: nowrap;
+  /* Allow text to wrap if needed on very small screens */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .radio-option input[type="radio"]:checked + span {
@@ -446,12 +479,56 @@
 @media (max-width: 768px) {
   .group-selection {
     flex-direction: column;
-    gap: var(--spacing-2);
+    gap: var(--spacing-1);
+    padding: var(--spacing-2);
+    width: 100%;
   }
   
   .radio-option {
     width: 100%;
-    padding: var(--spacing-3);
+    padding: var(--spacing-2);
+  }
+  
+  .radio-option span {
+    white-space: normal;
+    word-wrap: break-word;
+  }
+}
+
+/* Intermediate screen sizes - better handling */
+@media (min-width: 480px) and (max-width: 767px) {
+  .header-top {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .header-controls {
+    flex-wrap: nowrap;
+  }
+  
+  .group-selection {
+    flex-direction: row;
+    gap: var(--spacing-1);
+    padding: var(--spacing-2);
+    width: fit-content;
+    max-width: 100%;
+  }
+  
+  .radio-option {
+    flex: 0 1 auto;
+    min-width: fit-content;
+    padding: var(--spacing-1) var(--spacing-2);
+  }
+}
+
+/* Small tablets and large phones */
+@media (min-width: 600px) and (max-width: 767px) {
+  .conversion-row {
+    flex-wrap: nowrap;
+  }
+  
+  .value-row {
+    flex-wrap: nowrap;
   }
 }
 
@@ -487,6 +564,10 @@
   gap: var(--spacing-4);
   align-items: flex-end;
   margin-bottom: var(--spacing-6);
+  /* Prevent overflow */
+  min-width: 0;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .conversion-row .form-group {
@@ -564,6 +645,10 @@
   gap: var(--spacing-4);
   align-items: flex-end;
   margin-bottom: var(--spacing-6);
+  /* Prevent overflow */
+  min-width: 0;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .value-row .form-group {
@@ -830,12 +915,14 @@
     max-width: 100%;
     min-height: 100vh;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .header-top {
     flex-direction: column;
     gap: var(--spacing-4);
     align-items: stretch;
+    width: 100%;
   }
 
   .header-controls {
@@ -850,24 +937,28 @@
     text-align: center;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    width: 100%;
   }
 
   .subtitle {
     font-size: var(--font-size-base);
     text-align: center;
     padding: 0 var(--spacing-2);
+    width: 100%;
   }
 
   .language-selector {
     width: 100%;
     justify-content: center;
     gap: var(--spacing-2);
+    flex-wrap: wrap;
   }
 
   .language-select {
     min-width: 120px;
     min-height: 44px;
     flex: 0 0 auto;
+    max-width: 100%;
   }
 
   .converter-form {
@@ -875,6 +966,7 @@
     margin: 0;
     width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .form-group {
@@ -986,27 +1078,35 @@
     padding: var(--spacing-6);
     max-width: 90%;
     margin: 0 auto;
+    overflow-x: hidden;
   }
 
   .header-top {
     gap: var(--spacing-4);
+    flex-wrap: wrap;
   }
 
   .header-top h1 {
     font-size: var(--font-size-4xl);
+    flex: 1 1 auto;
+    min-width: 200px;
   }
 
   .subtitle {
     font-size: var(--font-size-lg);
+    width: 100%;
   }
 
   .header-controls {
     gap: var(--spacing-3);
+    flex-wrap: wrap;
+    flex-shrink: 0;
   }
 
   .converter-form {
     padding: var(--spacing-8);
     max-width: 100%;
+    overflow-x: hidden;
   }
 
   .conversion-row {
@@ -1108,14 +1208,18 @@
     padding: var(--spacing-8);
     max-width: 900px;
     margin: 0 auto;
+    overflow-x: hidden;
   }
 
   .header-top {
     gap: var(--spacing-6);
+    flex-wrap: nowrap;
   }
 
   .header-top h1 {
     font-size: var(--font-size-5xl);
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .subtitle {
@@ -1124,11 +1228,14 @@
 
   .header-controls {
     gap: var(--spacing-4);
+    flex-wrap: nowrap;
+    flex-shrink: 0;
   }
 
   .converter-form {
     padding: var(--spacing-10);
     max-width: 100%;
+    overflow-x: hidden;
   }
 
   .conversion-row {
@@ -1183,14 +1290,18 @@
     padding: var(--spacing-10);
     max-width: 1000px;
     margin: 0 auto;
+    overflow-x: hidden;
   }
 
   .header-top {
     gap: var(--spacing-8);
+    flex-wrap: nowrap;
   }
 
   .header-top h1 {
     font-size: var(--font-size-5xl);
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .subtitle {
@@ -1199,11 +1310,14 @@
 
   .header-controls {
     gap: var(--spacing-4);
+    flex-wrap: nowrap;
+    flex-shrink: 0;
   }
 
   .converter-form {
     padding: var(--spacing-12);
     max-width: 100%;
+    overflow-x: hidden;
   }
 
   .form-group {
@@ -1267,5 +1381,136 @@
 @media (min-width: 2560px) {
   .unit-converter {
     max-width: 1200px;
+    overflow-x: hidden;
+  }
+}
+
+/* Additional responsive improvements for smooth transitions */
+@media (min-width: 320px) and (max-width: 479px) {
+  .unit-converter {
+    padding: var(--spacing-3);
+  }
+  
+  .converter-form {
+    padding: var(--spacing-4);
+  }
+  
+  .header-top h1 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .group-selection {
+    padding: var(--spacing-1);
+    gap: var(--spacing-1);
+    margin-bottom: var(--spacing-2);
+    width: fit-content;
+    max-width: 100%;
+  }
+  
+  .radio-option {
+    padding: var(--spacing-1) var(--spacing-2);
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* Very small screens - extra small phones */
+@media (max-width: 360px) {
+  .header-top h1 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .subtitle {
+    font-size: var(--font-size-sm);
+  }
+  
+  .language-selector {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  
+  .language-select {
+    width: 100%;
+  }
+  
+  .group-selection {
+    gap: var(--spacing-1);
+    padding: var(--spacing-1);
+    margin-bottom: var(--spacing-2);
+    width: fit-content;
+    max-width: 100%;
+  }
+  
+  .radio-option {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-1) var(--spacing-2);
+  }
+}
+
+/* Ensure all form elements respect container width */
+.form-group select,
+.form-group input,
+.category-search,
+.unit-search {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Select elements - browser handles text display */
+.form-group select {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Allow text wrapping in input fields */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.category-search,
+.unit-search {
+  white-space: normal;
+  overflow: visible;
+}
+
+/* Prevent text overflow in result display */
+.result-value {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Ensure category info doesn't overflow */
+.category-info {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.category-info-value {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: right;
+  max-width: 60%;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.category-info-item {
+  width: 100%;
+  box-sizing: border-box;
+  gap: var(--spacing-2);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .category-info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-1);
+  }
+  
+  .category-info-value {
+    max-width: 100%;
+    text-align: left;
   }
 }
